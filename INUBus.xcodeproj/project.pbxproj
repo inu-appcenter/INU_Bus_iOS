@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29E4119B16DE5DEEF07D3539 /* Pods_INUBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCEE8A2EA22FEC78329AC46 /* Pods_INUBus.framework */; };
+		AF212DA422D62F9600FAD901 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF212DA322D62F9600FAD901 /* swiftgen.yml */; };
 		AF8631B622D4982800935AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8631B522D4982800935AA4 /* AppDelegate.swift */; };
 		AF8631B822D4982800935AA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8631B722D4982800935AA4 /* ViewController.swift */; };
 		AF8631BB22D4982800935AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8631B922D4982800935AA4 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		74DCAFE4E416637E9AE925E4 /* Pods-INUBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INUBus.release.xcconfig"; path = "Target Support Files/Pods-INUBus/Pods-INUBus.release.xcconfig"; sourceTree = "<group>"; };
+		AF212DA322D62F9600FAD901 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
 		AF8631B222D4982800935AA4 /* INUBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INUBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8631B522D4982800935AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF8631B722D4982800935AA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		AF8631A922D4982700935AA4 = {
 			isa = PBXGroup;
 			children = (
+				AF212DA322D62F9600FAD901 /* swiftgen.yml */,
 				AF8631D222D4A14600935AA4 /* .swiftlint.yml */,
 				AF8631B422D4982800935AA4 /* INUBus */,
 				AF8631B322D4982800935AA4 /* Products */,
@@ -80,11 +83,8 @@
 				AF8631C922D498B700935AA4 /* Main */,
 				AF8631C822D4989700935AA4 /* Extension */,
 				AF8631C722D4984800935AA4 /* Network */,
-				AF8631B522D4982800935AA4 /* AppDelegate.swift */,
 				AF8631B722D4982800935AA4 /* ViewController.swift */,
 				AF8631B922D4982800935AA4 /* Main.storyboard */,
-				AF8631BC22D4982900935AA4 /* Assets.xcassets */,
-				AF8631BE22D4982900935AA4 /* LaunchScreen.storyboard */,
 				AF8631C122D4982900935AA4 /* Info.plist */,
 			);
 			path = INUBus;
@@ -142,6 +142,9 @@
 		AF8631D022D49B5100935AA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF8631BC22D4982900935AA4 /* Assets.xcassets */,
+				AF8631B522D4982800935AA4 /* AppDelegate.swift */,
+				AF8631BE22D4982900935AA4 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF8631D322D4A14600935AA4 /* .swiftlint.yml in Resources */,
+				AF212DA422D62F9600FAD901 /* swiftgen.yml in Resources */,
 				AF8631C022D4982900935AA4 /* LaunchScreen.storyboard in Resources */,
 				AF8631BD22D4982900935AA4 /* Assets.xcassets in Resources */,
 				AF8631BB22D4982800935AA4 /* Main.storyboard in Resources */,

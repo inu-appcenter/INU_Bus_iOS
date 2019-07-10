@@ -2,7 +2,7 @@ disabled_rules:
 
 excluded:
 - Pods
-- INUBus/AppDelegate.swift
+- INUBus/Supporting Files/AppDelegate.swift
 
 line_length:
   warning: 99
