@@ -1,0 +1,9 @@
+disabled_rules:
+
+excluded:
+- Pods
+- INUBus/AppDelegate.swift
+
+line_length:
+  warning: 99
+  error: 120

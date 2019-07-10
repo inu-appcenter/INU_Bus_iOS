@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29E4119B16DE5DEEF07D3539 /* Pods_INUBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCEE8A2EA22FEC78329AC46 /* Pods_INUBus.framework */; };
 		AF8631B622D4982800935AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8631B522D4982800935AA4 /* AppDelegate.swift */; };
 		AF8631B822D4982800935AA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8631B722D4982800935AA4 /* ViewController.swift */; };
 		AF8631BB22D4982800935AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8631B922D4982800935AA4 /* Main.storyboard */; };
 		AF8631BD22D4982900935AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8631BC22D4982900935AA4 /* Assets.xcassets */; };
 		AF8631C022D4982900935AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8631BE22D4982900935AA4 /* LaunchScreen.storyboard */; };
+		AF8631D322D4A14600935AA4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF8631D222D4A14600935AA4 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74DCAFE4E416637E9AE925E4 /* Pods-INUBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INUBus.release.xcconfig"; path = "Target Support Files/Pods-INUBus/Pods-INUBus.release.xcconfig"; sourceTree = "<group>"; };
 		AF8631B222D4982800935AA4 /* INUBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INUBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8631B522D4982800935AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF8631B722D4982800935AA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		AF8631BC22D4982900935AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF8631BF22D4982900935AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF8631C122D4982900935AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF8631D222D4A14600935AA4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		BBCEE8A2EA22FEC78329AC46 /* Pods_INUBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INUBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE65B3D6B8B4BD7CE0E8D4FB /* Pods-INUBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INUBus.debug.xcconfig"; path = "Target Support Files/Pods-INUBus/Pods-INUBus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E4119B16DE5DEEF07D3539 /* Pods_INUBus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09BBAFE4EB67AE52E9BAB85C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBCEE8A2EA22FEC78329AC46 /* Pods_INUBus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF8631A922D4982700935AA4 = {
 			isa = PBXGroup;
 			children = (
+				AF8631D222D4A14600935AA4 /* .swiftlint.yml */,
 				AF8631B422D4982800935AA4 /* INUBus */,
 				AF8631B322D4982800935AA4 /* Products */,
+				F1497E2A59EFB590E1AFC170 /* Pods */,
+				09BBAFE4EB67AE52E9BAB85C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +72,14 @@
 		AF8631B422D4982800935AA4 /* INUBus */ = {
 			isa = PBXGroup;
 			children = (
+				AF8631D022D49B5100935AA4 /* Supporting Files */,
+				AF8631CE22D49A2400935AA4 /* Common */,
+				AF8631CD22D499C300935AA4 /* Inquiry */,
+				AF8631CC22D4991700935AA4 /* Route */,
+				AF8631CB22D498C500935AA4 /* Info */,
+				AF8631C922D498B700935AA4 /* Main */,
+				AF8631C822D4989700935AA4 /* Extension */,
+				AF8631C722D4984800935AA4 /* Network */,
 				AF8631B522D4982800935AA4 /* AppDelegate.swift */,
 				AF8631B722D4982800935AA4 /* ViewController.swift */,
 				AF8631B922D4982800935AA4 /* Main.storyboard */,
@@ -64,6 +90,71 @@
 			path = INUBus;
 			sourceTree = "<group>";
 		};
+		AF8631C722D4984800935AA4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AF8631C822D4989700935AA4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AF8631C922D498B700935AA4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AF8631CB22D498C500935AA4 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		AF8631CC22D4991700935AA4 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		AF8631CD22D499C300935AA4 /* Inquiry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Inquiry;
+			sourceTree = "<group>";
+		};
+		AF8631CE22D49A2400935AA4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AF8631D022D49B5100935AA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1497E2A59EFB590E1AFC170 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE65B3D6B8B4BD7CE0E8D4FB /* Pods-INUBus.debug.xcconfig */,
+				74DCAFE4E416637E9AE925E4 /* Pods-INUBus.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF8631C422D4982900935AA4 /* Build configuration list for PBXNativeTarget "INUBus" */;
 			buildPhases = (
+				2306CA813A40720FC45B2741 /* [CP] Check Pods Manifest.lock */,
 				AF8631AE22D4982800935AA4 /* Sources */,
 				AF8631AF22D4982800935AA4 /* Frameworks */,
 				AF8631B022D4982800935AA4 /* Resources */,
+				AF8631D122D49DEA00935AA4 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -122,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8631D322D4A14600935AA4 /* .swiftlint.yml in Resources */,
 				AF8631C022D4982900935AA4 /* LaunchScreen.storyboard in Resources */,
 				AF8631BD22D4982900935AA4 /* Assets.xcassets in Resources */,
 				AF8631BB22D4982800935AA4 /* Main.storyboard in Resources */,
@@ -129,6 +223,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2306CA813A40720FC45B2741 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-INUBus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF8631D122D49DEA00935AA4 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF8631AE22D4982800935AA4 /* Sources */ = {
@@ -280,9 +417,11 @@
 		};
 		AF8631C522D4982900935AA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE65B3D6B8B4BD7CE0E8D4FB /* Pods-INUBus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3U3H8GE38E;
 				INFOPLIST_FILE = INUBus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,9 +436,11 @@
 		};
 		AF8631C622D4982900935AA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74DCAFE4E416637E9AE925E4 /* Pods-INUBus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3U3H8GE38E;
 				INFOPLIST_FILE = INUBus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
