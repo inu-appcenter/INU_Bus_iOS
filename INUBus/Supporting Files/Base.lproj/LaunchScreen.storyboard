@@ -1,10 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-ExtraBold.ttf">
+            <string>NotoSans-ExtraBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -13,13 +22,59 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="zYu-Yg-Edt">
+                                <rect key="frame" x="153.5" y="342" width="68" height="38"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가는중 ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAs-zc-e9b">
+                                <rect key="frame" x="160.5" y="392" width="63" height="24"/>
+                                <fontDescription key="fontDescription" name="NotoSans-ExtraBold" family="Noto Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inuBus" translatesAutoresizingMaskIntoConstraints="NO" id="iEb-xn-0u3">
+                                <rect key="frame" x="150.5" y="613" width="74" height="16"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="rYB-Xb-g9a">
+                                <rect key="frame" x="73.5" y="176" width="228" height="76"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sM9-uI-B6X">
+                                <rect key="frame" x="97.5" y="480" width="180" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.38039215686274508" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zYu-Yg-Edt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8Id-hJ-V8p"/>
+                            <constraint firstItem="zYu-Yg-Edt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="342:667" id="J6n-Io-wTb"/>
+                            <constraint firstItem="sM9-uI-B6X" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Rh5-8k-J8j"/>
+                            <constraint firstItem="sM9-uI-B6X" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="180:375" id="UQA-Ht-cyu"/>
+                            <constraint firstItem="zYu-Yg-Edt" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="38:667" id="VaT-yB-sFH"/>
+                            <constraint firstItem="rYB-Xb-g9a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="176:667" id="dyb-sC-gwX"/>
+                            <constraint firstItem="uAs-zc-e9b" firstAttribute="leading" secondItem="zYu-Yg-Edt" secondAttribute="leading" constant="7" id="k3P-zv-Ihy"/>
+                            <constraint firstItem="uAs-zc-e9b" firstAttribute="top" secondItem="zYu-Yg-Edt" secondAttribute="bottom" constant="12" id="mo8-9y-mC2"/>
+                            <constraint firstItem="iEb-xn-0u3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="613:667" id="nU2-zP-xLt"/>
+                            <constraint firstItem="iEb-xn-0u3" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="74:375" id="q2D-kb-gm7"/>
+                            <constraint firstItem="rYB-Xb-g9a" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qGg-j4-YKf"/>
+                            <constraint firstItem="rYB-Xb-g9a" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="76:667" id="rPP-5q-KOL"/>
+                            <constraint firstItem="sM9-uI-B6X" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="80:667" id="t71-fR-J8E"/>
+                            <constraint firstItem="sM9-uI-B6X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="480:667" id="u5K-Cw-b8O"/>
+                            <constraint firstItem="iEb-xn-0u3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="udN-mQ-vhw"/>
+                            <constraint firstItem="rYB-Xb-g9a" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="228:375" id="wQX-KM-zlH"/>
+                            <constraint firstItem="zYu-Yg-Edt" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="68:375" id="xfd-YS-fPk"/>
+                            <constraint firstItem="iEb-xn-0u3" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="16:667" id="zOe-kI-Xse"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bus" width="68.5" height="38.5"/>
+        <image name="inuBus" width="74" height="16"/>
+        <image name="logo" width="228" height="76"/>
+    </resources>
 </document>

@@ -7,18 +7,9 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		04EC785F84F3624DAACB9A9F5C72D6DF /* SwiftGen */ = {
+		53F656821F21B68039C06A67EE89637A /* SwiftLint */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 2622AA4C43FA4E191A3863A30E400130 /* Build configuration list for PBXAggregateTarget "SwiftGen" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = SwiftGen;
-		};
-		08C536D77F5AB48EB2EB982F47C2A5F3 /* SwiftLint */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 9C3B0CB090E26A5740ADC29B5A1F8874 /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildConfigurationList = 8DE51752881DB0B5FFEBC3F87C3F2952 /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
 			buildPhases = (
 			);
 			dependencies = (
@@ -28,80 +19,130 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		23E1251FB11079AF77E67AE3C2FBF31F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		EBE01AF615BE63B6317C0CE8E4E0DF18 /* Pods-INUBus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B43DB8200E1ED142B98766C7D464B782 /* Pods-INUBus-dummy.m */; };
-		ED6E21D5D9DCAE75FD6A22A5DB19574F /* Pods-INUBus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8076F60A745622C78C272ABABAF58E32 /* Pods-INUBus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		707772A2FC23282620C8FE4941FC610C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		74A17246DC918B8E7FF28F4E616F84E3 /* KYEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21B6918B16AFCE420067CE3E8BA9D1F /* KYEmbedMainControllerSegue.swift */; };
+		74CF343BD3742D3643C0C0507FC5F183 /* KYDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A149D0394D5DD45DBA7FF7F9DD13019 /* KYDrawerController.swift */; };
+		9FC79171F1DD74412CF1D8CE9D4E99BB /* KYDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9B9AB8C7B389DB9869089420D1E01F9 /* KYDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FCF59B5BBD746559D1343216F66D235 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		AD27FE456FE8C9C555CE146678517FF4 /* KYDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7D4FB956A2D57CE3DB66C371079368 /* KYDrawerController-dummy.m */; };
+		BD79DA6D0D143E262E3A50DC9D9084E1 /* Pods-INUBus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D63BED5E9DB615760D834487A754FB3 /* Pods-INUBus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3CAD6119BE233F31C5D737533E1D1B1 /* Pods-INUBus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B24CBF73A57D4DE74F7EF1721F245 /* Pods-INUBus-dummy.m */; };
+		EBFA6C1365CE1C7C5A08E9067CFFED01 /* KYEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD46FF75016870D179C2FAD43D32A2 /* KYEmbedDrawerControllerSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E293E7F28935635FA1E26B8E494CDFD1 /* PBXContainerItemProxy */ = {
+		411DB3E1B8C29E4D544793BB92779C86 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 04EC785F84F3624DAACB9A9F5C72D6DF;
-			remoteInfo = SwiftGen;
-		};
-		E9904980E1B5BE8FD20907503DE38FC5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 08C536D77F5AB48EB2EB982F47C2A5F3;
+			remoteGlobalIDString = 53F656821F21B68039C06A67EE89637A;
 			remoteInfo = SwiftLint;
+		};
+		EADFCFD5BB59E39FA0B0EF25B3168F7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94B7957C41BA4B641DF21B5F6DDBA9DB;
+			remoteInfo = KYDrawerController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F6FBDDA64C07E59B12272D6E7183422 /* Pods-INUBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-INUBus.debug.xcconfig"; sourceTree = "<group>"; };
-		150F8CD64BEA237CA723E07FBE80757A /* Pods-INUBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-INUBus.release.xcconfig"; sourceTree = "<group>"; };
-		1C7375F066F6A9975B4BA6D1EA8B11CB /* Pods-INUBus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-INUBus.modulemap"; sourceTree = "<group>"; };
-		1D3AE1C84E29F35E2F5659A450447D3D /* SwiftGen.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.xcconfig; sourceTree = "<group>"; };
-		5A77F000018C5E5E267C65D4F92AE439 /* Pods-INUBus-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-INUBus-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8076F60A745622C78C272ABABAF58E32 /* Pods-INUBus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-INUBus-umbrella.h"; sourceTree = "<group>"; };
-		814670C58FD95089EF822553967AC85E /* Pods-INUBus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-INUBus-Info.plist"; sourceTree = "<group>"; };
+		01CD46FF75016870D179C2FAD43D32A2 /* KYEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedDrawerControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
+		1487991AB38A2EE97ADCCB71D2F794E8 /* Pods-INUBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-INUBus.release.xcconfig"; sourceTree = "<group>"; };
+		215B24CBF73A57D4DE74F7EF1721F245 /* Pods-INUBus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-INUBus-dummy.m"; sourceTree = "<group>"; };
+		2277FC0BEB981643B74BDA8CE222AB86 /* KYDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYDrawerController.xcconfig; sourceTree = "<group>"; };
+		2DC0E0069790B29CA8F5F77D4BF7CBCF /* Pods-INUBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-INUBus.debug.xcconfig"; sourceTree = "<group>"; };
+		308A8EE63C2C505235E610675284285A /* KYDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		342F0D8C0815DF15CFDB6AB682FF0294 /* Pods-INUBus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-INUBus.modulemap"; sourceTree = "<group>"; };
+		4AEEC0FF16B3823FDE3E2154252472DD /* KYDrawerController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KYDrawerController-Info.plist"; sourceTree = "<group>"; };
+		5E2D6A7A941202EBFC8E47E2B0497D0F /* Pods-INUBus-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-INUBus-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7A149D0394D5DD45DBA7FF7F9DD13019 /* KYDrawerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYDrawerController.swift; path = KYDrawerController/Classes/KYDrawerController.swift; sourceTree = "<group>"; };
+		7D63BED5E9DB615760D834487A754FB3 /* Pods-INUBus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-INUBus-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B19D5D04A6C99909F5E390D8A87E8A30 /* Pods_INUBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_INUBus.framework; path = "Pods-INUBus.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B43DB8200E1ED142B98766C7D464B782 /* Pods-INUBus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-INUBus-dummy.m"; sourceTree = "<group>"; };
+		9DE83664351D114F12BF9E6FF6ABE8C7 /* Pods-INUBus-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-INUBus-acknowledgements.plist"; sourceTree = "<group>"; };
+		A5F5326EEFD553429307B48015D5A73F /* Pods-INUBus-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-INUBus-frameworks.sh"; sourceTree = "<group>"; };
+		B21B6918B16AFCE420067CE3E8BA9D1F /* KYEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedMainControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
+		BB7D4FB956A2D57CE3DB66C371079368 /* KYDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KYDrawerController-dummy.m"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D66DD8759200E305A5E50136DF76B1B7 /* Pods-INUBus-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-INUBus-acknowledgements.plist"; sourceTree = "<group>"; };
-		F04FB1CCE177DC0BDB0C6BF94E673332 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
+		CE9D5F858C1A238EE3C4775A2C6133C7 /* Pods-INUBus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-INUBus-Info.plist"; sourceTree = "<group>"; };
+		D9B9AB8C7B389DB9869089420D1E01F9 /* KYDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-umbrella.h"; sourceTree = "<group>"; };
+		E18E7A733897CF60CDE7B02EE6D67363 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
+		F04CB16E3737039A85DDA6E0FF033CBD /* KYDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KYDrawerController.framework; path = KYDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96344A4D97CE9E97D025D411C8720D8 /* Pods_INUBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_INUBus.framework; path = "Pods-INUBus.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F976ED2D9ED2FCCCA6AB5858B974C797 /* KYDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KYDrawerController.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F7E82D329F827231627A50123DBB7EE6 /* Frameworks */ = {
+		32BADE44E9EC88B4311FD55E9A8323B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23E1251FB11079AF77E67AE3C2FBF31F /* Foundation.framework in Frameworks */,
+				9FCF59B5BBD746559D1343216F66D235 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A24E5939A25EB9D4DB370CEE659D14C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				707772A2FC23282620C8FE4941FC610C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		57CE83037799B0E54C14ED0DAB124221 /* Pods */ = {
+		389736694774FA010D1E192D6A42AD50 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7A1398968CB1E1A4A54E204C2601B7D6 /* SwiftGen */,
-				B7D098E09F776EF812149E0140115F02 /* SwiftLint */,
+				DF20DFF64D4BEAF75326390DECB77483 /* Pods-INUBus */,
 			);
-			name = Pods;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7A1398968CB1E1A4A54E204C2601B7D6 /* SwiftGen */ = {
+		664ECA30FA69216D5219B78A23904D27 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				EFE2E18A47B8A441185F5229BDD73059 /* Support Files */,
+				F976ED2D9ED2FCCCA6AB5858B974C797 /* KYDrawerController.modulemap */,
+				2277FC0BEB981643B74BDA8CE222AB86 /* KYDrawerController.xcconfig */,
+				BB7D4FB956A2D57CE3DB66C371079368 /* KYDrawerController-dummy.m */,
+				4AEEC0FF16B3823FDE3E2154252472DD /* KYDrawerController-Info.plist */,
+				308A8EE63C2C505235E610675284285A /* KYDrawerController-prefix.pch */,
+				D9B9AB8C7B389DB9869089420D1E01F9 /* KYDrawerController-umbrella.h */,
 			);
-			name = SwiftGen;
-			path = SwiftGen;
+			name = "Support Files";
+			path = "../Target Support Files/KYDrawerController";
 			sourceTree = "<group>";
 		};
-		98680FC1137F3B013C6EA04B68C65346 /* Products */ = {
+		8145D80D87F42179F4CD047439F77AB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B19D5D04A6C99909F5E390D8A87E8A30 /* Pods_INUBus.framework */,
+				F04CB16E3737039A85DDA6E0FF033CBD /* KYDrawerController.framework */,
+				F96344A4D97CE9E97D025D411C8720D8 /* Pods_INUBus.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		98D1FFD128397765E3E93EC8D0A1BA79 /* KYDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				7A149D0394D5DD45DBA7FF7F9DD13019 /* KYDrawerController.swift */,
+				01CD46FF75016870D179C2FAD43D32A2 /* KYEmbedDrawerControllerSegue.swift */,
+				B21B6918B16AFCE420067CE3E8BA9D1F /* KYEmbedMainControllerSegue.swift */,
+				664ECA30FA69216D5219B78A23904D27 /* Support Files */,
+			);
+			name = KYDrawerController;
+			path = KYDrawerController;
+			sourceTree = "<group>";
+		};
+		9A07272D8F2638F9CA35A23D41132D2F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98D1FFD128397765E3E93EC8D0A1BA79 /* KYDrawerController */,
+				AC9D6DEA227B8A171840D25BD97E90C4 /* SwiftLint */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
@@ -112,19 +153,10 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		B3BFCB72B004FE7D00DD80DD4E57AB14 /* Support Files */ = {
+		AC9D6DEA227B8A171840D25BD97E90C4 /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
-				F04FB1CCE177DC0BDB0C6BF94E673332 /* SwiftLint.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftLint";
-			sourceTree = "<group>";
-		};
-		B7D098E09F776EF812149E0140115F02 /* SwiftLint */ = {
-			isa = PBXGroup;
-			children = (
-				B3BFCB72B004FE7D00DD80DD4E57AB14 /* Support Files */,
+				FAD5FE47987DD70F6A8394828EE77A7E /* Support Files */,
 			);
 			name = SwiftLint;
 			path = SwiftLint;
@@ -135,9 +167,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				57CE83037799B0E54C14ED0DAB124221 /* Pods */,
-				98680FC1137F3B013C6EA04B68C65346 /* Products */,
-				E518ED010E815556A663D9FA2430EECF /* Targets Support Files */,
+				9A07272D8F2638F9CA35A23D41132D2F /* Pods */,
+				8145D80D87F42179F4CD047439F77AB7 /* Products */,
+				389736694774FA010D1E192D6A42AD50 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,71 +181,90 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E518ED010E815556A663D9FA2430EECF /* Targets Support Files */ = {
+		DF20DFF64D4BEAF75326390DECB77483 /* Pods-INUBus */ = {
 			isa = PBXGroup;
 			children = (
-				FEAC6D7C7F6390B7EB20DA2A31361664 /* Pods-INUBus */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		EFE2E18A47B8A441185F5229BDD73059 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1D3AE1C84E29F35E2F5659A450447D3D /* SwiftGen.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftGen";
-			sourceTree = "<group>";
-		};
-		FEAC6D7C7F6390B7EB20DA2A31361664 /* Pods-INUBus */ = {
-			isa = PBXGroup;
-			children = (
-				1C7375F066F6A9975B4BA6D1EA8B11CB /* Pods-INUBus.modulemap */,
-				5A77F000018C5E5E267C65D4F92AE439 /* Pods-INUBus-acknowledgements.markdown */,
-				D66DD8759200E305A5E50136DF76B1B7 /* Pods-INUBus-acknowledgements.plist */,
-				B43DB8200E1ED142B98766C7D464B782 /* Pods-INUBus-dummy.m */,
-				814670C58FD95089EF822553967AC85E /* Pods-INUBus-Info.plist */,
-				8076F60A745622C78C272ABABAF58E32 /* Pods-INUBus-umbrella.h */,
-				0F6FBDDA64C07E59B12272D6E7183422 /* Pods-INUBus.debug.xcconfig */,
-				150F8CD64BEA237CA723E07FBE80757A /* Pods-INUBus.release.xcconfig */,
+				342F0D8C0815DF15CFDB6AB682FF0294 /* Pods-INUBus.modulemap */,
+				5E2D6A7A941202EBFC8E47E2B0497D0F /* Pods-INUBus-acknowledgements.markdown */,
+				9DE83664351D114F12BF9E6FF6ABE8C7 /* Pods-INUBus-acknowledgements.plist */,
+				215B24CBF73A57D4DE74F7EF1721F245 /* Pods-INUBus-dummy.m */,
+				A5F5326EEFD553429307B48015D5A73F /* Pods-INUBus-frameworks.sh */,
+				CE9D5F858C1A238EE3C4775A2C6133C7 /* Pods-INUBus-Info.plist */,
+				7D63BED5E9DB615760D834487A754FB3 /* Pods-INUBus-umbrella.h */,
+				2DC0E0069790B29CA8F5F77D4BF7CBCF /* Pods-INUBus.debug.xcconfig */,
+				1487991AB38A2EE97ADCCB71D2F794E8 /* Pods-INUBus.release.xcconfig */,
 			);
 			name = "Pods-INUBus";
 			path = "Target Support Files/Pods-INUBus";
 			sourceTree = "<group>";
 		};
+		FAD5FE47987DD70F6A8394828EE77A7E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E18E7A733897CF60CDE7B02EE6D67363 /* SwiftLint.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A313B25C9B164F0308AB7BA3053E328B /* Headers */ = {
+		8BFB775D9FC735668343CAC0EDF621C7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED6E21D5D9DCAE75FD6A22A5DB19574F /* Pods-INUBus-umbrella.h in Headers */,
+				BD79DA6D0D143E262E3A50DC9D9084E1 /* Pods-INUBus-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E49A4E2A04427AABA35C1A94D67F2B6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FC79171F1DD74412CF1D8CE9D4E99BB /* KYDrawerController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7D2618C6DEBBC2D004D3E1786EE54D09 /* Pods-INUBus */ = {
+		4BDEA24C606093FE5C6F0528D82D88FF /* Pods-INUBus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08070FAE5766E89B120012B4F2643CEB /* Build configuration list for PBXNativeTarget "Pods-INUBus" */;
+			buildConfigurationList = FE24E577FA602980380E5EF7785CE174 /* Build configuration list for PBXNativeTarget "Pods-INUBus" */;
 			buildPhases = (
-				A313B25C9B164F0308AB7BA3053E328B /* Headers */,
-				ECACD222116A8243424AC9D76EC7735C /* Sources */,
-				F7E82D329F827231627A50123DBB7EE6 /* Frameworks */,
-				4E6A8752F8691BCC19E121D72069E589 /* Resources */,
+				8BFB775D9FC735668343CAC0EDF621C7 /* Headers */,
+				153A4625245FBF29995A247FDF58B9FA /* Sources */,
+				A24E5939A25EB9D4DB370CEE659D14C0 /* Frameworks */,
+				DF8B0811AD49E94F4517D82535FE15E8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A04C30366345DD230D86565CC874EF31 /* PBXTargetDependency */,
-				C3F197E73B806A4FE86005E74FE9057B /* PBXTargetDependency */,
+				B68BBBBBC35D737B72FE6B7F06E8424F /* PBXTargetDependency */,
+				F38047895520FC3124BE2AA6D798BE73 /* PBXTargetDependency */,
 			);
 			name = "Pods-INUBus";
 			productName = "Pods-INUBus";
-			productReference = B19D5D04A6C99909F5E390D8A87E8A30 /* Pods_INUBus.framework */;
+			productReference = F96344A4D97CE9E97D025D411C8720D8 /* Pods_INUBus.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		94B7957C41BA4B641DF21B5F6DDBA9DB /* KYDrawerController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C2D16C99CC8B1043F9DB21EC613050D /* Build configuration list for PBXNativeTarget "KYDrawerController" */;
+			buildPhases = (
+				E49A4E2A04427AABA35C1A94D67F2B6C /* Headers */,
+				C80996C8E9ED0707476BFC69FB8E5ACE /* Sources */,
+				32BADE44E9EC88B4311FD55E9A8323B6 /* Frameworks */,
+				F64C4AE3A5C199EC987A937F36B80906 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KYDrawerController;
+			productName = KYDrawerController;
+			productReference = F04CB16E3737039A85DDA6E0FF033CBD /* KYDrawerController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -233,19 +284,26 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 98680FC1137F3B013C6EA04B68C65346 /* Products */;
+			productRefGroup = 8145D80D87F42179F4CD047439F77AB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7D2618C6DEBBC2D004D3E1786EE54D09 /* Pods-INUBus */,
-				04EC785F84F3624DAACB9A9F5C72D6DF /* SwiftGen */,
-				08C536D77F5AB48EB2EB982F47C2A5F3 /* SwiftLint */,
+				94B7957C41BA4B641DF21B5F6DDBA9DB /* KYDrawerController */,
+				4BDEA24C606093FE5C6F0528D82D88FF /* Pods-INUBus */,
+				53F656821F21B68039C06A67EE89637A /* SwiftLint */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4E6A8752F8691BCC19E121D72069E589 /* Resources */ = {
+		DF8B0811AD49E94F4517D82535FE15E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C4AE3A5C199EC987A937F36B80906 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,73 +313,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		ECACD222116A8243424AC9D76EC7735C /* Sources */ = {
+		153A4625245FBF29995A247FDF58B9FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBE01AF615BE63B6317C0CE8E4E0DF18 /* Pods-INUBus-dummy.m in Sources */,
+				E3CAD6119BE233F31C5D737533E1D1B1 /* Pods-INUBus-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C80996C8E9ED0707476BFC69FB8E5ACE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD27FE456FE8C9C555CE146678517FF4 /* KYDrawerController-dummy.m in Sources */,
+				74CF343BD3742D3643C0C0507FC5F183 /* KYDrawerController.swift in Sources */,
+				EBFA6C1365CE1C7C5A08E9067CFFED01 /* KYEmbedDrawerControllerSegue.swift in Sources */,
+				74A17246DC918B8E7FF28F4E616F84E3 /* KYEmbedMainControllerSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A04C30366345DD230D86565CC874EF31 /* PBXTargetDependency */ = {
+		B68BBBBBC35D737B72FE6B7F06E8424F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftGen;
-			target = 04EC785F84F3624DAACB9A9F5C72D6DF /* SwiftGen */;
-			targetProxy = E293E7F28935635FA1E26B8E494CDFD1 /* PBXContainerItemProxy */;
+			name = KYDrawerController;
+			target = 94B7957C41BA4B641DF21B5F6DDBA9DB /* KYDrawerController */;
+			targetProxy = EADFCFD5BB59E39FA0B0EF25B3168F7B /* PBXContainerItemProxy */;
 		};
-		C3F197E73B806A4FE86005E74FE9057B /* PBXTargetDependency */ = {
+		F38047895520FC3124BE2AA6D798BE73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
-			target = 08C536D77F5AB48EB2EB982F47C2A5F3 /* SwiftLint */;
-			targetProxy = E9904980E1B5BE8FD20907503DE38FC5 /* PBXContainerItemProxy */;
+			target = 53F656821F21B68039C06A67EE89637A /* SwiftLint */;
+			targetProxy = 411DB3E1B8C29E4D544793BB92779C86 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		04D6422AFC6568A92B30F81EB7A7DC12 /* Debug */ = {
+		421A6A0B1DF4804209646283FF5146EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F6FBDDA64C07E59B12272D6E7183422 /* Pods-INUBus.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-INUBus/Pods-INUBus-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-INUBus/Pods-INUBus.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1D6072DF042769CB7CC4094379B3DC6B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D3AE1C84E29F35E2F5659A450447D3D /* SwiftGen.xcconfig */;
+			baseConfigurationReference = E18E7A733897CF60CDE7B02EE6D67363 /* SwiftLint.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -335,39 +366,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		436CA5EE685AB4B1B0AECAFD9802E232 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F04FB1CCE177DC0BDB0C6BF94E673332 /* SwiftLint.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		588B5820A11A8C49D2781E87FFE42318 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D3AE1C84E29F35E2F5659A450447D3D /* SwiftGen.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		84A06F28E9E7D9EB0A9B476A8668FD60 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -429,9 +427,45 @@
 			};
 			name = Release;
 		};
-		C1ED77D675A7E4D0E0A5A30AAB97BD59 /* Release */ = {
+		ABBAC636B65BAC3ADF472A30AAFD7A0E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 150F8CD64BEA237CA723E07FBE80757A /* Pods-INUBus.release.xcconfig */;
+			baseConfigurationReference = 2277FC0BEB981643B74BDA8CE222AB86 /* KYDrawerController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KYDrawerController/KYDrawerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYDrawerController/KYDrawerController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KYDrawerController/KYDrawerController.modulemap";
+				PRODUCT_MODULE_NAME = KYDrawerController;
+				PRODUCT_NAME = KYDrawerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B52198CB8DD52F0AF7994CBE5F2A6AFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DC0E0069790B29CA8F5F77D4BF7CBCF /* Pods-INUBus.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -462,11 +496,45 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
+		};
+		CBA42D24C59FA270C843B6286C7BD1E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2277FC0BEB981643B74BDA8CE222AB86 /* KYDrawerController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KYDrawerController/KYDrawerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYDrawerController/KYDrawerController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KYDrawerController/KYDrawerController.modulemap";
+				PRODUCT_MODULE_NAME = KYDrawerController;
+				PRODUCT_NAME = KYDrawerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		D0FE574C7B3479C6425BC136AA57D8C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -532,9 +600,9 @@
 			};
 			name = Debug;
 		};
-		EDFEBAA48E35944A4EFD7DC5CF53B661 /* Debug */ = {
+		D7516A0ECB168BBF8FD06423963A2D95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F04FB1CCE177DC0BDB0C6BF94E673332 /* SwiftLint.xcconfig */;
+			baseConfigurationReference = E18E7A733897CF60CDE7B02EE6D67363 /* SwiftLint.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -548,23 +616,53 @@
 			};
 			name = Debug;
 		};
+		D941C8B7741E2088482ABA3D0D8BD41E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1487991AB38A2EE97ADCCB71D2F794E8 /* Pods-INUBus.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-INUBus/Pods-INUBus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-INUBus/Pods-INUBus.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		08070FAE5766E89B120012B4F2643CEB /* Build configuration list for PBXNativeTarget "Pods-INUBus" */ = {
+		0C2D16C99CC8B1043F9DB21EC613050D /* Build configuration list for PBXNativeTarget "KYDrawerController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04D6422AFC6568A92B30F81EB7A7DC12 /* Debug */,
-				C1ED77D675A7E4D0E0A5A30AAB97BD59 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2622AA4C43FA4E191A3863A30E400130 /* Build configuration list for PBXAggregateTarget "SwiftGen" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				588B5820A11A8C49D2781E87FFE42318 /* Debug */,
-				1D6072DF042769CB7CC4094379B3DC6B /* Release */,
+				CBA42D24C59FA270C843B6286C7BD1E5 /* Debug */,
+				ABBAC636B65BAC3ADF472A30AAFD7A0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -578,11 +676,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C3B0CB090E26A5740ADC29B5A1F8874 /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+		8DE51752881DB0B5FFEBC3F87C3F2952 /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDFEBAA48E35944A4EFD7DC5CF53B661 /* Debug */,
-				436CA5EE685AB4B1B0AECAFD9802E232 /* Release */,
+				D7516A0ECB168BBF8FD06423963A2D95 /* Debug */,
+				421A6A0B1DF4804209646283FF5146EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE24E577FA602980380E5EF7785CE174 /* Build configuration list for PBXNativeTarget "Pods-INUBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B52198CB8DD52F0AF7994CBE5F2A6AFF /* Debug */,
+				D941C8B7741E2088482ABA3D0D8BD41E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
