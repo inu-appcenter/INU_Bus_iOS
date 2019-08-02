@@ -1,20 +1,20 @@
 PODS:
-  - SwiftGen (6.1.0)
+  - KYDrawerController (2.1.0)
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
-  - SwiftGen (~> 6.0)
+  - KYDrawerController
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - SwiftGen
+    - KYDrawerController
     - SwiftLint
 
 SPEC CHECKSUMS:
-  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  KYDrawerController: baad0e63b09c0cb564bd48f0f7f70f45d9176ebc
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 44bc5e36ee58f64360743cb75cca0589e8c8ab9e
+PODFILE CHECKSUM: f71e659d84f1f9fa4f68ff1e3dfbaa7571fbc8e4
 
 COCOAPODS: 1.6.0.rc.2

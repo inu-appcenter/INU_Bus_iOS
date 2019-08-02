@@ -8,6 +8,6 @@ target 'INUBus' do
   # Pods for INUBus
 
   pod 'SwiftLint'
-  pod 'SwiftGen', '~> 6.0' 
+  pod 'KYDrawerController'
 
 end
