@@ -125,7 +125,7 @@
                                 <rect key="frame" x="152.5" y="473.5" width="70" height="32.5"/>
                                 <state key="normal" image="send"/>
                                 <connections>
-                                    <action selector="touchUpSendButton:" destination="Ki0-K2-I1r" eventType="touchUpInside" id="q9D-Ue-30Y"/>
+                                    <action selector="sendButtonDidTap:" destination="Ki0-K2-I1r" eventType="touchUpInside" id="q9D-Ue-30Y"/>
                                     <segue destination="8eY-pm-6iH" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Bag-8L-EU5"/>
                                 </connections>
                             </button>
@@ -157,7 +157,7 @@
                         <barButtonItem key="leftBarButtonItem" image="invalidName" id="Qal-Up-UcH">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="touchUpBackButton:" destination="Ki0-K2-I1r" id="Rh8-58-Ius"/>
+                                <action selector="backButtonDidTap:" destination="Ki0-K2-I1r" id="Rh8-58-Ius"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -190,7 +190,7 @@
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="13"/>
                                         <state key="normal" title="확인"/>
                                         <connections>
-                                            <action selector="touchUpYesButton:" destination="8eY-pm-6iH" eventType="touchUpInside" id="NZS-Gk-5XZ"/>
+                                            <action selector="yesButtonDidTap:" destination="8eY-pm-6iH" eventType="touchUpInside" id="NZS-Gk-5XZ"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gj2-VE-A5B">

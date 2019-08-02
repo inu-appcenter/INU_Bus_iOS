@@ -16,9 +16,9 @@ class PopUpViewController: UIViewController {
     
     let severURL = "http://inucafeteriaaws.us.to:3829/"
 
-    var inquiryTitle: String = ""
-    var inquiryContact: String = ""
-    var inquiryMessage: String = ""
+    var inquiryTitle = ""
+    var inquiryContact = ""
+    var inquiryMessage = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class PopUpViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    @IBAction func touchUpYesButton(_ sender: Any) {
+    @IBAction func yesButtonDidTap(_ sender: Any) {
         let presentingViewController =
         self.presentingViewController
         self.dismiss(animated: true, completion: {
@@ -44,17 +44,15 @@ extension PopUpViewController {
     func setupView() {
  
     self.mainView.layer.cornerRadius = 16
-       
-    //mainView 오토레이아웃 설정
     self.mainView.translatesAutoresizingMaskIntoConstraints = false
     self.mainView.widthAnchor.constraint(equalToConstant: 260.5).isActive = true
     self.mainView.heightAnchor.constraint(equalToConstant: 155).isActive = true
     self.mainView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.mainView.centerYAnchor.constraint(equalTo:
-            self.view.centerYAnchor).isActive = true
-    
+    self.mainView.centerYAnchor.constraint(equalTo:
+        self.view.centerYAnchor).isActive = true
+        
 }
-
+    
     func jsonPost() {
         
         let inquiry: Inquiry = Inquiry(service:

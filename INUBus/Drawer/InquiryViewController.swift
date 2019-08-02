@@ -8,22 +8,22 @@
 
 import UIKit
 
-class InquiryViewController: UIViewController {
+final class InquiryViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    
     let message = "소중한 의견 감사드립니다!"
 
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInquiry()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func touchUpBackButton(_ sender: Any) {
+    @IBAction func backButtonDidTap(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
@@ -34,10 +34,9 @@ class InquiryViewController: UIViewController {
     @IBAction func phoneTextContentsCheck(_ sender: Any) {
         contentsCheck()
     }
-    @IBAction func touchUpSendButton(_ sender: Any) {
-        
-        // Do any additional setup after loading the view.
     
+    @IBAction func sendButtonDidTap(_ sender: Any) {
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,7 +57,6 @@ extension InquiryViewController {
             UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1).cgColor
         self.phoneNumberTextField.layer.borderColor =
             UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1).cgColor
-        
         self.titleTextField.layer.borderWidth = 1
         self.phoneNumberTextField.layer.borderWidth = 1
         self.contentsTextView.layer.borderWidth = 1
@@ -73,9 +71,7 @@ extension InquiryViewController {
     
     @objc func tapViewcontroller(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
-        self.contentsCheck()
-        print("공백 클릭")
-        
+        self.contentsCheck()        
     }
     
     func contentsCheck() {
@@ -83,10 +79,8 @@ extension InquiryViewController {
         self.phoneNumberTextField.text != "" &&
         self.contentsTextView.text != "" {
             self.sendButton.isEnabled = true
-                //버튼 활성화
         } else {
             self.sendButton.isEnabled = false
-                //버튼 비활성화
         }
     }
 }
