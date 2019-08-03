@@ -36,7 +36,7 @@ final class InquiryViewController: UIViewController {
     }
     
     @IBAction func sendButtonDidTap(_ sender: Any) {
-        
+   
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,7 +71,7 @@ extension InquiryViewController {
     
     @objc func tapViewcontroller(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
-        self.contentsCheck()        
+        self.contentsCheck()
     }
     
     func contentsCheck() {
