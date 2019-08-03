@@ -32,7 +32,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-V4-OYH">
                                 <rect key="frame" x="0.0" y="97" width="375" height="570"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="deviceRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,16 +46,47 @@
                         <viewLayoutGuide key="safeArea" id="B8e-op-gGh"/>
                     </view>
                     <navigationItem key="navigationItem" id="hle-Hd-kgD">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="VO9-ui-zJL">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f6d-pR-cTl">
-                                <rect key="frame" x="334" y="8.5" width="25" height="27"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="cPn-UO-yBL">
+                            <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VL7-hw-bf2">
+                                <rect key="frame" x="16" y="11" width="70" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="info"/>
-                                <connections>
-                                    <action selector="touch" destination="C9o-aq-DSD" eventType="touchUpInside" id="Lld-Jx-eWi"/>
-                                </connections>
+                                <state key="normal" image="blueInuBus"/>
                             </button>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="VO9-ui-zJL">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f6d-pR-cTl">
+                                    <rect key="frame" x="334" y="0.5" width="25" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="info"/>
+                                    <connections>
+                                        <action selector="infoButtonDidTap" destination="C9o-aq-DSD" eventType="touchUpInside" id="Lld-Jx-eWi"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="ATJ-Tl-5fI">
+                                <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  버스 또는 정류장 검색" textAlignment="natural" minimumFontSize="17" id="lOM-4w-0o5">
+                                    <rect key="frame" x="146" y="7" width="180" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="4PE-V4-OYH" id="h8u-Go-Hyc"/>
@@ -86,6 +116,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blueInuBus" width="55" height="13"/>
         <image name="info" width="25" height="27"/>
     </resources>
 </document>

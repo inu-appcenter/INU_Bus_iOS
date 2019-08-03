@@ -17,7 +17,7 @@ class EngineeringViewController: UIViewController {
   
   let sections = ["즐겨찾기", "간선버스", "지선버스", "광역버스"]
   
-  @IBAction func touch() {
+  @IBAction func infoButtonDidTap() {
     if let drawerController = navigationController?.parent?.parent as?
       KYDrawerController {
       drawerController.setDrawerState(.opened, animated: true)
@@ -26,7 +26,16 @@ class EngineeringViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    setUp()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
+}
+
+extension EngineeringViewController {
+  func setUp() {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil),
@@ -46,10 +55,6 @@ class EngineeringViewController: UIViewController {
       .present(to: self)
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-  }
-  
 }
 
 extension EngineeringViewController: UITableViewDelegate {
@@ -63,14 +68,29 @@ extension EngineeringViewController: UITableViewDelegate {
     return 20
   }
   
+  // section label 설정
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let view = UIView()
     view.backgroundColor = UIColor(white: 235/250, alpha: 1)
     
-    let label = UILabel()
-    label.text = sections[section]
-    label.frame = CGRect(x: 28, y: 3, width: 100, height: 20)
-    view.addSubview(label)
+    let label1 = UILabel()
+    label1.text = sections[section]
+    label1.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label1.frame = CGRect(x: sizeByDevice(size: 28), y: 0, width: 50, height: 20)
+    view.addSubview(label1)
+    
+    let label2 = UILabel()
+    label2.text = "남은시간"
+    label2.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label2.frame = CGRect(x: sizeByDevice(size: 182), y: 0, width: 50, height: 20)
+    view.addSubview(label2)
+    
+    let label3 = UILabel()
+    label3.text = "배차간격"
+    label3.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label3.frame = CGRect(x: sizeByDevice(size: 288), y: 0, width: 50, height: 20)
+    view.addSubview(label3)
+    
     return view
   }
 }
