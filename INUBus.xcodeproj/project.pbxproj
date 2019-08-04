@@ -10,6 +10,11 @@
 		08A370DEDD86466EF2A5240DB821B5D7 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CF12C8962132D16BA88C0D80FE36B /* MainTableViewCell.xib */; };
 		0A815557BCDBD508729352220810CB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774ECDFB09CCD2995D874DD5BD9D68CA /* Assets.xcassets */; };
 		17498620253ABA56020461794E1EEDAD /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E14AA1EF408C3914D18D09F5002C5D /* DrawerViewController.swift */; };
+		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
+		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
+		E163599715AB87EF14C7A96392AA5951 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF1795BA1A82C4EFF70E45CB2D0A4D /* Functions.swift */; };
+		2D30DC609A4DFA975CB6235D8F8E364A /* Jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C143317281489595FD685DE488EE847 /* Jalnan.ttf */; };
+		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
 		21EAF23CA81A317F9A384EF35AA81968 /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AD593875379C23B50170C7AE69FE4E3 /* NotoSans-Medium.ttf */; };
 		225C7417E88F2B4600B8B8EA1CE9CD3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A7F84B572065F2F849DE5076569FB53 /* Main.storyboard */; };
 		2D30DC609A4DFA975CB6235D8F8E364A /* Jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C143317281489595FD685DE488EE847 /* Jalnan.ttf */; };
@@ -33,6 +38,16 @@
 
 /* Begin PBXFileReference section */
 		067AAFEA4A6A3EEDD1199895A28DE2FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6DDFD5FAA2644BAC55AC9C91AE1FEAD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
+		38E14AA1EF408C3914D18D09F5002C5D /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Engineering.storyboard; sourceTree = "<group>"; };
+		61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineeringViewController.swift; sourceTree = "<group>"; };
+		61AF1795BA1A82C4EFF70E45CB2D0A4D /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		D1147FCD0C86E7FA6426D179DDB9BC13 /* INUBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INUBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFE70FD45933AEB3CA138AEC6BEFF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C143317281489595FD685DE488EE847 /* Jalnan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Jalnan.ttf; sourceTree = "<group>"; };
+		38C9AED849821A253AF7BDD66D2A3AFB /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		0932A0D4593DECB81E3A53151F4949A8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0E29CB009B42C07512EEC5888E8C0375 /* Pods-INUBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INUBus.release.xcconfig"; path = "Target Support Files/Pods-INUBus/Pods-INUBus.release.xcconfig"; sourceTree = "<group>"; };
 		0F9CF12C8962132D16BA88C0D80FE36B /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
@@ -220,6 +235,7 @@
 		C4DC1CD38BAB44A1783C1679217F4F36 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				61AF1795BA1A82C4EFF70E45CB2D0A4D /* Functions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -391,6 +407,7 @@
 				8E91701C17D0FD4E6BAA367C9FF49692 /* AppDelegate.swift in Sources */,
 				17498620253ABA56020461794E1EEDAD /* DrawerViewController.swift in Sources */,
 				B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */,
+				E163599715AB87EF14C7A96392AA5951 /* Functions.swift in Sources */,
 				9B1878C00B0360A7B82712A1E81098A1 /* Inquiry.swift in Sources */,
 				3B1CA0C388BC619F7E565AA962E59BC2 /* InquiryViewController.swift in Sources */,
 				78612C9ADEADE74BFCC47AE7D40BAC50 /* MainTableViewCell.swift in Sources */,

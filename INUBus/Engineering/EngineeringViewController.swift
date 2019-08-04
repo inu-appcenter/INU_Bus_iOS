@@ -11,9 +11,13 @@ import KYDrawerController
 
 class EngineeringViewController: UIViewController {
   
+  @IBOutlet weak var tableView: UITableView!
+  
   let message = "INU BUS 는\n하교 시, 버스 시간을 정확히 알 수 없는 인천대학교 학생들을 위한\n버스 앱입니다.\n즐거운 하교길 되세요 :)"
   
-  @IBAction func touch() {
+  let sections = ["즐겨찾기", "간선버스", "지선버스", "광역버스"]
+  
+  @IBAction func infoButtonDidTap() {
     if let drawerController = navigationController?.parent?.parent as?
       KYDrawerController {
       drawerController.setDrawerState(.opened, animated: true)
@@ -22,6 +26,20 @@ class EngineeringViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setUp()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
+}
+
+extension EngineeringViewController {
+  func setUp() {
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil),
+                       forCellReuseIdentifier: "MainTableViewCell")
     
     UIAlertController
       .alert(title: nil, message: message)
@@ -38,8 +56,63 @@ class EngineeringViewController: UIViewController {
       .present(to: self)
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+}
+
+extension EngineeringViewController: UITableViewDelegate {
+  // cell의 높이
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 52
+  }
+  
+  // section header의 높이
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 20
+  }
+  
+  // section label 설정
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let view = UIView()
+    view.backgroundColor = UIColor(white: 235/250, alpha: 1)
+    
+    let label1 = UILabel()
+    label1.text = sections[section]
+    label1.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label1.frame = CGRect(x: sizeByDevice(size: 28), y: 0, width: 50, height: 20)
+    view.addSubview(label1)
+    
+    let label2 = UILabel()
+    label2.text = "남은시간"
+    label2.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label2.frame = CGRect(x: sizeByDevice(size: 182), y: 0, width: 50, height: 20)
+    view.addSubview(label2)
+    
+    let label3 = UILabel()
+    label3.text = "배차간격"
+    label3.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label3.frame = CGRect(x: sizeByDevice(size: 288), y: 0, width: 50, height: 20)
+    view.addSubview(label3)
+    
+    return view
+  }
+}
+
+extension EngineeringViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return sections.count
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: "MainTableViewCell", for: indexPath
+      ) as? MainTableViewCell else {
+      return UITableViewCell()
+    }
+    
+    return cell
   }
   
 }
