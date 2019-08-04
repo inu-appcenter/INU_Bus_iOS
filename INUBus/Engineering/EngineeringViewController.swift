@@ -27,6 +27,7 @@ class EngineeringViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
+    print("hello")
   }
   
   override func viewWillAppear(_ animated: Bool) {
