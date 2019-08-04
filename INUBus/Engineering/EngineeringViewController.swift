@@ -27,7 +27,7 @@ class EngineeringViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
-    print("hello")
+    request()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +57,27 @@ extension EngineeringViewController {
       .present(to: self)
   }
   
+  func request() {
+    guard let url = URL(string: "") else {
+      return
+    }
+    
+    NetworkManager.shared.request(url: url, method: .get) { data, error in
+      if let error = error {
+        print(error.localizedDescription)
+      }
+      
+      if let data = data {
+        do {
+          let busStops = try JSONDecoder().decode([BusStop].self, from: data)
+          print(busStops)
+        } catch {
+          print(error.localizedDescription)
+        }
+      }
+    }
+  }
+  
 }
 
 extension EngineeringViewController: UITableViewDelegate {
@@ -78,18 +99,21 @@ extension EngineeringViewController: UITableViewDelegate {
     let label1 = UILabel()
     label1.text = sections[section]
     label1.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label1.textColor = UIColor(white: 112/255, alpha: 1)
     label1.frame = CGRect(x: sizeByDevice(size: 28), y: 0, width: 50, height: 20)
     view.addSubview(label1)
     
     let label2 = UILabel()
     label2.text = "남은시간"
     label2.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label2.textColor = UIColor(white: 112/255, alpha: 1)
     label2.frame = CGRect(x: sizeByDevice(size: 182), y: 0, width: 50, height: 20)
     view.addSubview(label2)
     
     let label3 = UILabel()
     label3.text = "배차간격"
     label3.font = UIFont(name: "NotoSans-Regular", size: 12)
+    label3.textColor = UIColor(white: 112/255, alpha: 1)
     label3.frame = CGRect(x: sizeByDevice(size: 288), y: 0, width: 50, height: 20)
     view.addSubview(label3)
     

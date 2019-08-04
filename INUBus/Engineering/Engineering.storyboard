@@ -24,24 +24,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 계산한 값으로, 정확하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-f8-gQS">
-                                <rect key="frame" x="28" y="74" width="128.5" height="12.5"/>
+                                <rect key="frame" x="28" y="84" width="128.5" height="12.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="9"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-V4-OYH">
-                                <rect key="frame" x="0.0" y="97" width="375" height="570"/>
+                                <rect key="frame" x="0.0" y="117" width="375" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ugL-f8-gQS" firstAttribute="top" secondItem="B8e-op-gGh" secondAttribute="top" constant="10" id="ECY-ut-QMF"/>
+                            <constraint firstItem="ugL-f8-gQS" firstAttribute="top" secondItem="B8e-op-gGh" secondAttribute="top" constant="20" id="ECY-ut-QMF"/>
                             <constraint firstItem="ugL-f8-gQS" firstAttribute="leading" secondItem="B8e-op-gGh" secondAttribute="leading" constant="28" id="OGK-Ts-sqa"/>
                             <constraint firstItem="4PE-V4-OYH" firstAttribute="leading" secondItem="B8e-op-gGh" secondAttribute="leading" id="TXo-14-BMn"/>
                             <constraint firstItem="B8e-op-gGh" firstAttribute="trailing" secondItem="4PE-V4-OYH" secondAttribute="trailing" id="X7m-GW-vKc"/>
                             <constraint firstItem="B8e-op-gGh" firstAttribute="bottom" secondItem="4PE-V4-OYH" secondAttribute="bottom" id="bIC-OG-JF1"/>
-                            <constraint firstItem="4PE-V4-OYH" firstAttribute="top" secondItem="B8e-op-gGh" secondAttribute="top" constant="33" id="oo8-ie-qok"/>
+                            <constraint firstItem="4PE-V4-OYH" firstAttribute="top" secondItem="B8e-op-gGh" secondAttribute="top" constant="53" id="oo8-ie-qok"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B8e-op-gGh"/>
                     </view>
@@ -55,36 +55,50 @@
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="VO9-ui-zJL">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f6d-pR-cTl">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f6d-pR-cTl">
                                     <rect key="frame" x="334" y="0.5" width="25" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="info"/>
+                                    <state key="normal" image="blueInfo"/>
                                     <connections>
                                         <action selector="infoButtonDidTap" destination="C9o-aq-DSD" eventType="touchUpInside" id="Lld-Jx-eWi"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="ATJ-Tl-5fI">
-                                <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  버스 또는 정류장 검색" textAlignment="natural" minimumFontSize="17" id="lOM-4w-0o5">
-                                    <rect key="frame" x="146" y="7" width="180" height="30"/>
+                            <barButtonItem style="plain" id="8ix-A3-VqM">
+                                <view key="customView" contentMode="scaleToFill" id="Rmq-n3-5JB" customClass="RoundUIView" customModule="INUBus" customModuleProvider="target">
+                                    <rect key="frame" x="121" y="5.5" width="205" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="버스 또는 정류장 검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-TU-ncm">
+                                            <rect key="frame" x="20" y="8" width="103" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="12"/>
+                                            <color key="textColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="deviceRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="layer.cornorColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graySearch" translatesAutoresizingMaskIntoConstraints="NO" id="ZOf-EA-rZ3">
+                                            <rect key="frame" x="174" y="9" width="16" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="textColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="15"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="15"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                            <integer key="value" value="1"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.82352941176470584" green="0.82352941176470584" blue="0.82352941176470584" alpha="1" colorSpace="deviceRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
-                                </textField>
+                                </view>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -116,7 +130,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blueInfo" width="25" height="27"/>
         <image name="blueInuBus" width="55" height="13"/>
-        <image name="info" width="25" height="27"/>
+        <image name="graySearch" width="16" height="17"/>
     </resources>
 </document>

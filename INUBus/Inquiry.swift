@@ -20,5 +20,3 @@ struct Inquiry: Codable {
         case message = "msg"
     }
 }
-
-

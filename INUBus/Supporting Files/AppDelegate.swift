@@ -17,12 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
+    // drawer 설정 부분
     let mainViewController = UIStoryboard(name: "Main", bundle: nil)
       .instantiateViewController(withIdentifier: "TabBarController")
     let drawerViewController = UIStoryboard(name: "Drawer", bundle: nil)
       .instantiateViewController(withIdentifier: "DrawerViewController")
     let drawerController = KYDrawerController(drawerDirection: .right,
-                                              drawerWidth: 200)
+                                              drawerWidth: 265)
     
     drawerController.mainViewController = mainViewController
     drawerController.drawerViewController = drawerViewController

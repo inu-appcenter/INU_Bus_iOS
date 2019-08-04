@@ -39,8 +39,16 @@
 		<string>NotoSans-ExtraBold.ttf</string>
 		<string>Jalnan.ttf</string>
 		<string>NotoSans-Medium.ttf</string>
-    <string>NotoSans-Regular.ttf</string>
+		<string>NotoSans-Regular.ttf</string>
+		<string>NanumSquareBold.ttf</string>
+		<string>NanumSquareRegular.ttf</string>
+		<string>NotoSans-SemiBold.ttf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
