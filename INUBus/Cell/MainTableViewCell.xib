@@ -59,6 +59,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="busNoLabel" destination="Oct-N1-NJC" id="G7x-X4-Mke"/>
                 <outlet property="favoritesButton" destination="kIj-2K-25H" id="nZz-sC-UWZ"/>
                 <outlet property="intervalLabel" destination="scp-rY-4Wh" id="ddc-D5-TjL"/>
                 <outlet property="timeRemainingLabel" destination="fD1-Qr-36q" id="aPC-P6-WPb"/>

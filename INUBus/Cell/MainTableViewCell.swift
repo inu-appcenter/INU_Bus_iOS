@@ -11,6 +11,7 @@ import UIKit
 class MainTableViewCell: UITableViewCell {
   
   @IBOutlet weak var favoritesButton: UIButton!
+  @IBOutlet weak var busNoLabel: UILabel!
   @IBOutlet weak var timeRemainingLabel: UILabel!
   @IBOutlet weak var intervalLabel: UILabel!
   

@@ -81,4 +81,4 @@ iOSInjectionProject/
 # End of https://www.gitignore.io/api/swift
 
 # URL info
-URL.swift
+Server.swift

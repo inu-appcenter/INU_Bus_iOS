@@ -17,6 +17,14 @@ class EngineeringViewController: UIViewController {
   
   let sections = ["즐겨찾기", "간선버스", "지선버스", "광역버스"]
   
+  let url = Server.address.rawValue + "arrivalInfo"
+  
+  let busStopIdentifier = "engineer"
+  
+  var busInfos = [BusInfo]()
+  
+  var sortedBuses = [[BusInfo](), [BusInfo](), [BusInfo](), [BusInfo]()]
+  
   @IBAction func infoButtonDidTap() {
     if let drawerController = navigationController?.parent?.parent as?
       KYDrawerController {
@@ -32,6 +40,7 @@ class EngineeringViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    
   }
 }
 
@@ -53,12 +62,11 @@ extension EngineeringViewController {
                   font: UIFont(name: "Jalnan", size: 13),
                   color: UIColor(red: 0/255, green: 97/255, blue: 244/255, alpha: 1))
       .action(title: "확인했습니다", style: .default, completion: nil)
-    
       .present(to: self)
   }
   
   func request() {
-    guard let url = URL(string: "") else {
+    guard let url = URL(string: url) else {
       return
     }
     
@@ -70,7 +78,16 @@ extension EngineeringViewController {
       if let data = data {
         do {
           let busStops = try JSONDecoder().decode([BusStop].self, from: data)
-          print(busStops)
+          for busStop in busStops {
+            if busStop.name == self.busStopIdentifier {
+              self.busInfos = busStop.data
+              self.sortBusInfos()
+              DispatchQueue.main.async {
+                self.tableView.reloadData()
+              }
+              break
+            }
+          }
         } catch {
           print(error.localizedDescription)
         }
@@ -78,6 +95,17 @@ extension EngineeringViewController {
     }
   }
   
+  func sortBusInfos() {
+    sortedBuses = [[], [], [], []]
+    for busInfo in busInfos {
+      if busInfo.type == "간선" || busInfo.type == "간선급행" {
+        sortedBuses[1].append(busInfo)
+      } else if busInfo.type == "순환" {
+        sortedBuses[2].append(busInfo)
+      }
+    }
+    print(sortedBuses)
+  }
 }
 
 extension EngineeringViewController: UITableViewDelegate {
@@ -127,7 +155,7 @@ extension EngineeringViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return sortedBuses[section].count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,6 +164,8 @@ extension EngineeringViewController: UITableViewDataSource {
       ) as? MainTableViewCell else {
       return UITableViewCell()
     }
+    
+    cell.busNoLabel.text = sortedBuses[indexPath.section][indexPath.row].no
     
     return cell
   }

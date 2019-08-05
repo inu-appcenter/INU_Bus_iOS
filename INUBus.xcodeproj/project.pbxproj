@@ -11,7 +11,6 @@
 		0A815557BCDBD508729352220810CB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774ECDFB09CCD2995D874DD5BD9D68CA /* Assets.xcassets */; };
 		17498620253ABA56020461794E1EEDAD /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E14AA1EF408C3914D18D09F5002C5D /* DrawerViewController.swift */; };
 		21EAF23CA81A317F9A384EF35AA81968 /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AD593875379C23B50170C7AE69FE4E3 /* NotoSans-Medium.ttf */; };
-		225BBB2C8DE50D5B0A0163750D1F25CF /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30DA77B7077E80ECB9A4E1D2720AAA6 /* URL.swift */; };
 		225C7417E88F2B4600B8B8EA1CE9CD3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A7F84B572065F2F849DE5076569FB53 /* Main.storyboard */; };
 		2D30DC609A4DFA975CB6235D8F8E364A /* Jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C143317281489595FD685DE488EE847 /* Jalnan.ttf */; };
 		32DE2E250D84B6B082698826F95E439C /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFBE98EDF0B3D79B0FE314F1DEE460 /* NanumSquareBold.ttf */; };
@@ -29,6 +28,7 @@
 		9B1878C00B0360A7B82712A1E81098A1 /* Inquiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */; };
 		A3FECE8036646E99C101F39ACBD52B30 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */; };
 		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
+		AF39091922F8119300719982 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39091822F8119300719982 /* Server.swift */; };
 		AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */; };
 		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
@@ -66,6 +66,7 @@
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
+		AF39091822F8119300719982 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		B8C324F936F1BB21D3DD24648E720A40 /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		C64D9C4B5531AE85FB85C9803746C63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		DF6A1FD6DACD817EDB36F7ADD1B05218 /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		EBFE70FD45933AEB3CA138AEC6BEFF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F16BF3B61D8A26E4F692C5EA0560B291 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
-		F30DA77B7077E80ECB9A4E1D2720AAA6 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,21 +183,6 @@
 			path = INUBus;
 			sourceTree = "<group>";
 		};
-		A7A8BBB51597AB8D368EB0639F612160 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				4C143317281489595FD685DE488EE847 /* Jalnan.ttf */,
-				9FCFBE98EDF0B3D79B0FE314F1DEE460 /* NanumSquareBold.ttf */,
-				F16BF3B61D8A26E4F692C5EA0560B291 /* NanumSquareRegular.ttf */,
-				7E42A7BD5679FF7C17474441C2628882 /* NotoSans-Bold.ttf */,
-				68296BB72BDDF860941CA82161A2556A /* NotoSans-ExtraBold.ttf */,
-				1AD593875379C23B50170C7AE69FE4E3 /* NotoSans-Medium.ttf */,
-				D0B0231627F638EFF5759FB4C1FDC36B /* NotoSans-Regular.ttf */,
-				CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
 		85598A2EF7262004E5D8E41CD2503E53 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,12 +201,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A7A8BBB51597AB8D368EB0639F612160 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4C143317281489595FD685DE488EE847 /* Jalnan.ttf */,
+				9FCFBE98EDF0B3D79B0FE314F1DEE460 /* NanumSquareBold.ttf */,
+				F16BF3B61D8A26E4F692C5EA0560B291 /* NanumSquareRegular.ttf */,
+				7E42A7BD5679FF7C17474441C2628882 /* NotoSans-Bold.ttf */,
+				68296BB72BDDF860941CA82161A2556A /* NotoSans-ExtraBold.ttf */,
+				1AD593875379C23B50170C7AE69FE4E3 /* NotoSans-Medium.ttf */,
+				D0B0231627F638EFF5759FB4C1FDC36B /* NotoSans-Regular.ttf */,
+				CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		C4DC1CD38BAB44A1783C1679217F4F36 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				61AF1795BA1A82C4EFF70E45CB2D0A4D /* Functions.swift */,
 				B8C324F936F1BB21D3DD24648E720A40 /* RoundUIView.swift */,
-				F30DA77B7077E80ECB9A4E1D2720AAA6 /* URL.swift */,
+				AF39091822F8119300719982 /* Server.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -396,10 +396,10 @@
 				78612C9ADEADE74BFCC47AE7D40BAC50 /* MainTableViewCell.swift in Sources */,
 				89908192514DF5A1B43422FBAB12102A /* NetworkManager.swift in Sources */,
 				5085526B0373F523687B9ABD42A02498 /* Objects.swift in Sources */,
+				AF39091922F8119300719982 /* Server.swift in Sources */,
 				FA2735937CA4DB09385761169459F63A /* PopUpViewController.swift in Sources */,
 				5EEE8C0769544059A913A5769D3217C7 /* RoundUIView.swift in Sources */,
 				DD3ECC9CB34EBA0271119FADABFC64A5 /* UIAlertController+.swift in Sources */,
-				225BBB2C8DE50D5B0A0163750D1F25CF /* URL.swift in Sources */,
 				AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
