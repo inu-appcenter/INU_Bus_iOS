@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+/// URL 주소를 담아둔 열거형
+enum URL: String {
+  case server = "http://117.16.191.242:1337/"
+}
