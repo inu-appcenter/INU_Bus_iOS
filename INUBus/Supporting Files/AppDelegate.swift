@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    //
+    if UserDefaults.standard.value(forKey: "favorArray") == nil {
+      UserDefaults.standard.set([String](), forKey: "favorArray")
+    }
     
     // drawer 설정 부분
     let mainViewController = UIStoryboard(name: "Main", bundle: nil)

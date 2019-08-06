@@ -36,12 +36,10 @@ class EngineeringViewController: UIViewController {
     super.viewDidLoad()
     setUp()
     request()
-    print(Date().millisecondsSince1970)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
   }
 }
 
@@ -79,14 +77,12 @@ extension EngineeringViewController {
       if let data = data {
         do {
           let busStops = try JSONDecoder().decode([BusStop].self, from: data)
-          for busStop in busStops {
-            if busStop.name == self.busStopIdentifier {
-              self.busInfos = busStop.data
-              self.sortBusInfos()
-              DispatchQueue.main.async {
-                self.tableView.reloadData()
-              }
-              break
+          
+          for busStop in busStops where busStop.name == self.busStopIdentifier {
+            self.busInfos = busStop.data
+            self.sortBusInfos()
+            DispatchQueue.main.async {
+              self.tableView.reloadData()
             }
           }
         } catch {
@@ -98,13 +94,26 @@ extension EngineeringViewController {
   
   func sortBusInfos() {
     sortedBuses = [[], [], [], []]
+    var favorArray = [String]()
+    if let array = UserDefaults.standard.value(forKey: "favorArray") as? [String] {
+      favorArray = array
+    }
     for busInfo in busInfos {
-      if busInfo.type == "간선" || busInfo.type == "간선급행" {
+      if favorArray.contains(busInfo.no) {
+        sortedBuses[0].append(busInfo)
+      } else if busInfo.type == "간선" || busInfo.type == "간선급행" {
         sortedBuses[1].append(busInfo)
       } else if busInfo.type == "순환" {
         sortedBuses[2].append(busInfo)
       }
     }
+  }
+}
+
+extension EngineeringViewController: ReloadDataDelegate {
+  func tableViewReloadData() {
+    sortBusInfos()
+    tableView.reloadData()
   }
 }
 
@@ -165,6 +174,7 @@ extension EngineeringViewController: UITableViewDataSource {
       return UITableViewCell()
     }
     
+    cell.delegate = self
     cell.busInfo = sortedBuses[indexPath.section][indexPath.row]
     
     return cell
