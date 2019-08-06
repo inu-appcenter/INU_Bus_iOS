@@ -21,9 +21,13 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIj-2K-25H">
                         <rect key="frame" x="30" y="15" width="19" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="TwR-kL-5jp"/>
+                            <constraint firstAttribute="width" constant="19" id="Yhs-sE-var"/>
+                        </constraints>
                         <state key="normal" image="star"/>
                         <connections>
-                            <action selector="favoritesButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpOutside" id="gYU-Ta-Plx"/>
+                            <action selector="favoritesButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kOu-Hg-FmD"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="780" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oct-N1-NJC">

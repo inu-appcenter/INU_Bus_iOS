@@ -35,7 +35,7 @@ class EngineeringViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
-    request()
+//    request()
     print(Date().timeIntervalSince1970)
   }
   
@@ -156,7 +156,8 @@ extension EngineeringViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return sortedBuses[section].count
+//    return sortedBuses[section].count
+    return 1
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -166,7 +167,7 @@ extension EngineeringViewController: UITableViewDataSource {
       return UITableViewCell()
     }
     
-    cell.busNoLabel.text = sortedBuses[indexPath.section][indexPath.row].no
+//    cell.busNoLabel.text = sortedBuses[indexPath.section][indexPath.row].no
     
     return cell
   }

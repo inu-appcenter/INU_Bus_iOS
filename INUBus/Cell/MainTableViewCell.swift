@@ -16,7 +16,14 @@ class MainTableViewCell: UITableViewCell {
   @IBOutlet weak var intervalLabel: UILabel!
   
   @IBAction func favoritesButtonDidTap(_ sender: Any) {
-    
+    if favoritesButton.imageView?.image ==
+      UIImage(named: AssetConstants.star.rawValue) {
+      favoritesButton.setImage(UIImage(named: AssetConstants.colorStar.rawValue),
+                               for: .normal)
+    } else {
+      favoritesButton.setImage(UIImage(named: AssetConstants.star.rawValue),
+                               for: .normal)
+    }
   }
   
   override func awakeFromNib() {
