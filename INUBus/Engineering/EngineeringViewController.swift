@@ -35,8 +35,8 @@ class EngineeringViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
-//    request()
-    print(Date().timeIntervalSince1970)
+    request()
+    print(Date().millisecondsSince1970)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -105,7 +105,6 @@ extension EngineeringViewController {
         sortedBuses[2].append(busInfo)
       }
     }
-    print(sortedBuses)
   }
 }
 
@@ -156,8 +155,7 @@ extension EngineeringViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    return sortedBuses[section].count
-    return 1
+    return sortedBuses[section].count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -167,7 +165,7 @@ extension EngineeringViewController: UITableViewDataSource {
       return UITableViewCell()
     }
     
-//    cell.busNoLabel.text = sortedBuses[indexPath.section][indexPath.row].no
+    cell.busInfo = sortedBuses[indexPath.section][indexPath.row]
     
     return cell
   }

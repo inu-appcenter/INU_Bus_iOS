@@ -15,6 +15,14 @@ class MainTableViewCell: UITableViewCell {
   @IBOutlet weak var timeRemainingLabel: UILabel!
   @IBOutlet weak var intervalLabel: UILabel!
   
+  var busInfo: BusInfo? {
+    willSet {
+      busNoLabel.text = newValue?.no
+      timeRemainingLabel.text = "\(newValue?.second ?? 0)"
+      intervalLabel.text = "\(newValue?.interval ?? 0)분"
+    }
+  }
+  
   @IBAction func favoritesButtonDidTap(_ sender: Any) {
     if favoritesButton.imageView?.image ==
       UIImage(named: AssetConstants.star.rawValue) {
