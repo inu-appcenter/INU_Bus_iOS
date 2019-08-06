@@ -36,6 +36,7 @@ class EngineeringViewController: UIViewController {
     super.viewDidLoad()
     setUp()
     request()
+    print(Date().timeIntervalSince1970)
   }
   
   override func viewWillAppear(_ animated: Bool) {
