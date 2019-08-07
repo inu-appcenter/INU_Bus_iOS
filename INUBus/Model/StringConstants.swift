@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+enum StringConstants: String {
+  case favorArray
+  case mainTableViewCell = "MainTableViewCell"
+  case arrivalInfo
+  case engineer
+}
