@@ -20,7 +20,6 @@ final class InquiryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInquiry()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func backButtonDidTap(_ sender: Any) {

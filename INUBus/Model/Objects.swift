@@ -21,6 +21,14 @@ struct BusInfo: Codable {
     let millisecond = arrival - Date().millisecondsSince1970
     return Int(round(Double(millisecond) / 1000))
   }
+  
+  var estimatedArrivalTime: Int {
+    var value = second
+    while value < 0 {
+      value += interval * 60
+    }
+    return value
+  }
 }
 
 struct BusStop: Codable {
