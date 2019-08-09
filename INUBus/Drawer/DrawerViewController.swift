@@ -8,12 +8,21 @@
 
 import UIKit
 
-class DrawerViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+final class DrawerViewController: UIViewController {
   
+  @IBOutlet weak var inquiryView: RoundUIView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    let tapRecognizer = UITapGestureRecognizer(target: self,
+                                         action: #selector(presentView(gestureRecognizer:)))
+    self.inquiryView.addGestureRecognizer(tapRecognizer)
+  }
+  
+  @objc func presentView(gestureRecognizer: UITapGestureRecognizer) {
+    let viewController = UIStoryboard(name: "Inquiry", bundle: nil)
+      .instantiateViewController(withIdentifier: "TT")
+    self.present(viewController, animated: true, completion: nil)
+  }
 }

@@ -18,10 +18,10 @@
 		32DE2E250D84B6B082698826F95E439C /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFBE98EDF0B3D79B0FE314F1DEE460 /* NanumSquareBold.ttf */; };
 		35630E1C65E037008E074671BE1BCF75 /* NotoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68296BB72BDDF860941CA82161A2556A /* NotoSans-ExtraBold.ttf */; };
 		3B1CA0C388BC619F7E565AA962E59BC2 /* InquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6A1FD6DACD817EDB36F7ADD1B05218 /* InquiryViewController.swift */; };
+		458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */; };
 		4B2805EE1996902E2475A9F069CEB5E5 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6DB49E8169BD07F59F3EE86BBBC77 /* Date+.swift */; };
 		5085526B0373F523687B9ABD42A02498 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011A8E2DCE4FDEC0E346B31598BC4C3B /* Objects.swift */; };
 		547D8E1EA71401AED07C064D04E2EE37 /* Drawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */; };
-		5EEE8C0769544059A913A5769D3217C7 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C324F936F1BB21D3DD24648E720A40 /* RoundUIView.swift */; };
 		6351C71E97A6B72284E627130F50B949 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0B0231627F638EFF5759FB4C1FDC36B /* NotoSans-Regular.ttf */; };
 		77C9852A646B9DBBBF0F4254A777EF6F /* Pods_INUBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C04DA5E34554444E836E5E604687E7 /* Pods_INUBus.framework */; };
 		78612C9ADEADE74BFCC47AE7D40BAC50 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9AED849821A253AF7BDD66D2A3AFB /* MainTableViewCell.swift */; };
@@ -31,6 +31,7 @@
 		9B1878C00B0360A7B82712A1E81098A1 /* Inquiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */; };
 		A3FECE8036646E99C101F39ACBD52B30 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */; };
 		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
+		AF1E3E2522FD5A8E00DE796A /* Inquiry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1E3E2422FD5A8E00DE796A /* Inquiry.storyboard */; };
 		AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */; };
 		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
@@ -72,10 +73,11 @@
 		91677746AF074356C51B56EF596921B8 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		96C6DB49E8169BD07F59F3EE86BBBC77 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		9FCFBE98EDF0B3D79B0FE314F1DEE460 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
+		A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
-		B8C324F936F1BB21D3DD24648E720A40 /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
+		AF1E3E2422FD5A8E00DE796A /* Inquiry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inquiry.storyboard; sourceTree = "<group>"; };
 		C64D9C4B5531AE85FB85C9803746C63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		D0B0231627F638EFF5759FB4C1FDC36B /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -152,8 +154,6 @@
 			children = (
 				A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */,
 				38E14AA1EF408C3914D18D09F5002C5D /* DrawerViewController.swift */,
-				DF6A1FD6DACD817EDB36F7ADD1B05218 /* InquiryViewController.swift */,
-				D8CA6314753D09116B238888B91664D5 /* PopUpViewController.swift */,
 			);
 			path = Drawer;
 			sourceTree = "<group>";
@@ -178,6 +178,7 @@
 		82781A26C8B114511B18F876A7FC5FF0 /* INUBus */ = {
 			isa = PBXGroup;
 			children = (
+				AF1E3E2322FD583800DE796A /* Inquiry */,
 				17D36FE17B68139817A543A9FAC7380D /* Cell */,
 				C4DC1CD38BAB44A1783C1679217F4F36 /* Common */,
 				3EC651BE82E05D1CC429F3F581D242E5 /* Drawer */,
@@ -205,10 +206,10 @@
 		940398F5BB1D3971D21DDE4353D39DCD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B8C324F936F1BB21D3DD24648E720A40 /* RoundUIView.swift */,
 				7CF5FD4416C2D534B01A40EC54E9A56D /* AssetConstants.swift */,
 				AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */,
 				011A8E2DCE4FDEC0E346B31598BC4C3B /* Objects.swift */,
+				A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */,
 				91677746AF074356C51B56EF596921B8 /* StringConstants.swift */,
 			);
 			path = Model;
@@ -227,6 +228,16 @@
 				CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		AF1E3E2322FD583800DE796A /* Inquiry */ = {
+			isa = PBXGroup;
+			children = (
+				DF6A1FD6DACD817EDB36F7ADD1B05218 /* InquiryViewController.swift */,
+				D8CA6314753D09116B238888B91664D5 /* PopUpViewController.swift */,
+				AF1E3E2422FD5A8E00DE796A /* Inquiry.storyboard */,
+			);
+			path = Inquiry;
 			sourceTree = "<group>";
 		};
 		C4DC1CD38BAB44A1783C1679217F4F36 /* Common */ = {
@@ -318,6 +329,7 @@
 				08A370DEDD86466EF2A5240DB821B5D7 /* MainTableViewCell.xib in Resources */,
 				32DE2E250D84B6B082698826F95E439C /* NanumSquareBold.ttf in Resources */,
 				C6B424D583500F803D4EE21F14009BF5 /* NanumSquareRegular.ttf in Resources */,
+				AF1E3E2522FD5A8E00DE796A /* Inquiry.storyboard in Resources */,
 				D81B2324116F73F663D0B4095786AC8C /* NotoSans-Bold.ttf in Resources */,
 				35630E1C65E037008E074671BE1BCF75 /* NotoSans-ExtraBold.ttf in Resources */,
 				21EAF23CA81A317F9A384EF35AA81968 /* NotoSans-Medium.ttf in Resources */,
@@ -412,7 +424,7 @@
 				5085526B0373F523687B9ABD42A02498 /* Objects.swift in Sources */,
 				FA2735937CA4DB09385761169459F63A /* PopUpViewController.swift in Sources */,
 				E334B6C6D2656362B6B135914012B5B8 /* ReloadDataDelegate.swift in Sources */,
-				5EEE8C0769544059A913A5769D3217C7 /* RoundUIView.swift in Sources */,
+				458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */,
 				12197ED56D033A4E6F6146B9DB84B405 /* Server.swift in Sources */,
 				07F642EEB59CFF4780E3D9CEC8B714F5 /* StringConstants.swift in Sources */,
 				DD3ECC9CB34EBA0271119FADABFC64A5 /* UIAlertController+.swift in Sources */,
