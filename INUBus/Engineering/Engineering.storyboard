@@ -103,6 +103,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchView" destination="Rmq-n3-5JB" id="XXU-f1-tEC"/>
                         <outlet property="tableView" destination="4PE-V4-OYH" id="h8u-Go-Hyc"/>
                     </connections>
                 </viewController>

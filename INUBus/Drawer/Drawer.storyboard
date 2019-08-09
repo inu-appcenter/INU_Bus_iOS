@@ -310,7 +310,7 @@
         <!--Navigation Controller-->
         <scene sceneID="wcN-US-Ffm">
             <objects>
-                <navigationController storyboardIdentifier="TT" id="b5u-gK-nVF" sceneMemberID="viewController">
+                <navigationController id="b5u-gK-nVF" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MEM-Db-cT8">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

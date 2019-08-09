@@ -12,6 +12,7 @@ import KYDrawerController
 class EngineeringViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var searchView: RoundUIView!
   
   let sections = ["즐겨찾기", "간선버스", "지선버스", "광역버스"]
   
@@ -49,8 +50,15 @@ extension EngineeringViewController {
     tableView.dataSource = self
     tableView.register(UINib(nibName: cellIdentifier, bundle: nil),
                        forCellReuseIdentifier: cellIdentifier)
+    // tableView 비어있는 cell 지우기
+    tableView.tableFooterView = UIView()
     
     showNoticeAlertController(viewController: self)
+    
+    let tapRecognizer = UITapGestureRecognizer(
+      target: self,
+      action: #selector(pushViewController(gestureRecognizer:)))
+    searchView.addGestureRecognizer(tapRecognizer)
   }
   
   /// 서버에 데이터를 요청하는 함수.
@@ -99,6 +107,12 @@ extension EngineeringViewController {
         sortedBuses[2].append(busInfo)
       }
     }
+  }
+  
+  @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
+    let viewController = UIStoryboard(name: "Search", bundle: nil)
+      .instantiateViewController(withIdentifier: "SearchViewController")
+    self.navigationController?.pushViewController(viewController, animated: true)
   }
 }
 
