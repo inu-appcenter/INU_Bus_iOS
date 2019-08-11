@@ -53,15 +53,13 @@ extension UIAlertController {
     
     if let messageFont = font {
       attributedString.addAttributes(
-        [NSAttributedString.Key.font : messageFont],
+        [NSAttributedString.Key.font: messageFont],
         range: NSRange(location: start, length: end))
-    } else {
-      print("font error")
     }
     
     if let messageColor = color {
       attributedString.addAttributes(
-        [NSAttributedString.Key.foregroundColor : messageColor],
+        [NSAttributedString.Key.foregroundColor: messageColor],
         range: NSRange(location: start, length: end))
     }
     

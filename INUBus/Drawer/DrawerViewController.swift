@@ -8,23 +8,21 @@
 
 import UIKit
 
-class DrawerViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+final class DrawerViewController: UIViewController {
+  
+  @IBOutlet weak var inquiryView: RoundUIView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    let tapRecognizer = UITapGestureRecognizer(target: self,
+                                         action: #selector(presentView(gestureRecognizer:)))
+    self.inquiryView.addGestureRecognizer(tapRecognizer)
+  }
+  
+  @objc func presentView(gestureRecognizer: UITapGestureRecognizer) {
+    let viewController = UIStoryboard(name: "Inquiry", bundle: nil)
+      .instantiateViewController(withIdentifier: "InquiryNavigationController")
+    self.present(viewController, animated: true, completion: nil)
+  }
 }
