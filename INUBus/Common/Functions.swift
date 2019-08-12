@@ -41,3 +41,13 @@ func sectionLabel(text: String, size: CGFloat) -> UILabel {
   label.frame = CGRect(x: size, y: 0, width: 50, height: 20)
   return label
 }
+
+/// Status Bar Color를 바꿔주는 함수
+func changeStatusBarColor(barStyle: UIStatusBarStyle) {
+  if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+    if let kyDrawer = appDelegate.window?.rootViewController as?
+      ExtensionKYDrawerController {
+      kyDrawer.statusBarColor = barStyle
+    }
+  }
+}

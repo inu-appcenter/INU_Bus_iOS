@@ -150,6 +150,10 @@ extension EngineeringViewController: UITableViewDelegate {
   // cell이 선택됐을때 highlight 해제
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
+    
+    let viewController = UIStoryboard(name: "Route", bundle: nil)
+      .instantiateViewController(withIdentifier: "RouteViewController")
+    self.navigationController?.pushViewController(viewController, animated: true)
   }
 }
 
