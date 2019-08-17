@@ -153,7 +153,11 @@ extension EngineeringViewController: UITableViewDelegate {
     
     let viewController = UIStoryboard(name: "Route", bundle: nil)
       .instantiateViewController(withIdentifier: "RouteViewController")
-    self.navigationController?.pushViewController(viewController, animated: true)
+    if let routeViewController = viewController as? RouteViewController {
+      routeViewController.busNo = sortedBuses[indexPath.section][indexPath.row].no
+      self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
   }
 }
 

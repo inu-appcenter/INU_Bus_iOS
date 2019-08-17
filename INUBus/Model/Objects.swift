@@ -35,3 +35,20 @@ struct BusStop: Codable {
   let name: String
   let data: [BusInfo]
 }
+
+struct Route: Codable {
+  let no: String
+  let routeID: String
+  let nodeList: [String]
+  let turnNode: String
+  let start: Int
+  let end: Int
+  let type: String
+  
+  enum CodingKeys: String, CodingKey {
+    case no, start, end, type
+    case routeID = "routeid"
+    case nodeList = "nodelist"
+    case turnNode = "turnnode"
+  }
+}
