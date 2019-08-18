@@ -147,7 +147,7 @@ extension EngineeringViewController: UITableViewDelegate {
     return view
   }
   
-  // cell이 선택됐을때 highlight 해제
+  // cell이 선택됐을때 highlight 해제 및 노선 view controller로 이동
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
     

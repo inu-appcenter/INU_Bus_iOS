@@ -20,7 +20,7 @@ final class NetworkManager {
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue
     
-    let task = session.dataTask(with: urlRequest) { data, response, error in
+    let task = session.dataTask(with: urlRequest) { data, _, error in
       completion(data, error)
       session.finishTasksAndInvalidate()
     }

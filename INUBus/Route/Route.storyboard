@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jpx-ro-kux">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -26,9 +26,21 @@
             <objects>
                 <viewController storyboardIdentifier="RouteViewController" id="jpx-ro-kux" customClass="RouteViewController" customModule="INUBus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cPT-u0-skL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k26-au-AHA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="k26-au-AHA" firstAttribute="leading" secondItem="XCv-b4-mdv" secondAttribute="leading" id="Fua-93-2AZ"/>
+                            <constraint firstItem="XCv-b4-mdv" firstAttribute="bottom" secondItem="k26-au-AHA" secondAttribute="bottom" id="aj5-NO-BGr"/>
+                            <constraint firstItem="k26-au-AHA" firstAttribute="top" secondItem="XCv-b4-mdv" secondAttribute="top" id="c7M-I8-QdP"/>
+                            <constraint firstItem="XCv-b4-mdv" firstAttribute="trailing" secondItem="k26-au-AHA" secondAttribute="trailing" id="rQD-aY-bOT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XCv-b4-mdv"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wlx-f9-KLI">
@@ -41,7 +53,7 @@
                             </barButtonItem>
                             <barButtonItem style="plain" id="ENw-CH-fK7">
                                 <view key="customView" contentMode="scaleToFill" id="83w-tR-LcB">
-                                    <rect key="frame" x="55" y="5.5" width="92" height="33"/>
+                                    <rect key="frame" x="63" y="5.5" width="92" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIg-09-EGJ">
@@ -61,7 +73,7 @@
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="zug-kc-u8A">
                                 <view key="customView" contentMode="scaleToFill" id="QbL-12-efV">
-                                    <rect key="frame" x="354" y="5.5" width="40" height="33"/>
+                                    <rect key="frame" x="319" y="5.5" width="40" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="v3X-hp-vgp">
@@ -74,7 +86,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jq8-bX-FoP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jq8-bX-FoP">
                                                     <rect key="frame" x="0.0" y="15" width="31" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -88,7 +100,7 @@
                             </barButtonItem>
                             <barButtonItem style="plain" id="pCs-xb-6Ua">
                                 <view key="customView" contentMode="scaleToFill" id="MJN-WG-A6W">
-                                    <rect key="frame" x="306" y="5.5" width="40" height="33"/>
+                                    <rect key="frame" x="271" y="5.5" width="40" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lm6-r8-rGX">
@@ -101,7 +113,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dac-tL-SFq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dac-tL-SFq">
                                                     <rect key="frame" x="0.0" y="15" width="31" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -115,7 +127,7 @@
                             </barButtonItem>
                             <barButtonItem style="plain" id="bhw-Wt-sTL">
                                 <view key="customView" contentMode="scaleToFill" id="5Nt-nX-Q5o">
-                                    <rect key="frame" x="258" y="5.5" width="40" height="33"/>
+                                    <rect key="frame" x="223" y="5.5" width="40" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wli-jk-mB5">
@@ -128,7 +140,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nha-6P-VH6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nha-6P-VH6">
                                                     <rect key="frame" x="0.0" y="15" width="31" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -147,11 +159,12 @@
                         <outlet property="busNoLabel" destination="TIg-09-EGJ" id="cdB-KA-WEw"/>
                         <outlet property="firstBusTimeLabel" destination="nha-6P-VH6" id="tuH-pN-Qjh"/>
                         <outlet property="lastBusTimeLabel" destination="dac-tL-SFq" id="qLm-Xg-rFN"/>
+                        <outlet property="tableView" destination="k26-au-AHA" id="YOy-D4-gHX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqh-HH-af2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="199"/>
+            <point key="canvasLocation" x="1223" y="171"/>
         </scene>
     </scenes>
     <resources>

@@ -35,6 +35,9 @@
 		9FF37A04ADED104662BFB8CD699C33BD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */; };
 		A3FECE8036646E99C101F39ACBD52B30 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */; };
 		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
+		AF6FD96D230862AC002841C3 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6FD96B230862AC002841C3 /* RouteTableViewCell.swift */; };
+		AF6FD96E230862AC002841C3 /* RouteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6FD96C230862AC002841C3 /* RouteTableViewCell.xib */; };
+		AF6FD9702308A0CA002841C3 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6FD96F2308A0CA002841C3 /* TableViewUpDelegate.swift */; };
 		AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */; };
 		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
@@ -87,6 +90,9 @@
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
+		AF6FD96B230862AC002841C3 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
+		AF6FD96C230862AC002841C3 /* RouteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteTableViewCell.xib; sourceTree = "<group>"; };
+		AF6FD96F2308A0CA002841C3 /* TableViewUpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUpDelegate.swift; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		C64D9C4B5531AE85FB85C9803746C63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 			children = (
 				38C9AED849821A253AF7BDD66D2A3AFB /* MainTableViewCell.swift */,
 				0F9CF12C8962132D16BA88C0D80FE36B /* MainTableViewCell.xib */,
+				AF6FD96B230862AC002841C3 /* RouteTableViewCell.swift */,
+				AF6FD96C230862AC002841C3 /* RouteTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -174,6 +182,16 @@
 				58C04DA5E34554444E836E5E604687E7 /* Pods_INUBus.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A0AA75F38831FD6B329EAE2BF832069 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				3076E47778D7C47FDEDB4671426B1CFD /* Route.storyboard */,
+				4CB3D6CC745CD5C482395546606B1428 /* RouteViewController.swift */,
+				AF6FD96F2308A0CA002841C3 /* TableViewUpDelegate.swift */,
+			);
+			path = Route;
 			sourceTree = "<group>";
 		};
 		61C1EEA038D950B1C6DC92B83B8A6C13 /* Extension */ = {
@@ -250,15 +268,6 @@
 				CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */,
 			);
 			path = Font;
-			sourceTree = "<group>";
-		};
-		5A0AA75F38831FD6B329EAE2BF832069 /* Route */ = {
-			isa = PBXGroup;
-			children = (
-				3076E47778D7C47FDEDB4671426B1CFD /* Route.storyboard */,
-				4CB3D6CC745CD5C482395546606B1428 /* RouteViewController.swift */,
-			);
-			path = Route;
 			sourceTree = "<group>";
 		};
 		C4DC1CD38BAB44A1783C1679217F4F36 /* Common */ = {
@@ -354,6 +363,7 @@
 				0A815557BCDBD508729352220810CB0B /* Assets.xcassets in Resources */,
 				547D8E1EA71401AED07C064D04E2EE37 /* Drawer.storyboard in Resources */,
 				AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */,
+				AF6FD96E230862AC002841C3 /* RouteTableViewCell.xib in Resources */,
 				DC6322CF5FCC4C5FE9709618224A08D7 /* Inquiry.storyboard in Resources */,
 				2D30DC609A4DFA975CB6235D8F8E364A /* Jalnan.ttf in Resources */,
 				BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */,
@@ -450,11 +460,13 @@
 				B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */,
 				698E4FB5D3A344944C2DA7358D3B6F70 /* ExtensionKYDrawerController.swift in Sources */,
 				E163599715AB87EF14C7A96392AA5951 /* Functions.swift in Sources */,
+				AF6FD9702308A0CA002841C3 /* TableViewUpDelegate.swift in Sources */,
 				CF4FEBE5B112F5B4139F8DA833438B0C /* HTTPMethod.swift in Sources */,
 				9B1878C00B0360A7B82712A1E81098A1 /* Inquiry.swift in Sources */,
 				8844173FEADC6EB17016988BE9F8EB67 /* InquiryViewController.swift in Sources */,
 				78612C9ADEADE74BFCC47AE7D40BAC50 /* MainTableViewCell.swift in Sources */,
 				89908192514DF5A1B43422FBAB12102A /* NetworkManager.swift in Sources */,
+				AF6FD96D230862AC002841C3 /* RouteTableViewCell.swift in Sources */,
 				5085526B0373F523687B9ABD42A02498 /* Objects.swift in Sources */,
 				60C5C6CA2B8002D47B9D4A865058CE77 /* PopUpViewController.swift in Sources */,
 				E334B6C6D2656362B6B135914012B5B8 /* ReloadDataDelegate.swift in Sources */,

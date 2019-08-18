@@ -13,12 +13,17 @@ class RouteViewController: UIViewController {
   @IBOutlet weak var busNoLabel: UILabel!
   @IBOutlet weak var firstBusTimeLabel: UILabel!
   @IBOutlet weak var lastBusTimeLabel: UILabel!
+  @IBOutlet weak var tableView: UITableView!
   
   var busNo: String?
   
   var route: Route?
   
+  var busStops = [String]()
+  
   let url = Server.address.rawValue + "nodeData/"
+  
+  let cellIdentifier = "RouteTableViewCell"
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,6 +41,11 @@ class RouteViewController: UIViewController {
 
 extension RouteViewController {
   func setUp() {
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.register(UINib(nibName: cellIdentifier, bundle: nil),
+                       forCellReuseIdentifier: cellIdentifier)
+    
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255,
                                                                     green: 97/255,
                                                                     blue: 244/255,
@@ -56,12 +66,18 @@ extension RouteViewController {
         do {
           let route = try JSONDecoder().decode(Route.self, from: data)
           
+          self.route = route
+          self.busStops = route.nodeList
+          
+          if let index = route.nodeList.firstIndex(of: route.turnNode) {
+            self.busStops.insert("", at: index + 1)
+          }
+          
           DispatchQueue.main.async {
             self.firstBusTimeLabel.text = self.changeTimeIntToString(time: route.start)
             self.lastBusTimeLabel.text = self.changeTimeIntToString(time: route.end)
+            self.tableView.reloadData()
           }
-          
-          self.route = route
           
         } catch {
           print(error.localizedDescription)
@@ -77,5 +93,60 @@ extension RouteViewController {
     let min = minTemp > 10 ? "\(minTemp)" : "0\(minTemp)"
     
     return hour + ":" + min
+  }
+}
+
+extension RouteViewController: TableViewUpDelegate {
+  func scrollToTableViewTop() {
+    let indexPath = IndexPath(row: 0, section: 0)
+    self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+  }
+}
+
+extension RouteViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return indexPath.row != busStops.count ? 61 : 173
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: false)
+  }
+}
+
+extension RouteViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return busStops.count + 1
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: cellIdentifier, for: indexPath
+      ) as? RouteTableViewCell else {
+        return UITableViewCell()
+    }
+    
+    cell.delegate = self
+    
+    if indexPath.row == busStops.count {
+      cell.upLineView.isHidden = true
+      cell.downLineView.isHidden = true
+      cell.directionImageView.isHidden = true
+      cell.upButton.isHidden = false
+      cell.isUserInteractionEnabled = true
+      return cell
+    }
+    
+    let busStop = busStops[indexPath.row]
+    cell.busStopLabel.text = busStop
+    
+    if indexPath.row == 0 {
+      cell.upLineView.isHidden = true
+    } else if busStop == "" {
+      cell.turnView.isHidden = false
+    } else if busStops.count == indexPath.row + 1 {
+      cell.downLineView.isHidden = true
+    }
+    
+    return cell
   }
 }
