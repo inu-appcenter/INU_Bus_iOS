@@ -29,6 +29,19 @@ struct BusInfo: Codable {
     }
     return value
   }
+  
+  var busColor: BusColor {
+    switch no {
+    case "908", "909":
+      return .purple
+    case "92":
+      return .green
+    case "1301":
+      return .orange
+    default:
+      return .blue
+    }
+  }
 }
 
 struct BusStop: Codable {

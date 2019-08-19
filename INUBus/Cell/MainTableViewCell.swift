@@ -33,6 +33,19 @@ class MainTableViewCell: UITableViewCell {
             for: .normal)
         }
       }
+      
+      if let busColor = newValue?.busColor {
+        switch busColor {
+        case .blue:
+          busNoLabel.textColor = UIColor(red: 0, green: 111/255, blue: 255/255, alpha: 1)
+        case .green:
+          busNoLabel.textColor = UIColor(red: 36/255, green: 195/255, blue: 48/255, alpha: 1)
+        case .orange:
+          busNoLabel.textColor = UIColor(red: 255/255, green: 73, blue: 7/255, alpha: 1)
+        case .purple:
+          busNoLabel.textColor = UIColor(red: 105/255, green: 0/255, blue: 181, alpha: 1)
+        }
+      }
     }
   }
   

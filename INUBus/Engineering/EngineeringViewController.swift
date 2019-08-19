@@ -64,7 +64,7 @@ extension EngineeringViewController {
     
     // 검색 바를 기기에 맞게 사이즈 조절하기
     searchView.frame.size.width = sizeByDevice(size: 205)
-    searchImageView.frame = CGRect(x: searchImageView.frame.width - 35,
+    searchImageView.frame = CGRect(x: searchView.frame.width - 35,
                                    y: 9,
                                    width: 16,
                                    height: 16)
