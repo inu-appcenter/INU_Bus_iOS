@@ -13,6 +13,7 @@ class EngineeringViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchView: RoundUIView!
+  @IBOutlet weak var searchImageView: UIImageView!
   @IBOutlet weak var refreshButton: UIButton!
   
   let sections = ["즐겨찾기", "간선버스", "지선버스", "광역버스"]
@@ -58,7 +59,15 @@ extension EngineeringViewController {
     // tableView 비어있는 cell 지우기
     tableView.tableFooterView = UIView()
     
+    // 공지사항 띄우기
     showNoticeAlertController(viewController: self)
+    
+    // 검색 바를 기기에 맞게 사이즈 조절하기
+    searchView.frame.size.width = sizeByDevice(size: 205)
+    searchImageView.frame = CGRect(x: searchImageView.frame.width - 35,
+                                   y: 9,
+                                   width: 16,
+                                   height: 16)
     
     let tapRecognizer = UITapGestureRecognizer(
       target: self,

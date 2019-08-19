@@ -117,7 +117,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="refreshButton" destination="BA9-Yb-FQb" id="SBm-My-RXp"/>
-                        <outlet property="searchView" destination="Rmq-n3-5JB" id="XXU-f1-tEC"/>
+                        <outlet property="searchImageView" destination="ZOf-EA-rZ3" id="T2z-7q-ZX1"/>
+                        <outlet property="searchView" destination="Rmq-n3-5JB" id="Ggb-Mp-Ctw"/>
                         <outlet property="tableView" destination="4PE-V4-OYH" id="h8u-Go-Hyc"/>
                     </connections>
                 </viewController>
