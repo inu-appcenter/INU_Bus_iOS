@@ -33,10 +33,23 @@
                                 <rect key="frame" x="0.0" y="117" width="375" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BA9-Yb-FQb">
+                                <rect key="frame" x="301" y="559" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="579-ky-W2G"/>
+                                    <constraint firstAttribute="width" constant="64" id="CED-I1-w8L"/>
+                                </constraints>
+                                <state key="normal" image="refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonDidTap:" destination="C9o-aq-DSD" eventType="touchUpInside" id="l2I-nx-avj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ugL-f8-gQS" firstAttribute="top" secondItem="B8e-op-gGh" secondAttribute="top" constant="20" id="ECY-ut-QMF"/>
+                            <constraint firstItem="B8e-op-gGh" firstAttribute="bottom" secondItem="BA9-Yb-FQb" secondAttribute="bottom" constant="44" id="FQ5-qg-PQI"/>
+                            <constraint firstItem="B8e-op-gGh" firstAttribute="trailing" secondItem="BA9-Yb-FQb" secondAttribute="trailing" constant="10" id="J2P-Da-NoW"/>
                             <constraint firstItem="ugL-f8-gQS" firstAttribute="leading" secondItem="B8e-op-gGh" secondAttribute="leading" constant="28" id="OGK-Ts-sqa"/>
                             <constraint firstItem="4PE-V4-OYH" firstAttribute="leading" secondItem="B8e-op-gGh" secondAttribute="leading" id="TXo-14-BMn"/>
                             <constraint firstItem="B8e-op-gGh" firstAttribute="trailing" secondItem="4PE-V4-OYH" secondAttribute="trailing" id="X7m-GW-vKc"/>
@@ -103,6 +116,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="refreshButton" destination="BA9-Yb-FQb" id="SBm-My-RXp"/>
                         <outlet property="searchView" destination="Rmq-n3-5JB" id="XXU-f1-tEC"/>
                         <outlet property="tableView" destination="4PE-V4-OYH" id="h8u-Go-Hyc"/>
                     </connections>
@@ -134,5 +148,6 @@
         <image name="blueInfo" width="25" height="27"/>
         <image name="blueInuBus" width="55" height="13"/>
         <image name="graySearch" width="16" height="17"/>
+        <image name="refresh" width="64" height="64"/>
     </resources>
 </document>

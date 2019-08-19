@@ -13,6 +13,7 @@ class EngineeringViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchView: RoundUIView!
+  @IBOutlet weak var refreshButton: UIButton!
   
   let sections = ["즐겨찾기", "간선버스", "지선버스", "광역버스"]
   
@@ -31,6 +32,10 @@ class EngineeringViewController: UIViewController {
       KYDrawerController {
       drawerController.setDrawerState(.opened, animated: true)
     }
+  }
+  
+  @IBAction func refreshButtonDidTap(_ sender: Any) {
+    request()
   }
   
   override func viewDidLoad() {
@@ -158,7 +163,22 @@ extension EngineeringViewController: UITableViewDelegate {
       routeViewController.busNo = sortedBuses[indexPath.section][indexPath.row].no
       self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
+  }
+  
+  // tableView가 스크롤 할 때 버튼을 사라지게 하기 위한 애니메이션 설정
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    UIView.animate(withDuration: 0.5) {
+      self.refreshButton.alpha = 0
+    }
+  }
+  
+  // tableView가 스크롤이 끝날 때 버튼을 보이게 하기 위한 애니메이션 설정
+  func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                 withVelocity velocity: CGPoint,
+                                 targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    UIView.animate(withDuration: 0.5) {
+      self.refreshButton.alpha = 1
+    }
   }
 }
 
@@ -186,5 +206,4 @@ extension EngineeringViewController: UITableViewDataSource {
     
     return cell
   }
-  
 }
