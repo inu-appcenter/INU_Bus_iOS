@@ -38,13 +38,14 @@
 		A3FECE8036646E99C101F39ACBD52B30 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
 		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
-		AF3E2645230ACB6A009DCD15 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E2644230ACB6A009DCD15 /* UIView+.swift */; };
+		AF3E2647230ACE00009DCD15 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E2646230ACE00009DCD15 /* ProgressIndicator.swift */; };
 		AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */; };
 		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
 		C6B424D583500F803D4EE21F14009BF5 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F16BF3B61D8A26E4F692C5EA0560B291 /* NanumSquareRegular.ttf */; };
 		CEDEE8F01D2D96DCB636D932A3E4BED5 /* Route.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076E47778D7C47FDEDB4671426B1CFD /* Route.storyboard */; };
 		CF4FEBE5B112F5B4139F8DA833438B0C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */; };
+		CF52DBDA579483A632E7A239D379565B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */; };
 		D81B2324116F73F663D0B4095786AC8C /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E42A7BD5679FF7C17474441C2628882 /* NotoSans-Bold.ttf */; };
 		DAB1CD488A0C5D16EE0A225B40F8F5B4 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3D6CC745CD5C482395546606B1428 /* RouteViewController.swift */; };
 		DC6322CF5FCC4C5FE9709618224A08D7 /* Inquiry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2475B9CECC0BA085925DB2631303FDA /* Inquiry.storyboard */; };
@@ -92,7 +93,8 @@
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
-		AF3E2644230ACB6A009DCD15 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		AF3E2646230ACE00009DCD15 /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
+		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		C64D9C4B5531AE85FB85C9803746C63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -201,7 +203,7 @@
 			children = (
 				96C6DB49E8169BD07F59F3EE86BBBC77 /* Date+.swift */,
 				373AE60E4D0B5741DB041BF01EE3305B /* UIAlertController+.swift */,
-				AF3E2644230ACB6A009DCD15 /* UIView+.swift */,
+				B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -278,6 +280,7 @@
 			children = (
 				61AF1795BA1A82C4EFF70E45CB2D0A4D /* Functions.swift */,
 				6758C916C9CC01AE973B83F9282DEF41 /* Server.swift */,
+				AF3E2646230ACE00009DCD15 /* ProgressIndicator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				60C5C6CA2B8002D47B9D4A865058CE77 /* PopUpViewController.swift in Sources */,
 				E334B6C6D2656362B6B135914012B5B8 /* ReloadDataDelegate.swift in Sources */,
 				458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */,
+				AF3E2647230ACE00009DCD15 /* ProgressIndicator.swift in Sources */,
 				17A5BEA1C3F419885FFB2DED8086B5EF /* RouteTableViewCell.swift in Sources */,
 				DAB1CD488A0C5D16EE0A225B40F8F5B4 /* RouteViewController.swift in Sources */,
 				9FF37A04ADED104662BFB8CD699C33BD /* SearchViewController.swift in Sources */,
@@ -479,8 +483,8 @@
 				07F642EEB59CFF4780E3D9CEC8B714F5 /* StringConstants.swift in Sources */,
 				ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */,
 				DD3ECC9CB34EBA0271119FADABFC64A5 /* UIAlertController+.swift in Sources */,
+				CF52DBDA579483A632E7A239D379565B /* UIView+.swift in Sources */,
 				AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */,
-				AF3E2645230ACB6A009DCD15 /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

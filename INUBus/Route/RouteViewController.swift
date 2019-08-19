@@ -78,12 +78,12 @@ extension RouteViewController {
             self.lastBusTimeLabel.text = self.changeTimeIntToString(time: route.end)
             self.tableView.reloadData()
           }
-          
         } catch {
           print(error.localizedDescription)
         }
         
       }
+      ProgressIndicator.shared.hide()
     }
   }
   

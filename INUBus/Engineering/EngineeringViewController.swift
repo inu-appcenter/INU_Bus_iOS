@@ -85,6 +85,7 @@ extension EngineeringViewController {
           print(error.localizedDescription)
         }
       }
+      ProgressIndicator.shared.hide()
     }
   }
   
