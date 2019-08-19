@@ -19,33 +19,27 @@ class MainTableViewCell: UITableViewCell {
   
   let userDefaultsIdentifier = StringConstants.favorArray.rawValue
   
-  var busInfo: BusInfo? {
-    willSet {
-      busNoLabel.text = newValue?.no
-      let time = newValue?.estimatedArrivalTime ?? 0
+  var busInfo: BusInfo! {
+    didSet {
+      busNoLabel.text = busInfo.no
+      
+      let time = busInfo.estimatedArrivalTime
       timeRemainingLabel.text = "\(time / 60)분 \(time % 60)초"
-      intervalLabel.text = "\(newValue?.interval ?? 0)분"
+      
+      intervalLabel.text = "\(busInfo.interval)분"
       
       if let array = UserDefaults.standard.value(forKey: userDefaultsIdentifier) as? [String] {
-        if array.contains(newValue?.no ?? "") {
+        if array.contains(busInfo.no) {
           favoritesButton.setImage(
             UIImage(named: AssetConstants.colorStar.rawValue),
             for: .normal)
         }
       }
       
-      if let busColor = newValue?.busColor {
-        switch busColor {
-        case .blue:
-          busNoLabel.textColor = UIColor(red: 0, green: 111/255, blue: 255/255, alpha: 1)
-        case .green:
-          busNoLabel.textColor = UIColor(red: 36/255, green: 195/255, blue: 48/255, alpha: 1)
-        case .orange:
-          busNoLabel.textColor = UIColor(red: 255/255, green: 73, blue: 7/255, alpha: 1)
-        case .purple:
-          busNoLabel.textColor = UIColor(red: 105/255, green: 0/255, blue: 181, alpha: 1)
-        }
-      }
+      let rgb = (CGFloat(busInfo.rgb.0),
+                 CGFloat(busInfo.rgb.1),
+                 CGFloat(busInfo.rgb.2))
+      busNoLabel.textColor = UIColor(red: rgb.0, green: rgb.1, blue: rgb.2)
     }
   }
   
@@ -90,5 +84,4 @@ class MainTableViewCell: UITableViewCell {
     timeRemainingLabel.text = nil
     intervalLabel.text = nil
   }
-  
 }

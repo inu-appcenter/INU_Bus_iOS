@@ -42,6 +42,19 @@ struct BusInfo: Codable {
       return .blue
     }
   }
+  
+  var rgb: (Float, Float, Float) {
+    switch busColor {
+    case .blue:
+      return (0, 39, 244)
+    case .green:
+      return (36, 195, 48)
+    case .orange:
+      return (255, 73, 7)
+    case .purple:
+      return (105, 0, 181)
+    }
+  }
 }
 
 struct BusStop: Codable {
