@@ -209,9 +209,7 @@ extension SearchViewController {
 
 extension SearchViewController: UITextFieldDelegate {
   
-  
-  func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-    
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     //return이 입력되면 키보드를 내려줌
     searchTextField.resignFirstResponder()
     
@@ -226,8 +224,12 @@ extension SearchViewController: UITextFieldDelegate {
     }
     //검색기록 추가로 저장
     UserDefaults.standard.set(save, forKey: "saveText")
-    
+    print(searchHistory)
+    print(searchList)
     return true
     
   }
+//  func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//
+//  }
 }
