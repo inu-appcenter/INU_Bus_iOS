@@ -52,6 +52,7 @@ extension RouteViewController {
                                                                     alpha: 1)
     changeStatusBarColor(barStyle: .lightContent)
     busNoLabel.text = busNo
+    busNoLabel.sizeToFit()
   }
   
   func request() {

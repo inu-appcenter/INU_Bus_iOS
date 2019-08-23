@@ -31,12 +31,12 @@ struct BusInfo: Codable {
   }
   
   var busColor: BusColor {
-    switch no {
-    case "908", "909":
+    switch type {
+    case "간선급행":
       return .purple
-    case "92":
+    case "순환":
       return .green
-    case "1301":
+    case "광역":
       return .orange
     default:
       return .blue
@@ -47,12 +47,12 @@ struct BusInfo: Codable {
     switch busColor {
     case .blue:
       return (0, 39, 244)
+    case .purple:
+      return (105, 0, 181)
     case .green:
       return (36, 195, 48)
     case .orange:
       return (255, 73, 7)
-    case .purple:
-      return (105, 0, 181)
     }
   }
 }

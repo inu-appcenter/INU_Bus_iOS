@@ -16,8 +16,6 @@ class EngineeringViewController: UIViewController {
   @IBOutlet weak var searchImageView: UIImageView!
   @IBOutlet weak var refreshButton: UIButton!
   
-  let sections = ["즐겨찾기", "간선버스", "지선버스", "광역버스"]
-  
   let url = Server.address.rawValue + StringConstants.arrivalInfo.rawValue
   
   let busStopIdentifier = StringConstants.engineer.rawValue
@@ -26,7 +24,7 @@ class EngineeringViewController: UIViewController {
   
   var busInfos = [BusInfo]()
   
-  var sortedBuses = [[BusInfo](), [BusInfo](), [BusInfo](), [BusInfo]()]
+  var sortedBuses: [BusTypeInfo] = []
   
   @IBAction func infoButtonDidTap() {
     if let drawerController = navigationController?.parent?.parent as?
@@ -105,7 +103,10 @@ extension EngineeringViewController {
   
   // 서버에서 받은 버스 정보를 각 section에 정렬시켜주는 함수.
   func sortBusInfos() {
-    sortedBuses = [[], [], [], []]
+    sortedBuses = [BusTypeInfo(busType: "즐겨찾기", busInfos: []),
+                   BusTypeInfo(busType: "간선버스", busInfos: []),
+                   BusTypeInfo(busType: "지선버스", busInfos: []),
+                   BusTypeInfo(busType: "지선버스", busInfos: [])]
     
     var favorArray = [String]()
     if let array = UserDefaults.standard.value(forKey: StringConstants.favorArray.rawValue)
@@ -115,12 +116,21 @@ extension EngineeringViewController {
     
     for busInfo in busInfos {
       if favorArray.contains(busInfo.no) {
-        sortedBuses[0].append(busInfo)
-      } else if busInfo.type == "간선" || busInfo.type == "간선급행" {
-        sortedBuses[1].append(busInfo)
-      } else if busInfo.type == "순환" {
-        sortedBuses[2].append(busInfo)
+        sortedBuses[0].busInfos.append(busInfo)
+        continue
       }
+      switch busInfo.busColor {
+      case .blue, .purple:
+        sortedBuses[1].busInfos.append(busInfo)
+      case .green:
+        sortedBuses[2].busInfos.append(busInfo)
+      case .orange:
+        sortedBuses[3].busInfos.append(busInfo)
+      }
+    }
+    
+    for index in (0..<sortedBuses.count).reversed() where sortedBuses[index].busInfos.count == 0 {
+      sortedBuses.remove(at: index)
     }
   }
   
@@ -154,7 +164,7 @@ extension EngineeringViewController: UITableViewDelegate {
     let view = UIView()
     view.backgroundColor = UIColor(white: 235/250, alpha: 1)
     
-    view.addSubview(sectionLabel(text: sections[section],
+    view.addSubview(sectionLabel(text: sortedBuses[section].busType,
                                  size: sizeByDevice(size: 28)))
     view.addSubview(sectionLabel(text: "남은시간", size: sizeByDevice(size: 182)))
     view.addSubview(sectionLabel(text: "배차간격", size: sizeByDevice(size: 288)))
@@ -169,7 +179,7 @@ extension EngineeringViewController: UITableViewDelegate {
     let viewController = UIStoryboard(name: "Route", bundle: nil)
       .instantiateViewController(withIdentifier: "RouteViewController")
     if let routeViewController = viewController as? RouteViewController {
-      routeViewController.busNo = sortedBuses[indexPath.section][indexPath.row].no
+      routeViewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
       self.navigationController?.pushViewController(viewController, animated: true)
     }
   }
@@ -194,12 +204,12 @@ extension EngineeringViewController: UITableViewDelegate {
 extension EngineeringViewController: UITableViewDataSource {
   // section의 개수
   func numberOfSections(in tableView: UITableView) -> Int {
-    return sections.count
+    return sortedBuses.count
   }
   
   // 각 section안에 들어갈 cell의 개수
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return sortedBuses[section].count
+    return sortedBuses[section].busInfos.count
   }
   
   // cell 커스터마이징
@@ -211,7 +221,7 @@ extension EngineeringViewController: UITableViewDataSource {
     }
     
     cell.delegate = self
-    cell.busInfo = sortedBuses[indexPath.section][indexPath.row]
+    cell.busInfo = sortedBuses[indexPath.section].busInfos[indexPath.row]
     
     return cell
   }
