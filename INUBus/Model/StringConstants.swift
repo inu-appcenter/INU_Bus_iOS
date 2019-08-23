@@ -12,5 +12,6 @@ enum StringConstants: String {
   case favorArray
   case mainTableViewCell = "MainTableViewCell"
   case arrivalInfo
+  case nodeData
   case engineer
 }

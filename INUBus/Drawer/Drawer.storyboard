@@ -84,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-ia-l4t">
-                                <rect key="frame" x="187" y="242" width="29" height="29.5"/>
+                                <rect key="frame" x="187" y="242" width="29" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="김병민 ">
                                         <attributes>
@@ -93,20 +93,20 @@
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" size="2" name="NotoSans-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="2"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="정고운">
                                         <attributes>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Regular"/>
-                                            <font key="NSOriginalFont" size="11" name="NotoSans-Regular"/>
+                                            <font key="NSOriginalFont" metaFont="smallSystem"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdX-H8-3ZF">
-                                <rect key="frame" x="187" y="359" width="29" height="29.5"/>
+                                <rect key="frame" x="187" y="359" width="29" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="임헌준 ">
                                         <attributes>
@@ -116,7 +116,7 @@
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" size="2" name="NotoSans-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="2"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -130,7 +130,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="566-Mv-ZQ4">
-                                <rect key="frame" x="187" y="408" width="29" height="29.5"/>
+                                <rect key="frame" x="187" y="408" width="29" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="서연재">
                                         <attributes>
@@ -140,13 +140,13 @@
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" size="11" name="NotoSans-Regular"/>
+                                            <font key="NSFont" metaFont="smallSystem"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" size="2" name="NotoSans-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="2"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -160,7 +160,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCp-3P-iJg">
-                                <rect key="frame" x="187" y="291" width="29" height="45.5"/>
+                                <rect key="frame" x="187" y="291" width="29" height="44.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="조용문 ">
                                         <attributes>
@@ -170,7 +170,7 @@
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" size="2" name="NotoSans-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="2"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -182,7 +182,7 @@
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" size="2" name="NotoSans-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="2"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -202,33 +202,21 @@
                                     <constraint firstAttribute="height" constant="24.5" id="q1V-HG-6KY"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="이 앱은 ">
+                                    <fragment content="이 앱은 공공데이터를 이용한 앱입니다. ">
                                         <attributes>
-                                            <font key="NSFont" size="9" name="NanumSquareR"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="공공데이터">
-                                        <attributes>
-                                            <font key="NSFont" size="9" name="NanumSquareB"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="를 이용한 앱입니다. ">
-                                        <attributes>
-                                            <font key="NSFont" size="9" name="NanumSquareR"/>
+                                            <font key="NSFont" metaFont="miniSystem"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" size="4" name="NanumSquareR"/>
+                                            <font key="NSFont" metaFont="system" size="4"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="This application used public data.">
                                         <attributes>
-                                            <font key="NSFont" size="9" name="NanumSquareR"/>
+                                            <font key="NSFont" metaFont="miniSystem"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>

@@ -50,16 +50,11 @@ final class InquiryViewController: UIViewController {
 extension InquiryViewController {
     private func setupInquiry() {
 
-        self.titleTextField.layer.borderColor =
-            UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1).cgColor
         self.contentsTextView.layer.borderColor =
             UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1).cgColor
-        self.phoneNumberTextField.layer.borderColor =
-            UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1).cgColor
-        self.titleTextField.layer.borderWidth = 1
-        self.phoneNumberTextField.layer.borderWidth = 1
+
         self.contentsTextView.layer.borderWidth = 1
-        
+      
         let viewControllerGesture: UITapGestureRecognizer =
             UITapGestureRecognizer(target: self, action: #selector(tapViewcontroller(_:)))
         

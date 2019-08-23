@@ -43,7 +43,6 @@ class PopUpViewController: UIViewController {
 extension PopUpViewController {
     func setupView() {
  
-    self.mainView.layer.cornerRadius = 16
     self.mainView.translatesAutoresizingMaskIntoConstraints = false
     self.mainView.widthAnchor.constraint(equalToConstant: 260.5).isActive = true
     self.mainView.heightAnchor.constraint(equalToConstant: 155).isActive = true
