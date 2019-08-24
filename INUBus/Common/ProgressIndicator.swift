@@ -8,13 +8,18 @@
 
 import UIKit
 
+/// 로딩 창을 구현하기 위한 class
 final class ProgressIndicator: UIView {
+  
+  /// 오로지 shared로만 class에 접근할게 함. view를 기기 사이즈에 맞게 맞춤
   static let shared = ProgressIndicator(frame: UIScreen.main.bounds)
   
+  /// 로딩 중일 때 뒤에 배경화면을 흐릿하게 하기 위한 View
   private var backgroundView: UIVisualEffectView! {
     didSet {
       backgroundView.translatesAutoresizingMaskIntoConstraints = false
       addSubview(backgroundView)
+      // constraint 설정
       NSLayoutConstraint.activate([
         backgroundView.topAnchor.constraint(equalTo: topAnchor),
         backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -24,6 +29,7 @@ final class ProgressIndicator: UIView {
     }
   }
   
+  /// 로딩 이미지를 보여줄 imageView
   private var loadingImageView: UIImageView! {
     didSet {
       loadingImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +40,7 @@ final class ProgressIndicator: UIView {
                            relatedBy: .equal,
                            toItem: self,
                            attribute: .bottom,
+                           // 130:667(아이폰8 세로 높이) 비율로 로딩창의 높이를 조정함
                            multiplier: 130 / 667,
                            constant: 0),
         loadingImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -43,6 +50,7 @@ final class ProgressIndicator: UIView {
     }
   }
   
+  // init에 setUp을 넣어줘서 변수들을 초기화 함.
   override init(frame: CGRect) {
     super.init(frame: frame)
     setUp()
@@ -53,16 +61,20 @@ final class ProgressIndicator: UIView {
     setUp()
   }
   
+  /// backgroundView와 loadingImageView를 값을 넣어줌으로써 위에 didSet을 작동시킴.
   private func setUp() {
     backgroundColor = .clear
     backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     loadingImageView = UIImageView(image: UIImage(named: "loading"))
   }
   
+  /// 로딩 애니메이션을 시작하는 함수.
   func show() {
     DispatchQueue.main.async {
+      // UIView에 추가한 회전 애니메이션. 360도로 View를 계속 돌림
       self.loadingImageView.rotationAnimation(duration: 1)
       self.alpha = 0
+      // view 중에서 최상위 window에 ProgressIndicator를 넣어줌.
       if let window = UIApplication.shared.keyWindow {
         window.addSubview(self)
         UIView.animate(withDuration: 0.3) {
@@ -72,6 +84,7 @@ final class ProgressIndicator: UIView {
     }
   }
   
+  /// 로딩 애니메이션을 멈추는 함수.
   func hide() {
     DispatchQueue.main.async {
       self.loadingImageView.layer.removeAllAnimations()

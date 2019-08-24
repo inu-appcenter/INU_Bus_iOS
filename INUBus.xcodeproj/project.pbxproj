@@ -17,6 +17,7 @@
 		225C7417E88F2B4600B8B8EA1CE9CD3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A7F84B572065F2F849DE5076569FB53 /* Main.storyboard */; };
 		2B548507D720AA1488EF40A084B43509 /* RouteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF5EBD2F9FCE5F285B5FD3C1ECF75031 /* RouteTableViewCell.xib */; };
 		2D30DC609A4DFA975CB6235D8F8E364A /* Jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C143317281489595FD685DE488EE847 /* Jalnan.ttf */; };
+		2FD98317558D4C3364061DE0E23BA879 /* BusTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DC46501CB1B75B4095BB430FB210 /* BusTypeInfo.swift */; };
 		32DE2E250D84B6B082698826F95E439C /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFBE98EDF0B3D79B0FE314F1DEE460 /* NanumSquareBold.ttf */; };
 		35630E1C65E037008E074671BE1BCF75 /* NotoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68296BB72BDDF860941CA82161A2556A /* NotoSans-ExtraBold.ttf */; };
 		458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */; };
@@ -40,7 +41,6 @@
 		A3FECE8036646E99C101F39ACBD52B30 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
 		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
-		AF6600E0230F83F100F508E2 /* BusTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6600DF230F83F100F508E2 /* BusTypeInfo.swift */; };
 		AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */; };
 		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
@@ -89,6 +89,7 @@
 		7CF5FD4416C2D534B01A40EC54E9A56D /* AssetConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetConstants.swift; sourceTree = "<group>"; };
 		7D0261165311A43AB56472C40FF8BAC4 /* ExtensionKYDrawerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKYDrawerController.swift; sourceTree = "<group>"; };
 		7E42A7BD5679FF7C17474441C2628882 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		8A32DC46501CB1B75B4095BB430FB210 /* BusTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTypeInfo.swift; sourceTree = "<group>"; };
 		91677746AF074356C51B56EF596921B8 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		96C6DB49E8169BD07F59F3EE86BBBC77 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		9FCFBE98EDF0B3D79B0FE314F1DEE460 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
-		AF6600DF230F83F100F508E2 /* BusTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTypeInfo.swift; sourceTree = "<group>"; };
 		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		C64D9C4B5531AE85FB85C9803746C63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,12 +259,12 @@
 			children = (
 				7CF5FD4416C2D534B01A40EC54E9A56D /* AssetConstants.swift */,
 				D63BF221AC6B68EBDA6A2FBAB6927EF5 /* BusColor.swift */,
+				8A32DC46501CB1B75B4095BB430FB210 /* BusTypeInfo.swift */,
 				7D0261165311A43AB56472C40FF8BAC4 /* ExtensionKYDrawerController.swift */,
 				AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */,
 				011A8E2DCE4FDEC0E346B31598BC4C3B /* Objects.swift */,
 				A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */,
 				91677746AF074356C51B56EF596921B8 /* StringConstants.swift */,
-				AF6600DF230F83F100F508E2 /* BusTypeInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +471,7 @@
 				8E91701C17D0FD4E6BAA367C9FF49692 /* AppDelegate.swift in Sources */,
 				FBEE3D6F1FF840C2538C37F79C02022F /* AssetConstants.swift in Sources */,
 				6B3042678962D413F9F0ED2D0F8A34DC /* BusColor.swift in Sources */,
+				2FD98317558D4C3364061DE0E23BA879 /* BusTypeInfo.swift in Sources */,
 				4B2805EE1996902E2475A9F069CEB5E5 /* Date+.swift in Sources */,
 				17498620253ABA56020461794E1EEDAD /* DrawerViewController.swift in Sources */,
 				B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */,
@@ -494,7 +495,6 @@
 				ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */,
 				DD3ECC9CB34EBA0271119FADABFC64A5 /* UIAlertController+.swift in Sources */,
 				71F042371D539E91497C7EF0BCB50417 /* UIColor+.swift in Sources */,
-				AF6600E0230F83F100F508E2 /* BusTypeInfo.swift in Sources */,
 				CF52DBDA579483A632E7A239D379565B /* UIView+.swift in Sources */,
 				AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */,
 			);
