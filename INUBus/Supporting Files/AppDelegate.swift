@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    //
+    // 첫 실행시 즐겨찾기 UserDefaults를 생성
     if UserDefaults.standard.value(forKey: "favorArray") == nil {
       UserDefaults.standard.set([String](), forKey: "favorArray")
     }
@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       .instantiateViewController(withIdentifier: "TabBarController")
     let drawerViewController = UIStoryboard(name: "Drawer", bundle: nil)
       .instantiateViewController(withIdentifier: "DrawerViewController")
-    let drawerController = KYDrawerController(drawerDirection: .right,
-                                              drawerWidth: 265)
+    let drawerController = ExtensionKYDrawerController(drawerDirection: .right,
+                                                       drawerWidth: 265)
     
     drawerController.mainViewController = mainViewController
     drawerController.drawerViewController = drawerViewController

@@ -19,20 +19,27 @@ class MainTableViewCell: UITableViewCell {
   
   let userDefaultsIdentifier = StringConstants.favorArray.rawValue
   
-  var busInfo: BusInfo? {
-    willSet {
-      busNoLabel.text = newValue?.no
-      let time = newValue?.estimatedArrivalTime ?? 0
+  var busInfo: BusInfo! {
+    didSet {
+      busNoLabel.text = busInfo.no
+      
+      let time = busInfo.estimatedArrivalTime
       timeRemainingLabel.text = "\(time / 60)분 \(time % 60)초"
-      intervalLabel.text = "\(newValue?.interval ?? 0)분"
+      
+      intervalLabel.text = "\(busInfo.interval)분"
       
       if let array = UserDefaults.standard.value(forKey: userDefaultsIdentifier) as? [String] {
-        if array.contains(newValue?.no ?? "") {
+        if array.contains(busInfo.no) {
           favoritesButton.setImage(
             UIImage(named: AssetConstants.colorStar.rawValue),
             for: .normal)
         }
       }
+      
+      let rgb = (CGFloat(busInfo.rgb.0),
+                 CGFloat(busInfo.rgb.1),
+                 CGFloat(busInfo.rgb.2))
+      busNoLabel.textColor = UIColor(red: rgb.0, green: rgb.1, blue: rgb.2)
     }
   }
   
@@ -77,5 +84,4 @@ class MainTableViewCell: UITableViewCell {
     timeRemainingLabel.text = nil
     intervalLabel.text = nil
   }
-  
 }

@@ -12,6 +12,10 @@ final class DrawerViewController: UIViewController {
   
   @IBOutlet weak var inquiryView: RoundUIView!
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
