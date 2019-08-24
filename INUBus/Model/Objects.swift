@@ -62,6 +62,11 @@ struct BusStop: Codable {
   let data: [BusInfo]
 }
 
+struct SearchInfo: Codable {
+  let no: String
+  let nodelist: [String]
+}
+
 struct Route: Codable {
   let no: String
   let routeID: String
