@@ -26,6 +26,8 @@ class EngineeringViewController: UIViewController {
   
   var sortedBuses: [BusTypeInfo] = []
   
+  var timer: Timer!
+  
   @IBAction func infoButtonDidTap() {
     if let drawerController = navigationController?.parent?.parent as?
       KYDrawerController {
@@ -71,6 +73,8 @@ extension EngineeringViewController {
       target: self,
       action: #selector(pushViewController(gestureRecognizer:)))
     searchView.addGestureRecognizer(tapRecognizer)
+    
+    startTimer()
   }
   
   /// 서버에 데이터를 요청하는 함수.
@@ -138,6 +142,18 @@ extension EngineeringViewController {
     let viewController = UIStoryboard(name: "Search", bundle: nil)
       .instantiateViewController(withIdentifier: "SearchViewController")
     self.navigationController?.pushViewController(viewController, animated: true)
+  }
+  
+  func startTimer() {
+    timer = Timer.scheduledTimer(timeInterval: 1,
+                                 target: self,
+                                 selector: #selector(countDown),
+                                 userInfo: nil,
+                                 repeats: true)
+  }
+  
+  @objc func countDown() {
+    tableView.reloadData()
   }
 }
 
