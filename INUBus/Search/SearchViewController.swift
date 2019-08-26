@@ -14,8 +14,7 @@ UITableViewDelegate, UITableViewDataSource {
   
   let cellIndentifier = "SearchTableViewCell"
   
-  let url = Server.address.rawValue +
-    StringConstants.nodeData.rawValue
+  let url = Server.address.rawValue + StringConstants.nodeData.rawValue
   
   let dateFormatter: DateFormatter = {
     let formatter: DateFormatter = DateFormatter()
@@ -95,7 +94,8 @@ extension SearchViewController {
     searchTableView.delegate = self
     searchTableView.dataSource = self
     //searchTabelView가 cellIndentifier라는 custom cell을 렌더링하게 설정
-    searchTableView.register(UINib(nibName: cellIndentifier, bundle:  nil), forCellReuseIdentifier: cellIndentifier)
+    searchTableView.register(UINib(nibName: cellIndentifier, bundle: nil),
+                             forCellReuseIdentifier: cellIndentifier)
     
     searchTextField.delegate = self
   }
@@ -120,6 +120,7 @@ extension SearchViewController {
           print(error.localizedDescription)
         }
       }
+      ProgressIndicator.shared.hide()
     }
   }
   
@@ -144,7 +145,8 @@ extension SearchViewController {
     if searchTextField.isEditing {
       print("cell이 선택되었습니다")
       
-      let viewController = UIStoryboard(name: "Search",bundle: nil).instantiateViewController(withIdentifier: "Result")
+      let viewController = UIStoryboard(name: "Search", bundle: nil)
+        .instantiateViewController(withIdentifier: "Result")
       
       self.navigationController?
         .pushViewController(viewController, animated: true)
@@ -229,7 +231,4 @@ extension SearchViewController: UITextFieldDelegate {
     return true
     
   }
-//  func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//
-//  }
 }
