@@ -68,9 +68,19 @@ struct SearchInfo: Codable {
 }
 
 struct Route: Codable {
+  struct Node: Codable {
+    let nodeNo: Int
+    let nodeName: String
+    
+    enum CodingKeys: String, CodingKey {
+      case nodeNo = "nodeno"
+      case nodeName = "nodenm"
+    }
+  }
+  
   let no: String
   let routeID: String
-  let nodeList: [String]
+  let nodeList: [Node]
   let turnNode: String
   let start: Int
   let end: Int

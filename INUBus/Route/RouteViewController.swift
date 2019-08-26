@@ -68,9 +68,11 @@ extension RouteViewController {
           let route = try JSONDecoder().decode(Route.self, from: data)
           
           self.route = route
-          self.busStops = route.nodeList
+          for node in route.nodeList {
+            self.busStops.append(node.nodeName)
+          }
           
-          if let index = route.nodeList.firstIndex(of: route.turnNode) {
+          if let index = self.busStops.firstIndex(of: route.turnNode) {
             self.busStops.insert("", at: index + 1)
           }
           

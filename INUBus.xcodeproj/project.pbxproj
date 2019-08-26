@@ -29,9 +29,9 @@
 		60C5C6CA2B8002D47B9D4A865058CE77 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3CED2904AC110CF3C35BBC8AEC9A2 /* PopUpViewController.swift */; };
 		6351C71E97A6B72284E627130F50B949 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0B0231627F638EFF5759FB4C1FDC36B /* NotoSans-Regular.ttf */; };
 		68501155673108CF7ECB3C6D48232026 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6184DBC64C76146A7F4647EAA388967A /* SearchTableViewCell.xib */; };
-		6BA5F9C82EF54CAD1738FFB8555F418B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973F620AA711AFD8C5487A4E8CA755A /* ResultViewController.swift */; };
 		698E4FB5D3A344944C2DA7358D3B6F70 /* ExtensionKYDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0261165311A43AB56472C40FF8BAC4 /* ExtensionKYDrawerController.swift */; };
 		6B3042678962D413F9F0ED2D0F8A34DC /* BusColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63BF221AC6B68EBDA6A2FBAB6927EF5 /* BusColor.swift */; };
+		6BA5F9C82EF54CAD1738FFB8555F418B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973F620AA711AFD8C5487A4E8CA755A /* ResultViewController.swift */; };
 		71F042371D539E91497C7EF0BCB50417 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE18FC39A526DFAF4AAECDDE88F2C8 /* UIColor+.swift */; };
 		77C9852A646B9DBBBF0F4254A777EF6F /* Pods_INUBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C04DA5E34554444E836E5E604687E7 /* Pods_INUBus.framework */; };
 		78612C9ADEADE74BFCC47AE7D40BAC50 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9AED849821A253AF7BDD66D2A3AFB /* MainTableViewCell.swift */; };
@@ -70,7 +70,7 @@
 		0932A0D4593DECB81E3A53151F4949A8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0E29CB009B42C07512EEC5888E8C0375 /* Pods-INUBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INUBus.release.xcconfig"; path = "Target Support Files/Pods-INUBus/Pods-INUBus.release.xcconfig"; sourceTree = "<group>"; };
 		0F9CF12C8962132D16BA88C0D80FE36B /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
-		1282D8E1C435D6357C265E1A961CB351 /* RoundUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundUITextField.swift; path = ../../RoundUITextField.swift; sourceTree = "<group>"; };
+		1282D8E1C435D6357C265E1A961CB351 /* RoundUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUITextField.swift; sourceTree = "<group>"; };
 		13A9193EEBD53730F14C4149AA76833D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		1AD593875379C23B50170C7AE69FE4E3 /* NotoSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Medium.ttf"; sourceTree = "<group>"; };
 		26834CAEF399CADC4F70154123FC0EC1 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,10 +139,10 @@
 			children = (
 				38C9AED849821A253AF7BDD66D2A3AFB /* MainTableViewCell.swift */,
 				0F9CF12C8962132D16BA88C0D80FE36B /* MainTableViewCell.xib */,
-				3DE4EB47C00B1DD869CAFE437E0B1A9B /* SearchTableViewCell.swift */,
-				6184DBC64C76146A7F4647EAA388967A /* SearchTableViewCell.xib */,
 				26834CAEF399CADC4F70154123FC0EC1 /* RouteTableViewCell.swift */,
 				CF5EBD2F9FCE5F285B5FD3C1ECF75031 /* RouteTableViewCell.xib */,
+				3DE4EB47C00B1DD869CAFE437E0B1A9B /* SearchTableViewCell.swift */,
+				6184DBC64C76146A7F4647EAA388967A /* SearchTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -502,9 +502,9 @@
 				6BA5F9C82EF54CAD1738FFB8555F418B /* ResultViewController.swift in Sources */,
 				08AF930433ADB310D3A6F970BAC0FBBC /* RoundUITextField.swift in Sources */,
 				458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */,
-				9A0E1992BB4AF959A267967D778F3437 /* SearchTableViewCell.swift in Sources */,
 				17A5BEA1C3F419885FFB2DED8086B5EF /* RouteTableViewCell.swift in Sources */,
 				DAB1CD488A0C5D16EE0A225B40F8F5B4 /* RouteViewController.swift in Sources */,
+				9A0E1992BB4AF959A267967D778F3437 /* SearchTableViewCell.swift in Sources */,
 				9FF37A04ADED104662BFB8CD699C33BD /* SearchViewController.swift in Sources */,
 				12197ED56D033A4E6F6146B9DB84B405 /* Server.swift in Sources */,
 				07F642EEB59CFF4780E3D9CEC8B714F5 /* StringConstants.swift in Sources */,
