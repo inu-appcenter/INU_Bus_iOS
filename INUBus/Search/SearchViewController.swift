@@ -29,8 +29,6 @@ class SearchViewController: UIViewController {
   var save = [String]()
   var busNode = [String: String]()
   var busNodeArr = [String]()
-  var busNodeNumArr = [String]()
-  var busNodeNumber = [String]()
   
   @IBOutlet weak var searchTableView: UITableView!
   @IBOutlet weak var searchTextField: UITextField!
