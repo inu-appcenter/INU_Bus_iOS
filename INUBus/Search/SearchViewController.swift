@@ -26,10 +26,16 @@ UITableViewDelegate, UITableViewDataSource {
   var searchList = [String]()
   var searchHistory = [String]()
   var saveNextStops = [String]()
-  var busInfo = [[String]()]
+  var busInfo = [String]()
   var word: String = ""
   var save = [String]()
-  
+  var busNodeInfo = [String]()
+  var busNode = [String: String]()
+  var busNodeNum = [String: Int]()
+  var busNodeArr = [String]()
+  var busNodeNumArr = [String]()
+  var busNodeNumber = [String]()
+  var nodeHistory = [[String]()]
   @IBOutlet weak var searchTableView: UITableView!
   @IBOutlet weak var searchTextField: UITextField!
   
@@ -57,23 +63,26 @@ UITableViewDelegate, UITableViewDataSource {
     searchList = []
     saveNextStops = []
     
-    //사용자가 검색한 값이 서버로부터 받은 값이 같은지 확인
-    for var busGroup in busInfo {
-      for num in 0..<(busGroup.count) {
-        if busGroup[num].contains(word) {
-          if busGroup.count == num+1 {
-            busGroup.append("다음 정류장이 없습니다.")
-          }
-          saveNextStops.append(busGroup[num+1])
-        }
+    for busNumber in busInfo {
+      if busNumber.contains(word) {
+        searchList.insert(busNumber, at: 0)
+        saveNextStops.insert("", at: 0)
       }
-      for busStops in busGroup {
-        if busStops.contains(word) {
-          searchList.append(busStops)
-        }
-      }
-      
     }
+    
+    for busStops in busNodeArr {
+      if busStops.contains(word) {
+        for(key, value) in busNode {
+          if value == busStops {
+            print("\(key): \(value)")
+            saveNextStops.append(key)
+            searchList.append(value)
+          }
+        }
+      }
+    }
+    
+    
     self.searchTableView.reloadData()
   }
   
@@ -88,6 +97,8 @@ UITableViewDelegate, UITableViewDataSource {
   }
 }
 
+//딕셔너리의 키와 벨류를 따로 배열에 넣어서
+
 extension SearchViewController {
   
   func setUp() {
@@ -96,7 +107,7 @@ extension SearchViewController {
     //searchTabelView가 cellIndentifier라는 custom cell을 렌더링하게 설정
     searchTableView.register(UINib(nibName: cellIndentifier, bundle: nil),
                              forCellReuseIdentifier: cellIndentifier)
-    
+    searchTableView.tableFooterView = UIView()
     searchTextField.delegate = self
   }
   
@@ -108,20 +119,50 @@ extension SearchViewController {
       if let error = error {
         print(error.localizedDescription)
       }
+      
       if let data = data {
         do {
-          let busNumbers = try JSONDecoder().decode([SearchInfo].self, from: data)
+          let busNumbers = try JSONDecoder().decode([Route].self, from: data)
           
           for busNumber in busNumbers {
-            self.busInfo.append(busNumber.nodelist)
-            self.busInfo.append([busNumber.no])
+            
+            self.busInfo.append(busNumber.no)
+            
+            for busNode in busNumber.nodeList {
+              
+              self.busNode.updateValue(busNode.nodeName, forKey: "\(busNode.nodeNo)")
+            }
           }
+          
+          for busNodeNumbers in self.busNode.keys {
+            self.busNodeNumArr.append(busNodeNumbers)
+          }
+          
+          for busNodes in self.busNode.values {
+            self.busNodeArr.append(busNodes)
+          }
+          
+          print(self.busNodeNumArr)
+          print(self.busNodeArr)
+          
         } catch {
           print(error.localizedDescription)
         }
       }
       ProgressIndicator.shared.hide()
     }
+  }
+  
+  func sorryAlert() {
+    
+    let alert =
+      UIAlertController(title: "알림", message: "\n해당 기능은 버스만 이용이 가능합니다.", preferredStyle: .alert)
+    let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+    
+    alert.addAction(action)
+    
+    present(alert, animated: true, completion: nil)
+    
   }
   
   //section마다의 cell개수
@@ -138,27 +179,61 @@ extension SearchViewController {
     return 1
   }
   
-  //cell이 선택되면 ResultViewController로 이동
+  //cell이 선택되면 RouteViewController로 이동
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    //검색하고있을때만 선택되면 이동하게 설정
+    
+    
     if searchTextField.isEditing {
-      print("cell이 선택되었습니다")
       
-      let viewController = UIStoryboard(name: "Search", bundle: nil)
-        .instantiateViewController(withIdentifier: "Result")
+      //cell이 선택되면 해당 row의 값이 검색기록으로 들어감
+      save = searchHistory
+      save.insert(searchList[indexPath.row], at: 0)
+      UserDefaults.standard.set(save, forKey: "saveText")
       
-      self.navigationController?
-        .pushViewController(viewController, animated: true)
+      switch searchList[indexPath.row] {
+      //검색목록의 해당 row의 버스정보가 버스 번호일때
+      case "81", "82", "16", "1301", "6", "6-1",
+           "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
+        
+        let viewController = UIStoryboard(name: "Route", bundle: nil)
+          .instantiateViewController(withIdentifier: "RouteViewController")
+        
+        //RouteViewController에 busNo을 주기 위함
+        if let routeViewController = viewController as? RouteViewController {
+          routeViewController.busNo = searchList[indexPath.row]
+        }
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+      //정류장일떄
+      default:
+        sorryAlert()
+      }
+      //검색기록이 보여지고 있는 상태일때
+    } else {
+      
+      switch searchHistory[indexPath.row] {
+      //검색기록의 해당 row의 버스정보가 버스 번호일때
+      case "81", "82", "16", "1301", "6", "6-1",
+           "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
+        
+        let viewController = UIStoryboard(name: "Route", bundle: nil)
+          .instantiateViewController(withIdentifier: "RouteViewController")
+        if let routeViewController = viewController as? RouteViewController {
+          routeViewController.busNo = searchHistory[indexPath.row]
+        }
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+      //정류장일때
+      default:
+        sorryAlert()
+      }
     }
   }
+  
   //cell의 높이
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    if searchTextField.isEditing {
-      return 77
-    } else {
-      return 60
-    }
+    return 77
   }
   
   //cell에 대한 정보
@@ -170,7 +245,8 @@ extension SearchViewController {
     
     if searchTextField.isEditing {
       cell.searchLabel.text = searchList[indexPath.row]
-      cell.moreInfo.text = saveNextStops[indexPath.row] + " 방면"
+      cell.moreInfo.text = "정류장 번호: " + saveNextStops[indexPath.row]
+      //      cell.moreInfo.text = "미구현"
       cell.dayLabel.text = self.dateFormatter.string(from: date)
       cell.deleteButton.isHidden = true
     } else {
@@ -215,19 +291,6 @@ extension SearchViewController: UITextFieldDelegate {
     //return이 입력되면 키보드를 내려줌
     searchTextField.resignFirstResponder()
     
-    //기존의 검색기록을 가져옴
-    loadHistory()
-    save = searchHistory
-    
-    //입력된 값이 공백이면 저장하지 않음
-    if searchTextField.text! == "" {
-    } else {
-      save.insert(searchTextField.text!, at: 0)
-    }
-    //검색기록 추가로 저장
-    UserDefaults.standard.set(save, forKey: "saveText")
-    print(searchHistory)
-    print(searchList)
     return true
     
   }
