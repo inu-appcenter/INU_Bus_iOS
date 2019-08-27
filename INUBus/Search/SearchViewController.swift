@@ -292,6 +292,6 @@ extension SearchViewController: UITextFieldDelegate {
     searchTextField.resignFirstResponder()
     
     return true
-    
+    print
   }
 }
