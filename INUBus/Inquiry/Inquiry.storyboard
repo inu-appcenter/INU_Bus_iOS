@@ -178,15 +178,6 @@
                                 <rect key="frame" x="57" y="233.5" width="260.5" height="153.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tll-UH-I12">
-                                        <rect key="frame" x="119.5" y="129" width="23" height="14.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="13"/>
-                                        <state key="normal" title="확인"/>
-                                        <connections>
-                                            <action selector="yesButtonDidTap:" destination="X4A-Lj-sOl" eventType="touchUpInside" id="M9S-bd-FPO"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3js-b5-FXo">
                                         <rect key="frame" x="0.0" y="118" width="260.5" height="0.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -202,6 +193,15 @@
                                         <rect key="frame" x="86" y="-45" width="89.5" height="89.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tll-UH-I12">
+                                        <rect key="frame" x="-1" y="118" width="261" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="13"/>
+                                        <state key="normal" title="확인"/>
+                                        <connections>
+                                            <action selector="yesButtonDidTap:" destination="X4A-Lj-sOl" eventType="touchUpInside" id="M9S-bd-FPO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>

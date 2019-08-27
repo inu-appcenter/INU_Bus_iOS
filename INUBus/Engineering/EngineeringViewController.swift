@@ -71,6 +71,9 @@ extension EngineeringViewController {
       target: self,
       action: #selector(pushViewController(gestureRecognizer:)))
     searchView.addGestureRecognizer(tapRecognizer)
+    
+    changeStatusBarColor(barStyle: .default
+    )
   }
   
   /// 서버에 데이터를 요청하는 함수.

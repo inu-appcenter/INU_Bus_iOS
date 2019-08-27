@@ -29,7 +29,7 @@ class SearchTableViewCell: UITableViewCell {
   }
   
   //deletebutton을 누르면 검색기록의 해당 row의 값을 지워줌
-  @IBAction func buttonDidTap() {
+  @IBAction func deleteButtonDidTap() {
     
     guard var saveHistory = UserDefaults.standard.object(forKey: "saveText") as? [String] else { return }
     

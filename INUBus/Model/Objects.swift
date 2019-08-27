@@ -62,11 +62,6 @@ struct BusStop: Codable {
   let data: [BusInfo]
 }
 
-struct SearchInfo: Codable {
-  let no: String
-  let nodelist: [String]
-}
-
 struct Route: Codable {
   struct Node: Codable {
     let nodeNo: Int
@@ -91,5 +86,31 @@ struct Route: Codable {
     case routeID = "routeid"
     case nodeList = "nodelist"
     case turnNode = "turnnode"
+  }
+  
+  var busColor: BusColor {
+    switch type {
+    case "간선급행":
+      return .purple
+    case "순환":
+      return .green
+    case "광역":
+      return .orange
+    default:
+      return .blue
+    }
+  }
+  
+  var rgb: (Float, Float, Float) {
+    switch busColor {
+    case .blue:
+      return (0, 39, 244)
+    case .purple:
+      return (105, 0, 181)
+    case .green:
+      return (36, 195, 48)
+    case .orange:
+      return (255, 73, 7)
+    }
   }
 }

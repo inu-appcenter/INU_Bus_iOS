@@ -22,7 +22,7 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupView()
+        setupView()
         // Do any additional setup after loading the view.
         
     }
@@ -49,7 +49,7 @@ extension PopUpViewController {
     self.mainView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     self.mainView.centerYAnchor.constraint(equalTo:
         self.view.centerYAnchor).isActive = true
-        
+    
 }
     
     func jsonPost() {
