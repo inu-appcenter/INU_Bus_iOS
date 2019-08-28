@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,9 +36,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-RU-pWA">
-                        <rect key="frame" x="339" y="32" width="12" height="12"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-RU-pWA">
+                        <rect key="frame" x="340.5" y="32.5" width="12" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="5o6-l6-js8"/>
+                            <constraint firstAttribute="width" constant="12" id="y0l-yR-HEs"/>
+                        </constraints>
                         <state key="normal" image="cancelButton"/>
                         <connections>
                             <action selector="deleteButtonDidTap" destination="Hta-OL-vtV" eventType="touchUpInside" id="xGN-xG-UHS"/>
@@ -45,7 +52,9 @@
                 <constraints>
                     <constraint firstItem="AH3-Vl-36u" firstAttribute="leading" secondItem="pVy-v3-8ml" secondAttribute="leading" constant="22" id="9cf-cG-Gxa"/>
                     <constraint firstAttribute="bottom" secondItem="vnW-BQ-k2V" secondAttribute="bottom" constant="19" id="cF5-RD-sdA"/>
+                    <constraint firstAttribute="trailing" secondItem="bzD-RU-pWA" secondAttribute="trailing" constant="22.600000000000001" id="cPt-nL-gRV"/>
                     <constraint firstItem="AH3-Vl-36u" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="19" id="e8h-hZ-jbA"/>
+                    <constraint firstItem="bzD-RU-pWA" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="32.600000000000001" id="fQ7-Tp-lZe"/>
                     <constraint firstAttribute="bottom" secondItem="JbP-BS-Dt2" secondAttribute="bottom" constant="31" id="fUh-Gz-dsm"/>
                     <constraint firstItem="vnW-BQ-k2V" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="43" id="ldw-i3-6nE"/>
                     <constraint firstItem="JbP-BS-Dt2" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="31" id="o4E-aK-wJ0"/>

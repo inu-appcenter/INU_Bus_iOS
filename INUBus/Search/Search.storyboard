@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="버스 또는 정류장 검색" minimumFontSize="17" id="hDo-zT-bwX" customClass="RoundUITextField" customModule="INUBus" customModuleProvider="target">
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="버스 또는 정류장 검색" minimumFontSize="17" clearButtonMode="always" id="hDo-zT-bwX" customClass="RoundUITextField" customModule="INUBus" customModuleProvider="target">
                             <rect key="frame" x="61" y="7" width="253" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
