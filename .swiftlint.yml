@@ -5,6 +5,7 @@ excluded:
 - Pods
 - INUBus/Supporting Files/AppDelegate.swift
 - INUBus/Model/Objects.swift
+- INUBus/Extension/CALayer+.swift
 
 line_length:
   warning: 99

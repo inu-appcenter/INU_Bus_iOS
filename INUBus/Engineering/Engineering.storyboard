@@ -116,6 +116,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="infoButton" destination="f6d-pR-cTl" id="hJn-vd-bpg"/>
                         <outlet property="refreshButton" destination="BA9-Yb-FQb" id="KDz-bV-1QM"/>
                         <outlet property="searchImageView" destination="ZOf-EA-rZ3" id="6ab-nm-zH4"/>
                         <outlet property="searchView" destination="Rmq-n3-5JB" id="ztP-IS-7ek"/>

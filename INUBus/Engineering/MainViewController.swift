@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var searchView: RoundUIView!
   @IBOutlet weak var searchImageView: UIImageView!
   @IBOutlet weak var refreshButton: UIButton!
+  @IBOutlet weak var infoButton: UIButton!
   
   /// 반드시 override 해야 하는 변수
   var busStopIdentifier: String {
@@ -81,6 +82,8 @@ extension MainViewController {
     self.tabBarController?.tabBar.items?[tabBarIndex].selectedImage = UIImage
       .circle(diameter: 5,
               color: UIColor(red: 0, green: 97, blue: 244))
+    
+    infoButton.layer.applyShadow()
     
     startTimer()
   }
@@ -199,6 +202,7 @@ extension MainViewController: UITableViewDelegate {
   // cell이 선택됐을때 highlight 해제 및 노선 view controller로 이동
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
+    
     if let viewController = UIViewController
       .instantiate(storyboard: "Route",
                    identifier: "RouteViewController") as? RouteViewController {
