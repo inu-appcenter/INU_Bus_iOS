@@ -25,11 +25,15 @@ class MainTableViewCell: UITableViewCell {
     didSet {
       busNoLabel.text = busInfo.no
       
-      if busInfo.estimatedArrivalTime > 59 {
-        let time = busInfo.estimatedArrivalTime
-        timeRemainingLabel.text = "\(time / 60)분 \(time % 60)초"
+      if busInfo.isRunning {
+        if busInfo.estimatedArrivalTime > 59 {
+          let time = busInfo.estimatedArrivalTime
+          timeRemainingLabel.text = "\(time / 60)분 \(time % 60)초"
+        } else {
+          timeRemainingLabel.text = "곧 도착"
+        }
       } else {
-        timeRemainingLabel.text = "곧 도착"
+        timeRemainingLabel.text = "운행종료"
       }
       
       intervalLabel.text = "\(busInfo.interval)분"

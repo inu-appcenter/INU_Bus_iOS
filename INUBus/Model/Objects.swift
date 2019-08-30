@@ -59,6 +59,17 @@ struct BusInfo: Codable {
       return (255, 73, 7)
     }
   }
+  
+  var isRunning: Bool {
+    let hour = Calendar.current.component(.hour, from: Date())
+    let currentTime = Calendar.current.component(.minute, from: Date()) + hour * 100
+    
+    if currentTime > end {
+      return false
+    } else {
+      return currentTime < start ? false : true
+    }
+  }
 }
 
 struct BusStop: Codable {
