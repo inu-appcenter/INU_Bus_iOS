@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
   /// 간단한 원(점)을 만드는 함수
-  class func circle(diameter: CGFloat, color: UIColor) -> UIImage {
+  static func circle(diameter: CGFloat, color: UIColor) -> UIImage {
     UIGraphicsBeginImageContextWithOptions(CGSize(width: diameter, height: diameter), false, 0)
     let currentContext = UIGraphicsGetCurrentContext()!
     currentContext.saveGState()

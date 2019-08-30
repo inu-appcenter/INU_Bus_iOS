@@ -147,9 +147,9 @@ extension MainViewController {
   }
   
   @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
-    let viewController = UIStoryboard(name: "Search", bundle: nil)
-      .instantiateViewController(withIdentifier: "SearchViewController")
-    self.navigationController?.pushViewController(viewController, animated: false)
+    UIViewController
+      .instantiate(storyboard: "Search", identifier: "SearchViewController")
+      .push(at: self, animated: false)
   }
   
   func startTimer() {
@@ -199,12 +199,11 @@ extension MainViewController: UITableViewDelegate {
   // cell이 선택됐을때 highlight 해제 및 노선 view controller로 이동
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
-    
-    let viewController = UIStoryboard(name: "Route", bundle: nil)
-      .instantiateViewController(withIdentifier: "RouteViewController")
-    if let routeViewController = viewController as? RouteViewController {
-      routeViewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
-      self.navigationController?.pushViewController(viewController, animated: true)
+    if let viewController = UIViewController
+      .instantiate(storyboard: "Route",
+                   identifier: "RouteViewController") as? RouteViewController {
+      viewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
+      viewController.push(at: self)
     }
   }
   
