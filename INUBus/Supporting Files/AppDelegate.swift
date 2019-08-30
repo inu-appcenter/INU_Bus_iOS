@@ -36,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = drawerController
     window?.makeKeyAndVisible()
     
+    UITabBarItem.appearance()
+      .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "NotoSans-Medium", size: 15)!], for: .normal)
+    
     return true
   }
 
