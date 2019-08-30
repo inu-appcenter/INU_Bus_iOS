@@ -83,6 +83,7 @@ extension MainViewController {
       .circle(diameter: 5,
               color: UIColor(red: 0, green: 97, blue: 244))
     
+    // info 버튼 그림자 설정
     infoButton.layer.applyShadow()
     
     startTimer()
@@ -124,7 +125,7 @@ extension MainViewController {
                    BusTypeInfo(busType: "지선버스", busInfos: [])]
     
     var favorArray = [String]()
-    if let array = UserDefaults.standard.value(forKey: StringConstants.favorArray.rawValue)
+    if let array = UserDefaults.standard.value(forKey: busStopIdentifier + "FavorArray")
       as? [String] {
       favorArray = array
     }
@@ -248,6 +249,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     cell.delegate = self
+    cell.busStopIdentifier = busStopIdentifier
     cell.busInfo = sortedBuses[indexPath.section].busInfos[indexPath.row]
     
     return cell
