@@ -9,14 +9,13 @@
 import Foundation
 
 struct Inquiry: Codable {
-    let service: String
+  
     let title: String
     let contact: String
     let message: String
-    let device: String
-    
+
     enum CodingKeys: String, CodingKey {
-        case service, title, contact, device
+        case title, contact
         case message = "msg"
     }
 }

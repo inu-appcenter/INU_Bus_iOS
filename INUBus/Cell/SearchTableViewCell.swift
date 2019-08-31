@@ -32,22 +32,25 @@ class SearchTableViewCell: UITableViewCell {
   @IBAction func deleteButtonDidTap() {
     
     guard var saveHistory =
-      UserDefaults.standard.object(forKey: "saveText") as? [String] else { return }
+      UserDefaults.standard.object(forKey: "saveText") as? [String]
+      else { return }
     
     guard let busLabel = searchLabel.text else { return }
     
-    guard var saveNodeNum = UserDefaults.standard.object(forKey: "saveNum") as? [String] else {
-      return }
+    guard var saveNodeNum = UserDefaults.standard.object(forKey: "saveNum") as? [String] else { return }
+    
+    guard var saveDay = UserDefaults.standard.object(forKey: "saveDate") as? [String] else { return }
     
     //button이 눌린 row의 searchLabel의 값을 text에서 삭제함
     if let index = saveHistory.firstIndex(of: busLabel) {
       saveHistory.remove(at: index)
       saveNodeNum.remove(at: index)
+      saveDay.remove(at: index)
     }
 
     //삭제한 값을 다시 저장
     UserDefaults.standard.set(saveHistory, forKey: "saveText")
     UserDefaults.standard.set(saveNodeNum, forKey: "saveNum")
-    
+    UserDefaults.standard.set(saveDay, forKey: "saveDate")
   }
 }

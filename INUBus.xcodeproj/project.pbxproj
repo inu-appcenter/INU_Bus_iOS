@@ -42,7 +42,6 @@
 		60C5C6CA2B8002D47B9D4A865058CE77 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3CED2904AC110CF3C35BBC8AEC9A2 /* PopUpViewController.swift */; };
 		D2376F170AC8E76892827D41DE52EE25 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFDB7663805F7B562AEE0C199D1BDF6 /* ProgressIndicator.swift */; };
 		E334B6C6D2656362B6B135914012B5B8 /* ReloadDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A45324B45F2D649E8DB0229F9CB97D /* ReloadDataDelegate.swift */; };
-		6BA5F9C82EF54CAD1738FFB8555F418B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973F620AA711AFD8C5487A4E8CA755A /* ResultViewController.swift */; };
 		08AF930433ADB310D3A6F970BAC0FBBC /* RoundUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1282D8E1C435D6357C265E1A961CB351 /* RoundUITextField.swift */; };
 		458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */; };
 		CEDEE8F01D2D96DCB636D932A3E4BED5 /* Route.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076E47778D7C47FDEDB4671426B1CFD /* Route.storyboard */; };
@@ -102,7 +101,6 @@
 		00D3CED2904AC110CF3C35BBC8AEC9A2 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		DEFDB7663805F7B562AEE0C199D1BDF6 /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		06A45324B45F2D649E8DB0229F9CB97D /* ReloadDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadDataDelegate.swift; sourceTree = "<group>"; };
-		4973F620AA711AFD8C5487A4E8CA755A /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		1282D8E1C435D6357C265E1A961CB351 /* RoundUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUITextField.swift; sourceTree = "<group>"; };
 		A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		3076E47778D7C47FDEDB4671426B1CFD /* Route.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Route.storyboard; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 		89FEB4F59CBFCA31FB23AA7251C8A6FE /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				4973F620AA711AFD8C5487A4E8CA755A /* ResultViewController.swift */,
 				13A9193EEBD53730F14C4149AA76833D /* Search.storyboard */,
 				FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */,
 			);
@@ -499,7 +496,6 @@
 				60C5C6CA2B8002D47B9D4A865058CE77 /* PopUpViewController.swift in Sources */,
 				D2376F170AC8E76892827D41DE52EE25 /* ProgressIndicator.swift in Sources */,
 				E334B6C6D2656362B6B135914012B5B8 /* ReloadDataDelegate.swift in Sources */,
-				6BA5F9C82EF54CAD1738FFB8555F418B /* ResultViewController.swift in Sources */,
 				08AF930433ADB310D3A6F970BAC0FBBC /* RoundUITextField.swift in Sources */,
 				458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */,
 				17A5BEA1C3F419885FFB2DED8086B5EF /* RouteTableViewCell.swift in Sources */,

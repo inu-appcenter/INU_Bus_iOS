@@ -34,11 +34,7 @@ final class InquiryViewController: UIViewController {
   @IBAction func phoneTextContentsCheck(_ sender: Any) {
     contentsCheck()
   }
-  
-  @IBAction func sendButtonDidTap(_ sender: Any) {
-    
-  }
-  
+
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let viewController = segue.destination as? PopUpViewController {
       viewController.inquiryTitle = self.titleTextField.text ?? ""
@@ -86,4 +82,3 @@ extension InquiryViewController: UITextViewDelegate {
     self.contentsCheck()
   }
 }
-

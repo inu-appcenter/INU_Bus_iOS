@@ -23,7 +23,7 @@ class SearchViewController: UIViewController {
   let date: Date = Date()
   
   var searchList = [String]()
-  var nodeNumList = [String]() //NodeNum으로 변경하기
+  var nodeNumList = [String]()
   var dayList = [String]()
 
   var searchHistory = [String]()
@@ -31,12 +31,9 @@ class SearchViewController: UIViewController {
   var dayHistory = [String]()
   
   var busInfo = [String]()
+  
   var word: String = ""
-  
-  var saveBusInfo = [String]()
-  var saveNodeNum = [String]()
-  var saveDateList = [String]()
-  
+
   var busNode = [String: String]()
   var busNodeArr = [String]()
   
@@ -101,7 +98,7 @@ class SearchViewController: UIViewController {
         if checkStops == nodeNumList[num] {
           nodeNumList.remove(at: num)
           //임의의 값을 저장함(이후에 "!"를 이용해 겹치는 값들 삭제)
-          //그냥 saveNextStops.remove만해버리면 배열의 index가 꼬임
+          //그냥 0ㅇ.remove만해버리면 배열의 index가 꼬임
           nodeNumList.insert("\(temp)!", at: num)
           searchList.remove(at: num)
           searchList.insert("\(temp)!", at: num)
@@ -145,21 +142,21 @@ class SearchViewController: UIViewController {
   //저장된 검색기록을 가져오는 함수
   func loadHistory() {
     
-    //버스 정보를 가져옴
+    //cell을 선택했을때 저장된 버스 정보를 가져옴
     guard let saveText =
       UserDefaults.standard.object(forKey: "saveText") as?
         [String] else { return }
     
     searchHistory = saveText
     
-    //버스 정거장 번호를 가져옴
+    //cell을 선택했을때 저장된 버스 정거장 번호를 가져옴
     guard let saveNum =
       UserDefaults.standard.object(forKey: "saveNum") as?
         [String] else { return }
     
     nodeNumHistory = saveNum
     
-    //검색한 날짜를 가져옴
+    //cell을 선택했을때 저장된 검색한 날짜를 가져옴
      guard let saveDay =
       UserDefaults.standard.object(forKey: "saveDate") as?
         [String] else { return }
@@ -200,13 +197,14 @@ extension SearchViewController {
             //버스 번호 저장
             self.busInfo.append(busNumber.no)
             
+            //버스 정거장과 정거장번호를 딕셔너리 형태로 가져옴
             for busNode in busNumber.nodeList {
               
-              //버스 정거장과 정거장번호를 딕셔너리 형태로 가져옴
               self.busNode.updateValue(busNode.nodeName, forKey: "\(busNode.nodeNo)")
             }
           }
           
+          //버스 정거장 값들 저장
           for busNodes in self.busNode.values {
             self.busNodeArr.append(busNodes)
           }
@@ -242,10 +240,10 @@ extension SearchViewController: UITableViewDelegate {
   
   //cell이 선택되면 RouteViewController로 이동
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
- 
-    var tempArr = [String]()
     
+    //사용자가 검색하면서 cell을 눌렀을때
     if searchTextField.isEditing {
+      
       if searchTextField.text == "" {
         
         switch searchHistory[indexPath.row] {
@@ -253,6 +251,7 @@ extension SearchViewController: UITableViewDelegate {
         case "81", "82", "16", "1301", "6", "6-1",
              "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
           
+          //버스 번호에 맞는 RouteViewController로 이동
           let viewController = UIStoryboard(name: "Route", bundle: nil)
             .instantiateViewController(withIdentifier: "RouteViewController")
           if let routeViewController = viewController as? RouteViewController {
@@ -264,22 +263,20 @@ extension SearchViewController: UITableViewDelegate {
         default:
           sorryAlert()
         }
+        
       } else {
         
-        saveBusInfo = searchHistory
-        saveBusInfo.insert(searchList[indexPath.row], at: 0)
+        searchHistory.insert(searchList[indexPath.row], at: 0)
+        nodeNumHistory.insert(nodeNumList[indexPath.row], at: 0)
+        dayHistory.insert(dayList[indexPath.row], at: 0)
         
-        saveNodeNum = nodeNumHistory
-        saveNodeNum.insert(nodeNumList[indexPath.row], at: 0)
+        //사용자가 선택한 cell의 정보를 저장
+        UserDefaults.standard.set(searchHistory, forKey: "saveText")
+        UserDefaults.standard.set(nodeNumHistory, forKey: "saveNum")
+        UserDefaults.standard.set(dayHistory, forKey: "saveDate")
         
-        saveDateList = dayHistory
-        saveDateList.insert(dayList[indexPath.row], at: 0)
-        
-        UserDefaults.standard.set(saveBusInfo, forKey: "saveText")
-        UserDefaults.standard.set(saveNodeNum, forKey: "saveNum")
-        UserDefaults.standard.set(saveDateList, forKey: "saveDate")
-
         switch searchList[indexPath.row] {
+          
       //검색목록의 해당 row의 버스정보가 버스 번호일때
       case "81", "82", "16", "1301", "6", "6-1",
       "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
@@ -298,23 +295,47 @@ extension SearchViewController: UITableViewDelegate {
       sorryAlert()
         }
       }
-    //검색기록이 보여지고 있는 상태일때
+      
+    //사용자가 검색기록의 cell을 클릭했을 때
   } else {
+      
+      //사용자가 검색하다가 return을 입력헀을 떄
+      if searchTextField.text != "" {
+        switch searchList[indexPath.row] {
+        //검색목록의 해당 row의 버스정보가 버스 번호일때
+        case "81", "82", "16", "1301", "6", "6-1",
+             "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
+          
+          let viewController = UIStoryboard(name: "Route", bundle: nil)
+            .instantiateViewController(withIdentifier: "RouteViewController")
+          
+          //RouteViewController에 busNo을 주기 위함
+          if let routeViewController = viewController as? RouteViewController {
+            routeViewController.busNo = searchList[indexPath.row]
+          }
+          self.navigationController?.pushViewController(viewController, animated: true)
+          
+        //정류장일떄
+        default:
+          sorryAlert()
+        }
+      } else {
   
-  switch searchHistory[indexPath.row] {
-  //검색기록의 해당 row의 버스정보가 버스 번호일때
-  case "81", "82", "16", "1301", "6", "6-1",
-  "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
-  
-  let viewController = UIStoryboard(name: "Route", bundle: nil)
-  .instantiateViewController(withIdentifier: "RouteViewController")
-  if let routeViewController = viewController as? RouteViewController {
-  routeViewController.busNo = searchHistory[indexPath.row]
-  }
-  self.navigationController?.pushViewController(viewController, animated: true)
-  //정류장일때
-  default:
-  sorryAlert()
+        switch searchHistory[indexPath.row] {
+        //검색기록의 해당 row의 버스정보가 버스 번호일때
+        case "81", "82", "16", "1301", "6", "6-1",
+             "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
+          
+          let viewController = UIStoryboard(name: "Route", bundle: nil)
+            .instantiateViewController(withIdentifier: "RouteViewController")
+          if let routeViewController = viewController as? RouteViewController {
+            routeViewController.busNo = searchHistory[indexPath.row]
+          }
+          self.navigationController?.pushViewController(viewController, animated: true)
+        //정류장일때
+        default:
+          sorryAlert()
+        }
       }
     }
   }
@@ -355,13 +376,20 @@ extension SearchViewController: UITableViewDataSource {
         cell.deleteButton.isHidden = true
       }
     } else {
-      cell.searchLabel.text = searchHistory[indexPath.row]
-      cell.moreInfo.text = "정류장 번호: " + nodeNumHistory[indexPath.row]
-      cell.dayLabel.text = dayHistory[indexPath.row]
+      // 사용자가 검색하고 return을 입력했을 때
+      if searchTextField.text != "" {
+      cell.searchLabel.text = searchList[indexPath.row]
+      cell.moreInfo.text = "정류장 번호: " + nodeNumList[indexPath.row]
+      cell.dayLabel.text = dayList[indexPath.row]
       cell.deleteButton.isHidden = false
-    }
+      } else {
+        cell.searchLabel.text = searchHistory[indexPath.row]
+        cell.moreInfo.text = "정류장 번호: " + nodeNumHistory[indexPath.row]
+        cell.dayLabel.text = dayHistory[indexPath.row]
+        cell.deleteButton.isHidden = false
+      }
+  }
 
-    
     //cell의 deletieButton이 누르면 did함수 실행
     cell.deleteButton.addTarget(self, action: #selector(reload), for: .touchUpInside)
     
@@ -386,6 +414,7 @@ extension SearchViewController: UITableViewDataSource {
   
   //delete button을 눌렀을 때 변경된 값을 받아와 테이블뷰를 reload하는 함수
   @objc func reload() {
+    
     guard let reloadBusInfo = UserDefaults.standard.object(forKey: "saveText") as? [String] else { return }
     
     searchHistory = reloadBusInfo
@@ -393,6 +422,10 @@ extension SearchViewController: UITableViewDataSource {
     guard let reloadBusNodeNum = UserDefaults.standard.object(forKey: "saveNum") as? [String] else { return }
     
     nodeNumHistory = reloadBusNodeNum
+    
+    guard let reloadDay = UserDefaults.standard.object(forKey: "saveData") as? [String] else { return }
+    
+    dayHistory = reloadDay
     
     searchTableView.reloadData()
     }
