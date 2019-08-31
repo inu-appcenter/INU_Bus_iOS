@@ -53,4 +53,5 @@ class SearchTableViewCell: UITableViewCell {
     UserDefaults.standard.set(saveNodeNum, forKey: "saveNum")
     UserDefaults.standard.set(saveDay, forKey: "saveDate")
   }
+  
 }

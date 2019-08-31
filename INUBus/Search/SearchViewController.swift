@@ -390,7 +390,7 @@ extension SearchViewController: UITableViewDataSource {
       }
   }
 
-    //cell의 deletieButton이 누르면 did함수 실행
+    //cell의 deletieButton을 누르면 did함수 실행
     cell.deleteButton.addTarget(self, action: #selector(reload), for: .touchUpInside)
     
     switch cell.searchLabel.text {
@@ -423,11 +423,11 @@ extension SearchViewController: UITableViewDataSource {
     
     nodeNumHistory = reloadBusNodeNum
     
-    guard let reloadDay = UserDefaults.standard.object(forKey: "saveData") as? [String] else { return }
+    guard let reloadDay = UserDefaults.standard.object(forKey: "saveDate") as? [String] else { return }
     
     dayHistory = reloadDay
     
-    searchTableView.reloadData()
+    self.searchTableView.reloadData()
     }
   }
 
