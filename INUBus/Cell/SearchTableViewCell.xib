@@ -36,12 +36,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-RU-pWA">
-                        <rect key="frame" x="339" y="32" width="12" height="12"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-RU-pWA">
+                        <rect key="frame" x="339.5" y="27" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="6Rv-UG-yAV"/>
+                            <constraint firstAttribute="height" constant="20" id="es7-8p-64L"/>
+                        </constraints>
                         <state key="normal" image="cancelButton"/>
                         <connections>
-                            <action selector="buttonDidTap" destination="Hta-OL-vtV" eventType="touchUpInside" id="xGN-xG-UHS"/>
+                            <action selector="deleteButtonDidTap" destination="Hta-OL-vtV" eventType="touchUpInside" id="xGN-xG-UHS"/>
                         </connections>
                     </button>
                 </subviews>
@@ -49,8 +52,10 @@
                 <constraints>
                     <constraint firstItem="AH3-Vl-36u" firstAttribute="leading" secondItem="pVy-v3-8ml" secondAttribute="leading" constant="22" id="9cf-cG-Gxa"/>
                     <constraint firstAttribute="bottom" secondItem="vnW-BQ-k2V" secondAttribute="bottom" constant="19" id="cF5-RD-sdA"/>
+                    <constraint firstItem="bzD-RU-pWA" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="27" id="cSw-QB-Ht2"/>
                     <constraint firstItem="AH3-Vl-36u" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="19" id="e8h-hZ-jbA"/>
                     <constraint firstAttribute="bottom" secondItem="JbP-BS-Dt2" secondAttribute="bottom" constant="31" id="fUh-Gz-dsm"/>
+                    <constraint firstAttribute="trailing" secondItem="bzD-RU-pWA" secondAttribute="trailing" constant="15.5" id="fm4-lQ-ktV"/>
                     <constraint firstItem="vnW-BQ-k2V" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="43" id="ldw-i3-6nE"/>
                     <constraint firstItem="JbP-BS-Dt2" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="31" id="o4E-aK-wJ0"/>
                     <constraint firstAttribute="trailing" secondItem="JbP-BS-Dt2" secondAttribute="trailing" constant="50" id="pS5-LR-A1A"/>

@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="버스 또는 정류장 검색" minimumFontSize="17" id="hDo-zT-bwX" customClass="RoundUITextField" customModule="INUBus" customModuleProvider="target">
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="버스 또는 정류장 검색" minimumFontSize="17" clearButtonMode="always" id="hDo-zT-bwX" customClass="RoundUITextField" customModule="INUBus" customModuleProvider="target">
                             <rect key="frame" x="61" y="7" width="253" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
@@ -89,22 +89,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLH-nR-vPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028" y="80.50974512743629"/>
-        </scene>
-        <!--Result View Controller-->
-        <scene sceneID="LOc-Qo-FQM">
-            <objects>
-                <viewController storyboardIdentifier="Result" id="zP6-oJ-gRI" customClass="ResultViewController" customModule="INUBus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JGN-Ke-qog">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="rdK-Ug-6Ql"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="5t4-7K-nnx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GaC-Zy-51h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1897" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D3K-Gj-6Vg">
