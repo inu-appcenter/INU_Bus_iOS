@@ -9,89 +9,80 @@
 import UIKit
 
 class PopUpViewController: UIViewController {
-
-    @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var thanksLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+  
+  @IBOutlet weak var mainView: UIView!
+  @IBOutlet weak var thanksLabel: UILabel!
+  @IBOutlet weak var imageView: UIImageView!
+  
+  let url = Server.address.rawValue + StringConstants.nodeData.rawValue
+  
+  var inquiryTitle = ""
+  var inquiryContact = ""
+  var inquiryMessage = ""
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupView()
+    // Do any additional setup after loading the view.
+  
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
+  
+  @IBAction func yesButtonDidTap(_ sender: Any) {
     
-    let severURL = "http://inucafeteriaaws.us.to:3829/"
-
-    var inquiryTitle = ""
-    var inquiryContact = ""
-    var inquiryMessage = ""
+    request()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setupView()
-        // Do any additional setup after loading the view.
-        
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    @IBAction func yesButtonDidTap(_ sender: Any) {
-        let presentingViewController =
-        self.presentingViewController
-        self.dismiss(animated: true, completion: {
-            presentingViewController?.dismiss(animated: true, completion: nil)
-        })
-    }
+    let presentingViewController =
+      self.presentingViewController
+    self.dismiss(animated: true, completion: {
+      presentingViewController?.dismiss(animated: true, completion: nil)
+    })
+  }
 }
 
 extension PopUpViewController {
-    func setupView() {
- 
+  func setupView() {
+    
     self.mainView.translatesAutoresizingMaskIntoConstraints = false
     self.mainView.widthAnchor.constraint(equalToConstant: 260.5).isActive = true
     self.mainView.heightAnchor.constraint(equalToConstant: 155).isActive = true
     self.mainView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     self.mainView.centerYAnchor.constraint(equalTo:
-        self.view.centerYAnchor).isActive = true
-        
-}
+      self.view.centerYAnchor).isActive = true
     
-    func jsonPost() {
-        
-        let inquiry: Inquiry = Inquiry(service:
-            "inu.appcenter.INUBus",
-            title: self.inquiryTitle,
-            contact: self.inquiryContact,
-            message: self.inquiryMessage, device: "Iphone7")
-        
-        guard let url = URL(string: "\(self.severURL)errormsg") else { return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
+  }
+  
+  func request() {
+    
+
+    let inquiry = Inquiry(title: self.inquiryTitle, contact: self.inquiryContact, message: self.inquiryMessage)
+    
+    guard let url = URL(string: url) else { return }
+
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+    
+    NetworkManager.shared.request(url: url, method: .post) { (data, error) in
+      
+      if let error = error {
+        print(error.localizedDescription)
+      }
+      
+      if let data = data {
         
         do {
-            let data = try encoder.encode(inquiry)
-            request.httpBody = data
-            print("encoding suceess!")
-            print(data)
-            
+
+          let jsonData = try encoder.encode(inquiry)
+          print(String(data: jsonData, encoding: .utf8)!)
+          
         } catch {
-            print(error)
+          print(error.localizedDescription)
         }
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-                
-            }
-            
-            if let data = data, let ut9Representation = String(data: data, encoding: .utf8) {
-                print("response: ", ut9Representation)
-            } else {
-                print("post error!")
-            }
-            
-            }.resume()
+      }
+      ProgressIndicator.shared.hide()
     }
-  
+  }
 }
