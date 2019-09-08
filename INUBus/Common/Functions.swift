@@ -32,7 +32,7 @@ func showNoticeAlertController(viewController: UIViewController) {
     .present(to: viewController)
 }
 
-/// Main Table View의 section에 들어갈 label을 반환해주는 함수
+/// Main Table View의 section에 들어갈 label을 반환해주는 함수.
 func sectionLabel(text: String, size: CGFloat) -> UILabel {
   let label = UILabel()
   label.text = text
@@ -42,12 +42,20 @@ func sectionLabel(text: String, size: CGFloat) -> UILabel {
   return label
 }
 
-/// Status Bar Color를 바꿔주는 함수
+/// Status Bar Color를 바꿔주는 함수.
 func changeStatusBarColor(barStyle: UIStatusBarStyle) {
   if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
     if let kyDrawer = appDelegate.window?.rootViewController as?
       ExtensionKYDrawerController {
       kyDrawer.statusBarColor = barStyle
     }
+  }
+}
+
+/// 모든 UserDealuts 데이터를 삭제하는 함수.
+func removeAllUserDefaluts() {
+  let dictionary = UserDefaults.standard.dictionaryRepresentation()
+  dictionary.keys.forEach { key in
+    UserDefaults.standard.removeObject(forKey: key)
   }
 }

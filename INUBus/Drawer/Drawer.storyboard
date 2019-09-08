@@ -196,27 +196,44 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPP-kO-N5Y">
-                                <rect key="frame" x="42" y="581.5" width="142.5" height="24.5"/>
+                                <rect key="frame" x="61" y="581.5" width="142.5" height="24.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="142.5" id="SUi-dR-phY"/>
                                     <constraint firstAttribute="height" constant="24.5" id="q1V-HG-6KY"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="이 앱은 공공데이터를 이용한 앱입니다. ">
+                                    <fragment content="이 앱은 ">
                                         <attributes>
-                                            <font key="NSFont" metaFont="miniSystem"/>
+                                            <color key="NSColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="9" name="NanumSquareR"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="공공데이터">
+                                        <attributes>
+                                            <color key="NSColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="9" name="NanumSquareB"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="를 이용한 앱입니다. ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="9" name="NanumSquareR"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="4"/>
+                                            <color key="NSColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="4" name="NanumSquareR"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="This application used public data.">
                                         <attributes>
-                                            <font key="NSFont" metaFont="miniSystem"/>
+                                            <color key="NSColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="9" name="NanumSquareR"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -261,7 +278,7 @@
                             <constraint firstItem="lyI-gh-edg" firstAttribute="top" secondItem="erF-UD-Kwl" secondAttribute="bottom" constant="34" id="B0C-MF-9Ud"/>
                             <constraint firstItem="G1K-03-N3b" firstAttribute="leading" secondItem="oKm-N8-dk4" secondAttribute="leading" id="DN4-zu-0f8"/>
                             <constraint firstItem="15L-mr-5dd" firstAttribute="leading" secondItem="aio-Rz-lmJ" secondAttribute="leading" id="Dii-5f-NZf"/>
-                            <constraint firstItem="rPP-kO-N5Y" firstAttribute="leading" secondItem="DyP-KC-xwr" secondAttribute="leading" constant="42" id="F1v-CY-QlS"/>
+                            <constraint firstItem="rPP-kO-N5Y" firstAttribute="leading" secondItem="DyP-KC-xwr" secondAttribute="leading" constant="61" id="F1v-CY-QlS"/>
                             <constraint firstItem="Acr-iC-cZN" firstAttribute="leading" secondItem="VJn-LN-zNf" secondAttribute="trailing" constant="7" id="GZb-Ir-yeV"/>
                             <constraint firstItem="oKm-N8-dk4" firstAttribute="leading" secondItem="DyP-KC-xwr" secondAttribute="leading" constant="49" id="NfT-ou-yY6"/>
                             <constraint firstItem="566-Mv-ZQ4" firstAttribute="leading" secondItem="MdX-H8-3ZF" secondAttribute="leading" id="Os6-4U-6dY"/>
@@ -326,19 +343,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duC-px-dje">
-                                <rect key="frame" x="30.5" y="123" width="21" height="16.5"/>
+                                <rect key="frame" x="30.5" y="123" width="21" height="14"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="12"/>
                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연락처" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juo-Rg-1Ub">
-                                <rect key="frame" x="30.5" y="172.5" width="32" height="16.5"/>
+                                <rect key="frame" x="30.5" y="170" width="32" height="14"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="12"/>
                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiZ-9r-AfJ">
-                                <rect key="frame" x="30.5" y="225" width="21" height="16.5"/>
+                                <rect key="frame" x="30.5" y="220" width="21" height="14"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="12"/>
                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -356,7 +373,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="퇴근하고싶어요.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m3m-3m-R3c">
-                                <rect key="frame" x="31.5" y="249" width="312.5" height="181.5"/>
+                                <rect key="frame" x="31.5" y="241.5" width="312.5" height="178.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -374,7 +391,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLG-p9-DUr">
-                                <rect key="frame" x="179.5" y="484" width="16" height="22"/>
+                                <rect key="frame" x="152.5" y="473.5" width="70" height="32.5"/>
                                 <state key="normal" image="send"/>
                                 <connections>
                                     <action selector="sendButtonDidTap:" destination="Ki0-K2-I1r" eventType="touchUpInside" id="q9D-Ue-30Y"/>

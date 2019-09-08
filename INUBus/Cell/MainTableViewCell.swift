@@ -17,18 +17,31 @@ class MainTableViewCell: UITableViewCell {
   
   weak var delegate: ReloadDataDelegate?
   
-  let userDefaultsIdentifier = StringConstants.favorArray.rawValue
+  var busStopIdentifier: String?
+  
+//  let userDefaultsIdentifier = StringConstants.favorArray.rawValue
   
   var busInfo: BusInfo! {
     didSet {
       busNoLabel.text = busInfo.no
       
-      let time = busInfo.estimatedArrivalTime
-      timeRemainingLabel.text = "\(time / 60)분 \(time % 60)초"
+      if busInfo.isRunning {
+        if busInfo.estimatedArrivalTime > 59 {
+          let time = busInfo.estimatedArrivalTime
+          timeRemainingLabel.text = "\(time / 60)분 \(time % 60)초"
+        } else {
+          timeRemainingLabel.text = "곧 도착"
+        }
+      } else {
+        timeRemainingLabel.text = "운행종료"
+      }
       
       intervalLabel.text = "\(busInfo.interval)분"
       
-      if let array = UserDefaults.standard.value(forKey: userDefaultsIdentifier) as? [String] {
+      if let busStopIdentifier = busStopIdentifier,
+        let array = UserDefaults
+          .standard
+          .value(forKey: busStopIdentifier + "FavorArray") as? [String] {
         if array.contains(busInfo.no) {
           favoritesButton.setImage(
             UIImage(named: AssetConstants.colorStar.rawValue),
@@ -44,10 +57,10 @@ class MainTableViewCell: UITableViewCell {
   }
   
   @IBAction func favoritesButtonDidTap(_ sender: Any) {
-    guard let busNo = busNoLabel.text else { return }
+    guard let busNo = busNoLabel.text, let busStopIdentifier = busStopIdentifier else { return }
     
     var favorArray = [String]()
-    if let temp = UserDefaults.standard.value(forKey: userDefaultsIdentifier)
+    if let temp = UserDefaults.standard.value(forKey: busStopIdentifier + "FavorArray")
       as? [String] {
       favorArray = temp
     }
@@ -57,13 +70,13 @@ class MainTableViewCell: UITableViewCell {
       favoritesButton.setImage(UIImage(named: AssetConstants.colorStar.rawValue),
                                for: .normal)
       favorArray.append(busNo)
-      UserDefaults.standard.set(favorArray, forKey: userDefaultsIdentifier)
+      UserDefaults.standard.set(favorArray, forKey: busStopIdentifier + "FavorArray")
     } else {
       favoritesButton.setImage(UIImage(named: AssetConstants.star.rawValue),
                                for: .normal)
       if let index = favorArray.firstIndex(of: busNo) {
         favorArray.remove(at: index)
-        UserDefaults.standard.set(favorArray, forKey: userDefaultsIdentifier)
+        UserDefaults.standard.set(favorArray, forKey: busStopIdentifier + "FavorArray")
       }
     }
     delegate?.tableViewReloadData()

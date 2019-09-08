@@ -16,18 +16,22 @@ struct BusInfo: Codable {
   let interval: Int
   let type: String
   
-  // 서버에서 받아온 millisecond에서 지금 시간을 빼서 초로 환산하는 변수
+  // 서버에서 받아온 millisecond에서 지금 시간을 빼서 초로 환산하는 변수.
+  // 서버에서 arrival 시간이 갱신이 안될 수도 있어서 음수 값이 나올 수 있음.
   var second: Int {
     let millisecond = arrival - Date().millisecondsSince1970
     return Int(round(Double(millisecond) / 1000))
   }
   
+  // second가 음수 값이 될 수도 있으므로 interval 시간을 더해서 양수로 만듬.
   var estimatedArrivalTime: Int {
     var value = second
     while value < 0 {
       value += interval * 60
     }
+    
     return value
+    
   }
   
   var busColor: BusColor {
@@ -53,6 +57,17 @@ struct BusInfo: Codable {
       return (36, 195, 48)
     case .orange:
       return (255, 73, 7)
+    }
+  }
+  
+  var isRunning: Bool {
+    let hour = Calendar.current.component(.hour, from: Date())
+    let currentTime = Calendar.current.component(.minute, from: Date()) + hour * 100
+    
+    if currentTime > end {
+      return false
+    } else {
+      return currentTime < start ? false : true
     }
   }
 }

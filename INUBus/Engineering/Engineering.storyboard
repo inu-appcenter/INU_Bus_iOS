@@ -20,7 +20,7 @@
             <objects>
                 <viewController storyboardIdentifier="engineering" id="C9o-aq-DSD" customClass="EngineeringViewController" customModule="INUBus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nsf-uM-rP4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 계산한 값으로, 정확하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-f8-gQS">
@@ -30,18 +30,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-V4-OYH">
-                                <rect key="frame" x="0.0" y="117" width="375" height="550"/>
+                                <rect key="frame" x="0.0" y="117" width="375" height="501"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BA9-Yb-FQb">
-                                <rect key="frame" x="301" y="559" width="64" height="64"/>
+                                <rect key="frame" x="301" y="510" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="579-ky-W2G"/>
                                     <constraint firstAttribute="width" constant="64" id="CED-I1-w8L"/>
                                 </constraints>
                                 <state key="normal" image="refresh"/>
                                 <connections>
-                                    <action selector="refreshButtonDidTap:" destination="C9o-aq-DSD" eventType="touchUpInside" id="l2I-nx-avj"/>
+                                    <action selector="refreshButtonDidTap:" destination="C9o-aq-DSD" eventType="touchUpInside" id="AFI-wJ-wNz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,7 +73,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="blueInfo"/>
                                     <connections>
-                                        <action selector="infoButtonDidTap" destination="C9o-aq-DSD" eventType="touchUpInside" id="Lld-Jx-eWi"/>
+                                        <action selector="infoButtonDidTap" destination="C9o-aq-DSD" eventType="touchUpInside" id="c3O-QC-Z9W"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -116,27 +116,36 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="refreshButton" destination="BA9-Yb-FQb" id="SBm-My-RXp"/>
-                        <outlet property="searchImageView" destination="ZOf-EA-rZ3" id="T2z-7q-ZX1"/>
-                        <outlet property="searchView" destination="Rmq-n3-5JB" id="Ggb-Mp-Ctw"/>
-                        <outlet property="tableView" destination="4PE-V4-OYH" id="h8u-Go-Hyc"/>
+                        <outlet property="infoButton" destination="f6d-pR-cTl" id="hJn-vd-bpg"/>
+                        <outlet property="refreshButton" destination="BA9-Yb-FQb" id="KDz-bV-1QM"/>
+                        <outlet property="searchImageView" destination="ZOf-EA-rZ3" id="6ab-nm-zH4"/>
+                        <outlet property="searchView" destination="Rmq-n3-5JB" id="ztP-IS-7ek"/>
+                        <outlet property="tableView" destination="4PE-V4-OYH" id="8g6-36-VJY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1h-SW-mYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="644.92753623188412" y="-135.26785714285714"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--공대-->
         <scene sceneID="cr9-fG-XT5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="44A-hP-ZUB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="공대" id="k0M-KO-ZJR">
+                        <inset key="imageInsets" minX="0.0" minY="-8" maxX="0.0" maxY="8"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-9"/>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xjF-hM-mhb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="7NV-zq-fIO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="C9o-aq-DSD" kind="relationship" relationship="rootViewController" id="F95-YP-gHq"/>
                     </connections>

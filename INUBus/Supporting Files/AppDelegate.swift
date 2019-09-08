@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // 첫 실행시 즐겨찾기 UserDefaults를 생성
-    if UserDefaults.standard.value(forKey: "favorArray") == nil {
-      UserDefaults.standard.set([String](), forKey: "favorArray")
+    if UserDefaults.standard.value(forKey: "engineeringFavorArray") == nil,
+      UserDefaults.standard.value(forKey: "scienceFavorArray") == nil {
+      UserDefaults.standard.set([String](), forKey: "engineeringFavorArray")
+      UserDefaults.standard.set([String](), forKey: "scienceFavorArray")
     }
     
     // drawer 설정 부분
@@ -36,8 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = drawerController
     window?.makeKeyAndVisible()
     
+    UITabBarItem.appearance()
+      .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "NotoSans-Medium", size: 15)!], for: .normal)
     
     UINavigationBar.appearance().barStyle = .blackOpaque
+
     return true
   }
   

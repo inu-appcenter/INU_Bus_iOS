@@ -9,18 +9,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--View Controller-->
         <scene sceneID="wjn-JW-NI9">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="ufI-64-9eN" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="ufI-64-9eN" customClass="ViewController" customModule="INUBus" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YHy-mr-0XQ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.38039215686274508" blue="0.95686274509803915" alpha="1" colorSpace="deviceRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="nUV-8E-dpA" kind="relationship" relationship="viewControllers" id="cEg-UO-fQz"/>
+                        <segue destination="YY9-15-UsB" kind="relationship" relationship="viewControllers" id="Dbu-vs-1AK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzb-Il-tl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,7 +37,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBK-mw-jEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800" y="-20"/>
+            <point key="canvasLocation" x="818" y="-64"/>
+        </scene>
+        <!--Science-->
+        <scene sceneID="EHf-ZV-GGg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Science" id="YY9-15-UsB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="eHS-vp-Qh8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPK-Ls-B3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="42"/>
         </scene>
     </scenes>
 </document>
