@@ -176,7 +176,8 @@ extension SearchViewController {
                              forCellReuseIdentifier: cellIndentifier)
     searchTableView.tableFooterView = UIView()
     searchTextField.delegate = self
-
+    
+    searchTextField.clipsToBounds = true
   }
   
   //서버로부터 버스 번호, 노선을 받아오는 함수
@@ -240,6 +241,9 @@ extension SearchViewController: UITableViewDelegate {
   
   //cell이 선택되면 RouteViewController로 이동
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    //highlight 해제
+    searchTableView.deselectRow(at: indexPath, animated: false)
     
     //사용자가 검색하면서 cell을 눌렀을때
     if searchTextField.isEditing {
