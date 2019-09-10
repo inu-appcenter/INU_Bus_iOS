@@ -14,4 +14,5 @@ enum StringConstants: String {
   case arrivalInfo
   case nodeData
   case engineer
+  case errormsg
 }

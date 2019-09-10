@@ -29,3 +29,28 @@ final class NetworkManager {
     task.resume()
   }
 }
+  
+  final class PostManager {
+    static let shared = PostManager()
+    
+    private init() { }
+    
+    func request(url: URL, method: HTTPMethod, httpBody: Data,
+                 completion: @escaping (Data?, Error?) -> Void) {
+      
+      let session = URLSession(configuration: .default)
+      var urlRequest = URLRequest(url: url)
+      
+      urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+      urlRequest.httpMethod = method.rawValue
+      urlRequest.httpBody = httpBody
+      ProgressIndicator.shared.show()
+      
+      let task = session.dataTask(with: urlRequest) { (data, _, error) in
+        completion(data, error)
+        session.finishTasksAndInvalidate()
+      }
+      task.resume()
+    }
+  
+}

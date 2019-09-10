@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
   
   let url = Server.address.rawValue + StringConstants.nodeData.rawValue
   
+  /// 년. 월. 일로 나타내주는 프로퍼티.
   let dateFormatter: DateFormatter = {
     let formatter: DateFormatter = DateFormatter()
     formatter.dateFormat = "yyyy.MM.dd"
@@ -37,6 +38,8 @@ class SearchViewController: UIViewController {
   var busNode = [String: String]()
   var busNodeArr = [String]()
   
+  // MARK: IBOutlets
+
   @IBOutlet weak var searchTableView: UITableView!
   @IBOutlet weak var searchTextField: UITextField!
   
@@ -56,7 +59,7 @@ class SearchViewController: UIViewController {
       .popViewController(animated: true)
   }
   
-  //검색값이 바뀔때마다 실행
+  //검색값이 바뀔때마다 실행되는 함수
   @IBAction func editingChanged(_ sender: Any) {
     
     word = searchTextField.text!
@@ -71,7 +74,6 @@ class SearchViewController: UIViewController {
     for busNumber in busInfo {
       if busNumber.contains(word) {
         searchList.insert(busNumber, at: 0)
-        //값을 비교하는 과정에서 다른 값을 줘서 버스 번호
         nodeNumList.insert("\(busNumber)@", at: 0)
       }
     }
@@ -98,7 +100,7 @@ class SearchViewController: UIViewController {
         if checkStops == nodeNumList[num] {
           nodeNumList.remove(at: num)
           //임의의 값을 저장함(이후에 "!"를 이용해 겹치는 값들 삭제)
-          //그냥 0ㅇ.remove만해버리면 배열의 index가 꼬임
+          //그냥 .remove만해버리면 배열의 index가 꼬임
           nodeNumList.insert("\(temp)!", at: num)
           searchList.remove(at: num)
           searchList.insert("\(temp)!", at: num)
@@ -142,21 +144,21 @@ class SearchViewController: UIViewController {
   //저장된 검색기록을 가져오는 함수
   func loadHistory() {
     
-    //cell을 선택했을때 저장된 버스 정보를 가져옴
+    //저장된 버스 정보를 가져옴
     guard let saveText =
       UserDefaults.standard.object(forKey: "saveText") as?
         [String] else { return }
     
     searchHistory = saveText
     
-    //cell을 선택했을때 저장된 버스 정거장 번호를 가져옴
+    //저장된 버스 정거장 번호를 가져옴
     guard let saveNum =
       UserDefaults.standard.object(forKey: "saveNum") as?
         [String] else { return }
     
     nodeNumHistory = saveNum
     
-    //cell을 선택했을때 저장된 검색한 날짜를 가져옴
+    //저장된 검색한 날짜를 가져옴
      guard let saveDay =
       UserDefaults.standard.object(forKey: "saveDate") as?
         [String] else { return }
@@ -166,8 +168,11 @@ class SearchViewController: UIViewController {
   }
 }
 
+//MARK: - Methods
+
 extension SearchViewController {
   
+  //SearchViewController 초기 설정 메소드
   func setUp() {
     searchTableView.delegate = self
     searchTableView.dataSource = self
@@ -176,10 +181,11 @@ extension SearchViewController {
                              forCellReuseIdentifier: cellIndentifier)
     searchTableView.tableFooterView = UIView()
     searchTextField.delegate = self
-
+    
+    searchTextField.clipsToBounds = true
   }
   
-  //서버로부터 버스 번호, 노선을 받아오는 함수
+  //서버로부터 버스 번호, 노선을 받아오는 메소드
   func request() {
     guard let url = URL(string: url) else { return }
     
@@ -212,11 +218,10 @@ extension SearchViewController {
           print(error.localizedDescription)
         }
       }
-      ProgressIndicator.shared.hide()
     }
   }
   
-  //검색 결과에서 버스정거장을 클릭했을때 알림
+  //검색 결과에서 버스정거장을 클릭했을때 표시되는 Alert
   func sorryAlert() {
     
     let alert =
@@ -240,6 +245,9 @@ extension SearchViewController: UITableViewDelegate {
   
   //cell이 선택되면 RouteViewController로 이동
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    //highlight 해제
+    searchTableView.deselectRow(at: indexPath, animated: false)
     
     //사용자가 검색하면서 cell을 눌렀을때
     if searchTextField.isEditing {
@@ -275,7 +283,7 @@ extension SearchViewController: UITableViewDelegate {
         UserDefaults.standard.set(nodeNumHistory, forKey: "saveNum")
         UserDefaults.standard.set(dayHistory, forKey: "saveDate")
         
-        switch searchList[indexPath.row] {
+      switch searchList[indexPath.row] {
           
       //검색목록의 해당 row의 버스정보가 버스 번호일때
       case "81", "82", "16", "1301", "6", "6-1",
@@ -415,15 +423,18 @@ extension SearchViewController: UITableViewDataSource {
   //delete button을 눌렀을 때 변경된 값을 받아와 테이블뷰를 reload하는 함수
   @objc func reload() {
     
-    guard let reloadBusInfo = UserDefaults.standard.object(forKey: "saveText") as? [String] else { return }
+    guard let reloadBusInfo =
+      UserDefaults.standard.object(forKey: "saveText") as? [String] else { return }
     
     searchHistory = reloadBusInfo
     
-    guard let reloadBusNodeNum = UserDefaults.standard.object(forKey: "saveNum") as? [String] else { return }
+    guard let reloadBusNodeNum =
+      UserDefaults.standard.object(forKey: "saveNum") as? [String] else { return }
     
     nodeNumHistory = reloadBusNodeNum
     
-    guard let reloadDay = UserDefaults.standard.object(forKey: "saveDate") as? [String] else { return }
+    guard let reloadDay =
+      UserDefaults.standard.object(forKey: "saveDate") as? [String] else { return }
     
     dayHistory = reloadDay
     
