@@ -11,6 +11,8 @@ import KYDrawerController
 
 /// Main에 나올 ViewController들의 베이스가 되는 ViewController
 class MainViewController: UIViewController {
+  
+  // MARK: - IBOutlets
 
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchView: RoundUIView!
@@ -18,24 +20,37 @@ class MainViewController: UIViewController {
   @IBOutlet weak var refreshButton: UIButton!
   @IBOutlet weak var infoButton: UIButton!
   
-  /// 반드시 override 해야 하는 변수
+  // MARK: - Must Override Properties
+  
+  /// 버스 정류장 식별자
   var busStopIdentifier: String {
     return ""
   }
   
+  /// Tab Bar에 들어갈 위치 인덱스
   var tabBarIndex: Int {
     return -1
   }
   
+  // MARK: Properties
+  
+  let arrivalInfoService: ArrivalInfoServiceType = ArrivalInfoService()
+  
+  /// 정보를 요청할 서버 URL
   let url = Server.address.rawValue + StringConstants.arrivalInfo.rawValue
   
+  /// TableView에 쓰일 Cell 식별자
   let cellIdentifier = StringConstants.mainTableViewCell.rawValue
   
+  /// 서버에서 받아오는 JSON 형태
   var busInfos = [BusInfo]()
   
+  /// TableView에 띄울 Array. busInfos의 정보들이 정렬되어짐.
   var sortedBuses: [BusTypeInfo] = []
   
   var timer: Timer!
+  
+  // MARK: - IBAtions
   
   @IBAction func infoButtonDidTap() {
     if let drawerController = navigationController?.parent?.parent as?
@@ -48,13 +63,15 @@ class MainViewController: UIViewController {
     request()
   }
   
+  // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
     request()
   }
-  
 }
+
+// MARK: - Methods
 
 extension MainViewController {
   func setUp() {
@@ -91,64 +108,74 @@ extension MainViewController {
   
   /// 서버에 데이터를 요청하는 함수.
   func request() {
-    guard let url = URL(string: url) else { return }
-    
-    NetworkManager.shared.request(url: url, method: .get) { data, error in
-      if let error = error {
-        print(error.localizedDescription)
-      }
-      
-      if let data = data {
-        do {
-          let busStops = try JSONDecoder().decode([BusStop].self, from: data)
-          
-          for busStop in busStops where busStop.name == self.busStopIdentifier {
-            self.busInfos = busStop.data
-            self.sortBusInfos()
-            DispatchQueue.main.async {
-              self.tableView.reloadData()
-            }
-          }
-        } catch {
-          print(error.localizedDescription)
+    arrivalInfoService.requestArrivalInfo(url: url, identifier: busStopIdentifier) {
+      if let busInfos = $0, let busTypeInfo = $1 {
+        self.busInfos = busInfos
+        self.sortedBuses = busTypeInfo
+        DispatchQueue.main.async {
+          self.tableView.reloadData()
         }
       }
-      ProgressIndicator.shared.hide()
     }
+    
+//    guard let url = URL(string: url) else { return }
+//
+//    NetworkManager.shared.request(url: url, method: .get) { data, error in
+//      if let error = error {
+//        print(error.localizedDescription)
+//      }
+//
+//      if let data = data {
+//        do {
+//          let busStops = try JSONDecoder().decode([BusStop].self, from: data)
+//
+//          for busStop in busStops where busStop.name == self.busStopIdentifier {
+//            self.busInfos = busStop.data
+//            self.sortBusInfos()
+//            DispatchQueue.main.async {
+//              self.tableView.reloadData()
+//            }
+//          }
+//        } catch {
+//          print(error.localizedDescription)
+//        }
+//      }
+//      ProgressIndicator.shared.hide()
+//    }
   }
   
   // 서버에서 받은 버스 정보를 각 section에 정렬시켜주는 함수.
-  func sortBusInfos() {
-    sortedBuses = [BusTypeInfo(busType: "즐겨찾기", busInfos: []),
-                   BusTypeInfo(busType: "간선버스", busInfos: []),
-                   BusTypeInfo(busType: "지선버스", busInfos: []),
-                   BusTypeInfo(busType: "지선버스", busInfos: [])]
-    
-    var favorArray = [String]()
-    if let array = UserDefaults.standard.value(forKey: busStopIdentifier + "FavorArray")
-      as? [String] {
-      favorArray = array
-    }
-    
-    for busInfo in busInfos {
-      if favorArray.contains(busInfo.no) {
-        sortedBuses[0].busInfos.append(busInfo)
-        continue
-      }
-      switch busInfo.busColor {
-      case .blue, .purple:
-        sortedBuses[1].busInfos.append(busInfo)
-      case .green:
-        sortedBuses[2].busInfos.append(busInfo)
-      case .orange:
-        sortedBuses[3].busInfos.append(busInfo)
-      }
-    }
-    
-    for index in (0..<sortedBuses.count).reversed() where sortedBuses[index].busInfos.count == 0 {
-      sortedBuses.remove(at: index)
-    }
-  }
+//  func sortBusInfos() {
+//    sortedBuses = [BusTypeInfo(busType: "즐겨찾기", busInfos: []),
+//                   BusTypeInfo(busType: "간선버스", busInfos: []),
+//                   BusTypeInfo(busType: "지선버스", busInfos: []),
+//                   BusTypeInfo(busType: "지선버스", busInfos: [])]
+//
+//    var favorArray = [String]()
+//    if let array = UserDefaults.standard.value(forKey: busStopIdentifier + "FavorArray")
+//      as? [String] {
+//      favorArray = array
+//    }
+//
+//    for busInfo in busInfos {
+//      if favorArray.contains(busInfo.no) {
+//        sortedBuses[0].busInfos.append(busInfo)
+//        continue
+//      }
+//      switch busInfo.busColor {
+//      case .blue, .purple:
+//        sortedBuses[1].busInfos.append(busInfo)
+//      case .green:
+//        sortedBuses[2].busInfos.append(busInfo)
+//      case .orange:
+//        sortedBuses[3].busInfos.append(busInfo)
+//      }
+//    }
+//
+//    for index in (0..<sortedBuses.count).reversed() where sortedBuses[index].busInfos.count == 0 {
+//      sortedBuses.remove(at: index)
+//    }
+//  }
   
   @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
     UIViewController
@@ -171,10 +198,16 @@ extension MainViewController {
 
 extension MainViewController: ReloadDataDelegate {
   func tableViewReloadData() {
-    sortBusInfos()
-    tableView.reloadData()
+    arrivalInfoService.sortArrivalInfos(busInfos: busInfos, identifier: busStopIdentifier) {
+      if let busTypeInfos = $0 {
+        self.sortedBuses = busTypeInfos
+        self.tableView.reloadData()
+      }
+    }
   }
 }
+
+// MARK: - UITableViewDelegate
 
 extension MainViewController: UITableViewDelegate {
   // cell의 높이
@@ -228,6 +261,8 @@ extension MainViewController: UITableViewDelegate {
     }
   }
 }
+
+// MARK: - UITableViewDataSource
 
 extension MainViewController: UITableViewDataSource {
   // section의 개수

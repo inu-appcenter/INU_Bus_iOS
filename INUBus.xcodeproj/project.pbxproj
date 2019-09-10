@@ -50,6 +50,9 @@
 		A3FECE8036646E99C101F39ACBD52B30 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
 		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
+		AF81190423250B5D009E6CBE /* ArrivalInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81190323250B5D009E6CBE /* ArrivalInfoService.swift */; };
+		AF81190623250CEF009E6CBE /* ArrivalInfoServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81190523250CEF009E6CBE /* ArrivalInfoServiceType.swift */; };
+		AF811908232511C7009E6CBE /* ArrivalInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF811907232511C7009E6CBE /* ArrivalInfoManager.swift */; };
 		AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */; };
 		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
@@ -114,6 +117,10 @@
 		A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
+		AE19857A7150F57B8B05E1ECA35A5E63 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
+		AF81190323250B5D009E6CBE /* ArrivalInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalInfoService.swift; sourceTree = "<group>"; };
+		AF81190523250CEF009E6CBE /* ArrivalInfoServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalInfoServiceType.swift; sourceTree = "<group>"; };
+		AF811907232511C7009E6CBE /* ArrivalInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalInfoManager.swift; sourceTree = "<group>"; };
 		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		C64D9C4B5531AE85FB85C9803746C63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +204,9 @@
 				2D108F6D4EC745C078727E3A7B0AFA05 /* Science.storyboard */,
 				D008764139EC1B09F26C630D3CFF57A6 /* ScienceViewController.swift */,
 				03674B6E76D8A936D4BF2ABFE4875164 /* Template.storyboard */,
+				AF81190323250B5D009E6CBE /* ArrivalInfoService.swift */,
+				AF81190523250CEF009E6CBE /* ArrivalInfoServiceType.swift */,
+				AF811907232511C7009E6CBE /* ArrivalInfoManager.swift */,
 			);
 			path = Engineering;
 			sourceTree = "<group>";
@@ -507,6 +517,8 @@
 				17498620253ABA56020461794E1EEDAD /* DrawerViewController.swift in Sources */,
 				B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */,
 				698E4FB5D3A344944C2DA7358D3B6F70 /* ExtensionKYDrawerController.swift in Sources */,
+				AF81190423250B5D009E6CBE /* ArrivalInfoService.swift in Sources */,
+				AF811908232511C7009E6CBE /* ArrivalInfoManager.swift in Sources */,
 				E163599715AB87EF14C7A96392AA5951 /* Functions.swift in Sources */,
 				CF4FEBE5B112F5B4139F8DA833438B0C /* HTTPMethod.swift in Sources */,
 				8844173FEADC6EB17016988BE9F8EB67 /* InquiryViewController.swift in Sources */,
@@ -525,6 +537,7 @@
 				9A0E1992BB4AF959A267967D778F3437 /* SearchTableViewCell.swift in Sources */,
 				9FF37A04ADED104662BFB8CD699C33BD /* SearchViewController.swift in Sources */,
 				12197ED56D033A4E6F6146B9DB84B405 /* Server.swift in Sources */,
+				AF81190623250CEF009E6CBE /* ArrivalInfoServiceType.swift in Sources */,
 				07F642EEB59CFF4780E3D9CEC8B714F5 /* StringConstants.swift in Sources */,
 				ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */,
 				DD3ECC9CB34EBA0271119FADABFC64A5 /* UIAlertController+.swift in Sources */,
