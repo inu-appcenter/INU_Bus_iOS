@@ -10,6 +10,9 @@ import UIKit
 
 class PopUpViewController: UIViewController {
   
+  
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var thanksLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
@@ -20,6 +23,7 @@ class PopUpViewController: UIViewController {
   var inquiryContact = ""
   var inquiryMessage = ""
   
+  // MARK:
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
@@ -59,7 +63,6 @@ extension PopUpViewController {
     
     let inquiry = Inquiry(title: self.inquiryTitle, msg: self.inquiryMessage,
                           device: "test", contact: self.inquiryContact)
-    
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     let jsonBody = try? encoder.encode(inquiry)
@@ -67,16 +70,15 @@ extension PopUpViewController {
     
     guard let url = URL(string: url) else { return }
     
-    PostManager.shared.request(url: url, method: .post, jsonBody: jsonBody!) {(data, error) in
+    PostManager.shared.request(url: url, method: .post, httpBody: jsonBody!) {(data, error) in
       
       if let error = error {
         print(error.localizedDescription)
       }
       
       if let data = data {
-        print(String(data: data, encoding: .utf8))
+      print(String(data: data, encoding: .utf8))
       }
-      ProgressIndicator.shared.hide()
     }
   }
 }

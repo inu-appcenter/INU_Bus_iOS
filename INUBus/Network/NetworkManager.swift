@@ -16,10 +16,10 @@ final class NetworkManager {
   func request(url: URL,
                method: HTTPMethod,
                completion: @escaping (Data?, Error?) -> Void) {
-    
     let session = URLSession(configuration: .default)
-    
-    let urlRequest = URLRequest(url: url)
+    var urlRequest = URLRequest(url: url)
+    urlRequest.httpMethod = method.rawValue
+    urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
     
     ProgressIndicator.shared.show()
     let task = session.dataTask(with: urlRequest) { data, _, error in
@@ -29,27 +29,28 @@ final class NetworkManager {
     task.resume()
   }
 }
-
-final class PostManager {
-  static let shared = PostManager()
   
-  private init() { }
-  
-  func request(url: URL, method: HTTPMethod, jsonBody: Data,
-               completion: @escaping (Data?, Error?) -> Void) {
+  final class PostManager {
+    static let shared = PostManager()
     
-    let session = URLSession(configuration: .default)
-    var urlRequest = URLRequest(url: url)
+    private init() { }
     
-    urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    urlRequest.httpMethod = method.rawValue
-    urlRequest.httpBody = jsonBody
-    ProgressIndicator.shared.show()
-    
-    let task = session.dataTask(with: urlRequest) { (data, _, error) in
-      completion(data, error)
-      session.finishTasksAndInvalidate()
+    func request(url: URL, method: HTTPMethod, httpBody: Data,
+                 completion: @escaping (Data?, Error?) -> Void) {
+      
+      let session = URLSession(configuration: .default)
+      var urlRequest = URLRequest(url: url)
+      
+      urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+      urlRequest.httpMethod = method.rawValue
+      urlRequest.httpBody = httpBody
+      ProgressIndicator.shared.show()
+      
+      let task = session.dataTask(with: urlRequest) { (data, _, error) in
+        completion(data, error)
+        session.finishTasksAndInvalidate()
+      }
+      task.resume()
     }
-    task.resume()
-  }
+  
 }

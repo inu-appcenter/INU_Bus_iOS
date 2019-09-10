@@ -103,3 +103,12 @@ struct Route: Codable {
     case turnNode = "turnnode"
   }
 }
+
+struct Inquiry: Codable {
+  
+  let title: String
+  let msg: String
+  let device: String
+  let contact: String
+}
+
