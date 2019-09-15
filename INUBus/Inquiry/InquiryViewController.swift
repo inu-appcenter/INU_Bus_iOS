@@ -10,17 +10,21 @@ import UIKit
 
 final class InquiryViewController: UIViewController {
   
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var phoneNumberTextField: UITextField!
   @IBOutlet weak var contentsTextView: UITextView!
   @IBOutlet weak var sendButton: UIButton!
   
-  let message = "소중한 의견 감사드립니다!"
+  // MARK: - Life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupInquiry()
   }
+  
+  // MARK: - IBActions
   
   @IBAction func backButtonDidTap(_ sender: Any) {
     self.dismiss(animated: true)
@@ -44,6 +48,8 @@ final class InquiryViewController: UIViewController {
   }
 }
 
+// MARK: - Methods
+
 extension InquiryViewController {
   func setupInquiry() {
     
@@ -56,16 +62,16 @@ extension InquiryViewController {
       UITapGestureRecognizer(target: self, action: #selector(tapViewcontroller(_:)))
     self.view.addGestureRecognizer(viewControllerGesture)
     self.contentsTextView.delegate = self
-    
-//    changeStatusBarColor(barStyle: .lightContent)
-    
   }
   
+  // 빈 공간을 눌렀을 때의 함수
   @objc func tapViewcontroller(_ sender: UITapGestureRecognizer) {
+    // 키보드를 내려줌
     self.view.endEditing(true)
     self.contentsCheck()
   }
   
+  // TextField, TextView가 다 채워졌으면 버튼을 활성화하는 함수
   func contentsCheck() {
     if self.titleTextField.text != "" &&
       self.phoneNumberTextField.text != "" &&
@@ -76,6 +82,8 @@ extension InquiryViewController {
     }
   }
 }
+
+// MARK: - UITextViewDelegate
 
 extension InquiryViewController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {

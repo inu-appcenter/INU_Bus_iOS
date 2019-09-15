@@ -10,20 +10,23 @@ import UIKit
 
 class PopUpViewController: UIViewController {
   
-  
   // MARK: - IBOutlets
   
   @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var thanksLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   
+  // MARK: - Properties
+  
+  // 정보를 요청할 서버 URL
   let url = Server.address.rawValue + StringConstants.nodeData.rawValue
   
   var inquiryTitle = ""
   var inquiryContact = ""
   var inquiryMessage = ""
   
-  // MARK:
+  // MARK: - Life cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
@@ -34,6 +37,8 @@ class PopUpViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   }
+  
+  // MARK: - IBActions
   
   @IBAction func yesButtonDidTap(_ sender: Any) {
     
@@ -47,6 +52,8 @@ class PopUpViewController: UIViewController {
   }
 }
 
+// MARK: - Methods
+
 extension PopUpViewController {
   func setupView() {
     
@@ -58,7 +65,8 @@ extension PopUpViewController {
       self.view.centerYAnchor).isActive = true
     
   }
-  //
+  
+  // HTTP POST 통신을 하는 함수
   func request() {
     
     let inquiry = Inquiry(title: self.inquiryTitle, msg: self.inquiryMessage,
