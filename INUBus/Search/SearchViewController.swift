@@ -12,6 +12,7 @@ class SearchViewController: UIViewController {
   
   // MARK: - ProPerties
   
+  let searchService: SearchServiceType = SearchService()
   // TableView에 쓰일 Cell 식별자
   let cellIndentifier = "SearchTableViewCell"
   
@@ -201,38 +202,9 @@ extension SearchViewController {
   
   // 서버로부터 데이터를 요청하는 함수
   func request() {
-    guard let url = URL(string: url) else { return }
     
-    NetworkManager.shared.request(url: url, method: .get) { (data, error) in
-      if let error = error {
-        print(error.localizedDescription)
-      }
-      
-      if let data = data {
-        do {
-          let busNumbers = try JSONDecoder().decode([Route].self, from: data)
-          
-          for busNumber in busNumbers {
-            
-            // 버스 번호 저장
-            self.busInfo.append(busNumber.no)
-            
-            // 버스 정거장과 정거장번호를 딕셔너리 형태로 가져옴
-            for busNode in busNumber.nodeList {
-              
-              self.busNode.updateValue(busNode.nodeName, forKey: "\(busNode.nodeNo)")
-            }
-          }
-          
-          // 버스 정거장 값들 저장
-          for busNodes in self.busNode.values {
-            self.busNodeArr.append(busNodes)
-          }
-        } catch {
-          print(error.localizedDescription)
-        }
-      }
-    }
+    searchService.requestSearch(url: url, busInfo: &busInfo, busNode: &busNode, busNodeArr: &busNodeArr)
+    
   }
   
   // 검색 결과에서 버스정거장을 클릭했을때 Alert가 표시되는 함수

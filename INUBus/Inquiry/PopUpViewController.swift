@@ -19,7 +19,7 @@ class PopUpViewController: UIViewController {
   // MARK: - Properties
   
   // 정보를 요청할 서버 URL
-  let url = Server.address.rawValue + StringConstants.nodeData.rawValue
+  let url = Server.address.rawValue + StringConstants.errormsg.rawValue
   
   var inquiryTitle = ""
   var inquiryContact = ""
@@ -78,15 +78,20 @@ extension PopUpViewController {
     
     guard let url = URL(string: url) else { return }
     
-    PostManager.shared.request(url: url, method: .post, httpBody: jsonBody!) {(data, error) in
+    PostManager.shared.request(url: url, method: .post, httpBody: jsonBody!) {(data, response, error) in
       
-      if let error = error {
-        print(error.localizedDescription)
+      guard let data = data, error == nil else {
+        print("error=\(error)")
+        return
       }
       
-      if let data = data {
-      print(String(data: data, encoding: .utf8))
+      if let httpStatus = response as? HTTPURLResponse {
+        print("statusCode = \(httpStatus.statusCode)")
       }
+      
+      let responseString = String(data: data, encoding: .utf8)
+      print("responseString = \(responseString)")
+      
     }
   }
 }
