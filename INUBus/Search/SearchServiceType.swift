@@ -12,4 +12,9 @@ protocol SearchServiceType: class {
   
   func requestSearch(url: String, busInfo: inout [String], busNode: inout [String: String], busNodeArr: inout [String])
   
+  func infoCell(arr: [String], indexPath: IndexPath, node: [String], day: [String], hidden: Bool)
+  
+  func shortSearchList( busInfo: inout [String], busNodeArr: inout [String],
+                        busNode: inout [String : String], nodeNumList: inout  [String],
+                        searchList: inout [String], word: String)
 }
