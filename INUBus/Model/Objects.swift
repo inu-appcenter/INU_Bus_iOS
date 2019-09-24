@@ -105,10 +105,25 @@ struct Route: Codable {
 }
 
 struct Inquiry: Codable {
-  
   let title: String
   let msg: String
   let device: String
   let contact: String
 }
 
+struct GPS: Codable {
+  struct GPSInfo: Codable {
+    let routeID: String
+    let status: String
+    let location: Int
+    let lat: String
+    let lng: String
+    
+    enum CodingKeys: String, CodingKey {
+      case status, location, lat, lng
+      case routeID = "routeId"
+    }
+  }
+  
+  let gpsInfos: [GPSInfo]
+}
