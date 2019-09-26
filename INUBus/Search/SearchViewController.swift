@@ -18,14 +18,7 @@ class SearchViewController: UIViewController {
   
   // 정보를 요청할 서버 URL
   let url = Server.address.rawValue + StringConstants.nodeData.rawValue
-  
-  /// 년. 월. 일로 나타내주는 프로퍼티.
-  let dateFormatter: DateFormatter = {
-    let formatter: DateFormatter = DateFormatter()
-    formatter.dateFormat = "yyyy.MM.dd"
-    return formatter
-  }()
-  
+
   // 검색 결과 TableView에 표시될 버스 정거장, 버스 번호 배열
   var searchList = [String]()
   
@@ -52,8 +45,6 @@ class SearchViewController: UIViewController {
   
   // 서버에서 받아오는 버스 정거장 번호를 저장할 배열
   var busNodeArr = [String]()
-  
-  let date: Date = Date()
   
   // MARK: - IBOutlets
 
@@ -83,17 +74,12 @@ class SearchViewController: UIViewController {
   // 검색값이 바뀔때마다 검색 결과 배열의 값을 바꿔주는 함수
   @IBAction func editingChanged(_ sender: Any) {
     
-    var word: String = ""
-    word = searchTextField.text!
+    let word = searchTextField.text!
 
     searchService.shortSearchList(busInfo: &busInfo, busNodeArr: &busNodeArr,
                                   busNode: &busNode, nodeNumList: &nodeNumList,
-                                  searchList: &searchList, word: word)
-    
-    // SearchList의 개수만큼 daylist를 생성
-    for _ in 0..<(searchList.count) {
-      dayList.append(self.dateFormatter.string(from: date))
-    }
+                                  searchList: &searchList, dayList: &dayList, word: word)
+  
     self.searchTableView.reloadData()
   }
   
@@ -162,6 +148,38 @@ extension SearchViewController {
     
     present(alert, animated: true, completion: nil)
   }
+  
+  func depositionCell(cell: [String], indexPath: IndexPath) {
+    
+    switch cell[indexPath.row] {
+      
+    case "81", "82", "16", "1301", "6", "6-1",
+         "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
+      
+      if let viewController = UIViewController
+        .instantiate(storyboard: "Route",
+                     identifier: "RouteViewController") as? RouteViewController {
+        viewController.busNo = cell[indexPath.row]
+        viewController.push(at: self)
+      }
+      
+    default:
+      sorryAlert()
+      
+    }
+  }
+  
+  func saveSearchHistory(indexPath: IndexPath) {
+    
+    searchHistory.insert(searchList[indexPath.row], at: 0)
+    nodeNumHistory.insert(nodeNumList[indexPath.row], at: 0)
+    dayHistory.insert(dayList[indexPath.row], at: 0)
+    
+    // 사용자가 선택한 cell의 정보를 저장
+    UserDefaults.standard.set(searchHistory, forKey: "saveText")
+    UserDefaults.standard.set(nodeNumHistory, forKey: "saveNum")
+    UserDefaults.standard.set(dayHistory, forKey: "saveDate")
+  }
 }
 
 // MARK: - UITableViewDelegate
@@ -182,55 +200,16 @@ extension SearchViewController: UITableViewDelegate {
     // 사용자가 검색하면서 cell을 눌렀을때
     if searchTextField.isEditing {
       
-      // searchBar를 클릭한 뒤 검색기록(searchHistory) cell을 누른 상황
+      // searchBar를 클릭한 뒤 검색기록 cell을 누른 상황
       if searchTextField.text == "" {
         
-        switch searchHistory[indexPath.row] {
-        // 검색기록의 해당 row의 버스정보가 버스 번호일때
-        case "81", "82", "16", "1301", "6", "6-1",
-             "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
-          
-          if let viewController = UIViewController
-            .instantiate(storyboard: "Route",
-                         identifier: "RouteViewController") as? RouteViewController {
-            viewController.busNo = searchHistory[indexPath.row]
-            viewController.push(at: self)
-          }
-          
-        // 정류장일때
-        default:
-          sorryAlert()
-        }
-        
-        // searchBar를 클릭한 뒤 검색을 한 뒤 검색결과(searchList) cell을 누른 상황
+        depositionCell(cell: searchHistory, indexPath: indexPath)
+        // searchBar를 클릭한 뒤 검색을 한 뒤 검색결과 cell을 누른 상황
       } else {
         
-        searchHistory.insert(searchList[indexPath.row], at: 0)
-        nodeNumHistory.insert(nodeNumList[indexPath.row], at: 0)
-        dayHistory.insert(dayList[indexPath.row], at: 0)
+        saveSearchHistory(indexPath: indexPath)
+        depositionCell(cell: searchList, indexPath: indexPath)
         
-        // 사용자가 선택한 cell의 정보를 저장
-        UserDefaults.standard.set(searchHistory, forKey: "saveText")
-        UserDefaults.standard.set(nodeNumHistory, forKey: "saveNum")
-        UserDefaults.standard.set(dayHistory, forKey: "saveDate")
-        
-      switch searchList[indexPath.row] {
-          
-      // 검색목록의 해당 row의 버스정보가 버스 번호일때
-      case "81", "82", "16", "1301", "6", "6-1",
-      "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
-      
-        if let viewController = UIViewController
-          .instantiate(storyboard: "Route",
-                       identifier: "RouteViewController") as? RouteViewController {
-          viewController.busNo = searchList[indexPath.row]
-          viewController.push(at: self)
-        }
-
-      // 정류장일떄
-      default:
-      sorryAlert()
-        }
       }
       
     // 사용자가 검색기록의 cell을 클릭했을 때
@@ -239,50 +218,13 @@ extension SearchViewController: UITableViewDelegate {
       // 사용자가 검색하다가 return을 입력헀을 떄
       if searchTextField.text != "" {
         
-        searchHistory.insert(searchList[indexPath.row], at: 0)
-        nodeNumHistory.insert(nodeNumList[indexPath.row], at: 0)
-        dayHistory.insert(dayList[indexPath.row], at: 0)
+        saveSearchHistory(indexPath: indexPath)
+        depositionCell(cell: searchList, indexPath: indexPath)
         
-        // 사용자가 선택한 cell의 정보를 저장
-        UserDefaults.standard.set(searchHistory, forKey: "saveText")
-        UserDefaults.standard.set(nodeNumHistory, forKey: "saveNum")
-        UserDefaults.standard.set(dayHistory, forKey: "saveDate")
-        
-        switch searchList[indexPath.row] {
-        // 검색목록의 해당 row의 버스정보가 버스 번호일때
-        case "81", "82", "16", "1301", "6", "6-1",
-             "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
-          
-          if let viewController = UIViewController
-            .instantiate(storyboard: "Route",
-                         identifier: "RouteViewController") as? RouteViewController {
-            viewController.busNo = searchList[indexPath.row]
-            viewController.push(at: self)
-          }
-          
-        // 정류장일떄
-        default:
-          sorryAlert()
-        }
         // searchBar를 클릭하지 않은 상태에서 검색결과 Cell을 클릭했을 때
       } else {
   
-        switch searchHistory[indexPath.row] {
-        // 검색기록의 해당 row의 버스정보가 버스 번호일때
-        case "81", "82", "16", "1301", "6", "6-1",
-             "6-2", "780", "780-1", "780-2", "92", "3002", "6405", "908", "909":
-          
-          if let viewController = UIViewController
-            .instantiate(storyboard: "Route",
-                         identifier: "RouteViewController") as? RouteViewController {
-            viewController.busNo = searchHistory[indexPath.row]
-            viewController.push(at: self)
-          }
-          
-        // 정류장일때
-        default:
-          sorryAlert()
-        }
+       depositionCell(cell: searchHistory, indexPath: indexPath)
       }
     }
   }
@@ -361,26 +303,10 @@ extension SearchViewController: UITableViewDataSource {
     return cell
   }
   
-  
-  
   // delete button을 눌렀을 때 변경된 값을 받아와 테이블뷰를 reload하는 함수
   @objc func reload() {
     
-    guard let reloadBusInfo =
-      UserDefaults.standard.object(forKey: "saveText") as? [String] else { return }
-    
-    searchHistory = reloadBusInfo
-    
-    guard let reloadBusNodeNum =
-      UserDefaults.standard.object(forKey: "saveNum") as? [String] else { return }
-    
-    nodeNumHistory = reloadBusNodeNum
-    
-    guard let reloadDay =
-      UserDefaults.standard.object(forKey: "saveDate") as? [String] else { return }
-    
-    dayHistory = reloadDay
-    
+    loadHistory()
     self.searchTableView.reloadData()
     }
   }

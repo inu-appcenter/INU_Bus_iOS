@@ -6,19 +6,30 @@
 //  Copyright © 2019 zun. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class SearchService: SearchServiceType {
   
-  func shortSearchList( busInfo: inout [String], busNodeArr: inout [String],
+  func shortSearchList(busInfo: inout [String], busNodeArr: inout [String],
                         busNode: inout [String : String], nodeNumList: inout  [String],
-                        searchList: inout [String], word: String) {
+                        searchList: inout [String], dayList: inout [String], word: String) {
     
     searchList = []
     nodeNumList = []
     
     var temp = 0
     var tempArr = [String]()
+    
+    // 년. 월. 일로 나타내주는 프로퍼티.
+    let dateFormatter: DateFormatter = {
+      let formatter: DateFormatter = DateFormatter()
+      formatter.dateFormat = "yyyy.MM.dd"
+      return formatter
+    }()
+    
+    let date: Date = Date()
+
     
     // 사용자가 검색한 값이 서버로 받아온 버스번호에 포함되면 표시
     for busNumber in busInfo {
@@ -76,10 +87,10 @@ class SearchService: SearchServiceType {
       searchList.remove(at: 0)
     }
     
-    // SearchList의 개수만큼 daylist를 생성
-//    for _ in 0..<(searchList.count) {
-//      dayList.append(self.dateFormatter.string(from: date))
-//    }
+//     SearchList의 개수만큼 daylist를 생성
+    for _ in 0..<(searchList.count) {
+      dayList.append(dateFormatter.string(from: date))
+    }
   }
     
   
@@ -144,6 +155,8 @@ class SearchService: SearchServiceType {
         [String] else { return }
     
     busInfo = loadBusInfo
+    
+    // 뒤에 UserDefaults지워주는게 날듯
     
     guard let loadBusNode =
       UserDefaults.standard.object(forKey: "busNode") as?

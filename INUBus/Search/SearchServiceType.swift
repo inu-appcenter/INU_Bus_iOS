@@ -16,5 +16,5 @@ protocol SearchServiceType: class {
   
   func shortSearchList( busInfo: inout [String], busNodeArr: inout [String],
                         busNode: inout [String : String], nodeNumList: inout  [String],
-                        searchList: inout [String], word: String)
+                        searchList: inout [String], dayList: inout [String], word: String)
 }
