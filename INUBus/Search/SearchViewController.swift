@@ -188,7 +188,8 @@ extension SearchViewController: UITableViewDelegate {
   
   // cell의 높이
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 77
+    
+    return indexPath.row == (searchHistory.count)-1 ? 145 : 77
   }
   
   // cell이 선택되면 RouteViewController로 이동
@@ -253,7 +254,12 @@ extension SearchViewController: UITableViewDataSource {
     guard let cell = searchTableView.dequeueReusableCell(withIdentifier:
       cellIndentifier, for: indexPath) as?
       SearchTableViewCell else { return UITableViewCell() }
-    
+//
+//    if indexPath.row == (searchHistory.count) - 1{
+//      cell.allDeleteButton.isHidden = false
+////      cell.layer.borderWidth = UIView()
+//    } else { cell.allDeleteButton.isHidden = true }
+
     if searchTextField.isEditing {
       if searchTextField.text == "" {
         cell.searchLabel.text = searchHistory[indexPath.row]
@@ -265,6 +271,7 @@ extension SearchViewController: UITableViewDataSource {
         cell.moreInfo.text = "정류장 번호: " + nodeNumList[indexPath.row]
         cell.dayLabel.text = dayList[indexPath.row]
         cell.deleteButton.isHidden = true
+        cell.allDeleteButton.isHidden = true
       }
     } else {
       // 사용자가 검색하고 return을 입력했을 때
@@ -283,7 +290,9 @@ extension SearchViewController: UITableViewDataSource {
 
     // cell의 deleteButton을 누르면 did함수 실행
     cell.deleteButton.addTarget(self, action: #selector(reload), for: .touchUpInside)
-    
+    // cell의 allDeleteButton을 누르면 did함수 실행
+    cell.allDeleteButton.addTarget(self, action: #selector(reload), for: .touchUpInside)
+
     switch cell.searchLabel.text {
     case "3002", "1301", "6405":
       cell.searchLabel.textColor = UIColor(red: 255/255, green: 97/255, blue: 7/255, alpha: 1)
@@ -303,9 +312,8 @@ extension SearchViewController: UITableViewDataSource {
     return cell
   }
   
-  // delete button을 눌렀을 때 변경된 값을 받아와 테이블뷰를 reload하는 함수
+  /// 변경된 값을 받아와 테이블뷰를 reload하는 함수
   @objc func reload() {
-    
     loadHistory()
     self.searchTableView.reloadData()
     }
