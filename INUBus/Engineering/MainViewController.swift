@@ -21,6 +21,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var infoButton: UIButton!
   
   // MARK: - Must Override Properties
+  //상속하는 하위 클래스들은 무조건 오버라이드를 해야합니다.
   
   /// 버스 정류장 식별자
   var busStopIdentifier: String {

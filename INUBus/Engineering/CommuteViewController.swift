@@ -33,10 +33,16 @@ class CommuteViewController: UIViewController {
   // MARK: Properties
   
   /// 정보를 요청할 서버 URL
-  let url = Server.address.rawValue + StringConstants.arrivalInfo.rawValue
+  let url = Server.address.rawValue + "gps"
   
   /// TableView에 쓰일 Cell 식별자
-  let cellIdentifier = StringConstants.mainTableViewCell.rawValue
+  let cellIdentifier = "CommuteTableViewCell"
+  
+  var gpsInfos = [GPS(routeID: "송내", status: 0, location: 0, lat: 0, lng: 0),
+                  GPS(routeID: "수원", status: 0, location: 0, lat: 0, lng: 0),
+                  GPS(routeID: "일산", status: 0, location: 0, lat: 0, lng: 0),
+                  GPS(routeID: "청라", status: 0, location: 0, lat: 0, lng: 0),
+                  GPS(routeID: "광명", status: 0, location: 0, lat: 0, lng: 0)]
   
   @IBAction func infoButtonDidTap() {
     if let drawerController = navigationController?.parent?.parent as?
@@ -46,19 +52,23 @@ class CommuteViewController: UIViewController {
   }
   
   @IBAction func refreshButtonDidTap(_ sender: Any) {
-//    request()
+    request()
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setUp()
+    request()
   }
   
 }
 
+// MARK: - Methods
+
 extension CommuteViewController {
   func setUp() {
-//    tableView.delegate = self
-//    tableView.dataSource = self
+    tableView.delegate = self
+    tableView.dataSource = self
     tableView.register(UINib(nibName: cellIdentifier, bundle: nil),
                        forCellReuseIdentifier: cellIdentifier)
     // tableView 비어있는 cell 지우기
@@ -87,7 +97,28 @@ extension CommuteViewController {
   }
   
   func request() {
-
+    guard let url = URL(string: url) else {
+      errorLog("잘못된 URL입니다.")
+      return
+    }
+    
+    NetworkManager.shared.request(url: url, method: .get) { data, error in
+      if let error = error {
+        errorLog("네트워크 에러가 발생했습니다: " + error.localizedDescription)
+      }
+      
+      if let data = data {
+        do {
+          self.gpsInfos = try JSONDecoder().decode([GPS].self, from: data)
+          
+          DispatchQueue.main.async {
+            self.tableView.reloadData()
+          }
+        } catch {
+          errorLog("Decode하는데 오류가 발생했습니다: " + error.localizedDescription)
+        }
+      }
+    }
   }
 
   @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
@@ -96,6 +127,16 @@ extension CommuteViewController {
       .push(at: self, animated: false)
   }
 }
+
+// MARK: - Custom Delegate
+
+extension CommuteViewController: ReloadDataDelegate {
+  func tableViewReloadData() {
+    tableView.reloadData()
+  }
+}
+
+// MARK: - TableViewDelegate
 
 extension CommuteViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -113,8 +154,8 @@ extension CommuteViewController: UITableViewDelegate {
     view.backgroundColor = UIColor(white: 235/250, alpha: 1)
     
     view.addSubview(sectionLabel(text: "통학버스", size: sizeByDevice(size: 28)))
-    view.addSubview(sectionLabel(text: "남은시간", size: sizeByDevice(size: 182)))
-    view.addSubview(sectionLabel(text: "배차간격", size: sizeByDevice(size: 288)))
+    view.addSubview(sectionLabel(text: "현재위치", size: sizeByDevice(size: 182)))
+    view.addSubview(sectionLabel(text: "출발시간", size: sizeByDevice(size: 288)))
     
     return view
   }
@@ -124,9 +165,9 @@ extension CommuteViewController: UITableViewDelegate {
     tableView.deselectRow(at: indexPath, animated: false)
     
     if let viewController = UIViewController
-      .instantiate(storyboard: "Route",
-                   identifier: "RouteViewController") as? RouteViewController {
-//      viewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
+      .instantiate(storyboard: "CommuteRoute",
+                   identifier: "CommuteRouteViewController") as? CommuteRouteViewController {
+      viewController.gpsInfo = gpsInfos[indexPath.row]
       viewController.push(at: self)
     }
   }
@@ -145,5 +186,30 @@ extension CommuteViewController: UITableViewDelegate {
     UIView.animate(withDuration: 0.5) {
       self.refreshButton.alpha = 1
     }
+  }
+}
+
+// MARK: - TableViewDataSource
+
+extension CommuteViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return gpsInfos.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+      as? CommuteTableViewCell else {
+        errorLog("테이블뷰셀 에러")
+        return UITableViewCell()
+    }
+    
+    cell.delegate = self
+    cell.gpsInfo = gpsInfos[indexPath.row]
+    
+    return cell
   }
 }

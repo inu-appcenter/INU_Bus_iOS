@@ -46,10 +46,8 @@ extension RouteViewController {
     tableView.register(UINib(nibName: cellIdentifier, bundle: nil),
                        forCellReuseIdentifier: cellIdentifier)
     
-    self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/255,
-                                                                    green: 97/255,
-                                                                    blue: 244/255,
-                                                                    alpha: 1)
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 97, blue: 244)
+    
     changeStatusBarColor(barStyle: .lightContent)
     busNoLabel.text = busNo
     busNoLabel.sizeToFit()
@@ -131,6 +129,7 @@ extension RouteViewController: UITableViewDataSource {
     cell.delegate = self
     
     if indexPath.row == busStops.count {
+      cell.busStopLabel.text = ""
       cell.upLineView.isHidden = true
       cell.downLineView.isHidden = true
       cell.directionImageView.isHidden = true
