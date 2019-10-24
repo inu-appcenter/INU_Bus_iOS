@@ -15,7 +15,5 @@ protocol ArrivalInfoServiceType: class {
                           completion: @escaping ([BusInfo]?, [BusTypeInfo]?) -> Void)
   
   /// 구한 버스 도착 예정 시간을 TableView에 나타내주기 위해 정렬 시켜주는 함수.
-  func sortArrivalInfos(busInfos: [BusInfo],
-                        identifier: String,
-                        completion: @escaping ([BusTypeInfo]?) -> Void)
+  func sortArrivalInfos(busInfos: [BusInfo], completion: @escaping ([BusTypeInfo]?) -> Void)
 }

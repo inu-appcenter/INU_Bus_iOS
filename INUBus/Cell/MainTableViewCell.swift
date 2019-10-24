@@ -10,17 +10,17 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
   
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var favoritesButton: UIButton!
   @IBOutlet weak var busNoLabel: UILabel!
   @IBOutlet weak var timeRemainingLabel: UILabel!
   @IBOutlet weak var intervalLabel: UILabel!
   
+  // MARK: - Properties
   weak var delegate: ReloadDataDelegate?
   
-  var busStopIdentifier: String?
-  
-//  let userDefaultsIdentifier = StringConstants.favorArray.rawValue
-  
+  // IBOutlets에 값을 넣어줌.
   var busInfo: BusInfo! {
     didSet {
       busNoLabel.text = busInfo.no
@@ -38,15 +38,9 @@ class MainTableViewCell: UITableViewCell {
       
       intervalLabel.text = "\(busInfo.interval)분"
       
-      if let busStopIdentifier = busStopIdentifier,
-        let array = UserDefaults
-          .standard
-          .value(forKey: busStopIdentifier + "FavorArray") as? [String] {
-        if array.contains(busInfo.no) {
-          favoritesButton.setImage(
-            UIImage(named: AssetConstants.colorStar.rawValue),
-            for: .normal)
-        }
+      if let array = UserDefaults.standard.value(forKey: "favorArray") as? [String],
+        array.contains(busInfo.no) {
+        favoritesButton.setImage(UIImage(named: AssetConstants.colorStar.rawValue), for: .normal)
       }
       
       let rgb = (CGFloat(busInfo.rgb.0),
@@ -56,13 +50,12 @@ class MainTableViewCell: UITableViewCell {
     }
   }
   
+  // MARK: - IBAction
   @IBAction func favoritesButtonDidTap(_ sender: Any) {
-    guard let busNo = busNoLabel.text, let busStopIdentifier = busStopIdentifier else { return }
-    
-    var favorArray = [String]()
-    if let temp = UserDefaults.standard.value(forKey: busStopIdentifier + "FavorArray")
-      as? [String] {
-      favorArray = temp
+    guard let busNo = busNoLabel.text,
+      var favorArray = UserDefaults.standard.value(forKey: "favorArray") as? [String] else {
+      errorLog("MainTableViewCell error")
+      return
     }
     
     if favoritesButton.imageView?.image ==
@@ -70,17 +63,19 @@ class MainTableViewCell: UITableViewCell {
       favoritesButton.setImage(UIImage(named: AssetConstants.colorStar.rawValue),
                                for: .normal)
       favorArray.append(busNo)
-      UserDefaults.standard.set(favorArray, forKey: busStopIdentifier + "FavorArray")
+      UserDefaults.standard.set(favorArray, forKey: "favorArray")
     } else {
       favoritesButton.setImage(UIImage(named: AssetConstants.star.rawValue),
                                for: .normal)
       if let index = favorArray.firstIndex(of: busNo) {
         favorArray.remove(at: index)
-        UserDefaults.standard.set(favorArray, forKey: busStopIdentifier + "FavorArray")
+        UserDefaults.standard.set(favorArray, forKey: "favorArray")
       }
     }
     delegate?.tableViewReloadData()
   }
+  
+  // MARK: - Methods
   
   override func awakeFromNib() {
     super.awakeFromNib()

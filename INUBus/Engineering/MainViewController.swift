@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var infoButton: UIButton!
   
   // MARK: - Must Override Properties
-  //상속하는 하위 클래스들은 무조건 오버라이드를 해야합니다.
+  // 상속하는 하위 클래스들은 무조건 오버라이드를 해야함.
   
   /// 버스 정류장 식별자
   var busStopIdentifier: String {
@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     return -1
   }
   
-  // MARK: Properties
+  // MARK: - Properties
   
   let arrivalInfoService: ArrivalInfoServiceType = ArrivalInfoService()
   
@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
   var busInfos = [BusInfo]()
   
   /// TableView에 띄울 Array. busInfos의 정보들이 정렬되어짐.
-  var sortedBuses: [BusTypeInfo] = []
+  var sortedBuses = [BusTypeInfo]()
   
   var timer: Timer!
   
@@ -68,6 +68,11 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
+    request()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     request()
   }
 }
@@ -118,65 +123,7 @@ extension MainViewController {
         }
       }
     }
-    
-//    guard let url = URL(string: url) else { return }
-//
-//    NetworkManager.shared.request(url: url, method: .get) { data, error in
-//      if let error = error {
-//        print(error.localizedDescription)
-//      }
-//
-//      if let data = data {
-//        do {
-//          let busStops = try JSONDecoder().decode([BusStop].self, from: data)
-//
-//          for busStop in busStops where busStop.name == self.busStopIdentifier {
-//            self.busInfos = busStop.data
-//            self.sortBusInfos()
-//            DispatchQueue.main.async {
-//              self.tableView.reloadData()
-//            }
-//          }
-//        } catch {
-//          print(error.localizedDescription)
-//        }
-//      }
-//      ProgressIndicator.shared.hide()
-//    }
   }
-  
-  // 서버에서 받은 버스 정보를 각 section에 정렬시켜주는 함수.
-//  func sortBusInfos() {
-//    sortedBuses = [BusTypeInfo(busType: "즐겨찾기", busInfos: []),
-//                   BusTypeInfo(busType: "간선버스", busInfos: []),
-//                   BusTypeInfo(busType: "지선버스", busInfos: []),
-//                   BusTypeInfo(busType: "지선버스", busInfos: [])]
-//
-//    var favorArray = [String]()
-//    if let array = UserDefaults.standard.value(forKey: busStopIdentifier + "FavorArray")
-//      as? [String] {
-//      favorArray = array
-//    }
-//
-//    for busInfo in busInfos {
-//      if favorArray.contains(busInfo.no) {
-//        sortedBuses[0].busInfos.append(busInfo)
-//        continue
-//      }
-//      switch busInfo.busColor {
-//      case .blue, .purple:
-//        sortedBuses[1].busInfos.append(busInfo)
-//      case .green:
-//        sortedBuses[2].busInfos.append(busInfo)
-//      case .orange:
-//        sortedBuses[3].busInfos.append(busInfo)
-//      }
-//    }
-//
-//    for index in (0..<sortedBuses.count).reversed() where sortedBuses[index].busInfos.count == 0 {
-//      sortedBuses.remove(at: index)
-//    }
-//  }
   
   @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
     UIViewController
@@ -184,6 +131,7 @@ extension MainViewController {
       .push(at: self, animated: false)
   }
   
+  // 매초 1초씩 tableView를 업데이트 함으로써 1초씩 감소하는 효과를 봄.
   func startTimer() {
     timer = Timer.scheduledTimer(timeInterval: 1,
                                  target: self,
@@ -197,9 +145,11 @@ extension MainViewController {
   }
 }
 
+// MARK: - ReloadDataDelegate
+
 extension MainViewController: ReloadDataDelegate {
   func tableViewReloadData() {
-    arrivalInfoService.sortArrivalInfos(busInfos: busInfos, identifier: busStopIdentifier) {
+    arrivalInfoService.sortArrivalInfos(busInfos: busInfos) {
       if let busTypeInfos = $0 {
         self.sortedBuses = busTypeInfos
         self.tableView.reloadData()
@@ -281,11 +231,11 @@ extension MainViewController: UITableViewDataSource {
     guard let cell = tableView.dequeueReusableCell(
       withIdentifier: cellIdentifier, for: indexPath
       ) as? MainTableViewCell else {
+        errorLog("TableViewCell error")
         return UITableViewCell()
     }
     
     cell.delegate = self
-    cell.busStopIdentifier = busStopIdentifier
     cell.busInfo = sortedBuses[indexPath.section].busInfos[indexPath.row]
     
     return cell
