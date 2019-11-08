@@ -20,6 +20,7 @@ class PopUpViewController: UIViewController {
   
   // 정보를 요청할 서버 URL
   let url = Server.address.rawValue + StringConstants.errormsg.rawValue
+  let device = UIDevice.current
   
   var inquiryTitle = ""
   var inquiryContact = ""
@@ -43,7 +44,8 @@ class PopUpViewController: UIViewController {
   @IBAction func yesButtonDidTap(_ sender: Any) {
     
     request()
-    
+    print(device.name)
+    print(device.systemVersion)
     let presentingViewController =
       self.presentingViewController
     self.dismiss(animated: true, completion: {
@@ -70,7 +72,7 @@ extension PopUpViewController {
   func request() {
     
     let inquiry = Inquiry(title: self.inquiryTitle, msg: self.inquiryMessage,
-                          device: "test", contact: self.inquiryContact)
+                          device: "\(device.name)", version: "\(device.systemVersion)", contact: self.inquiryContact)
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     let jsonBody = try? encoder.encode(inquiry)
@@ -94,4 +96,5 @@ extension PopUpViewController {
       
     }
   }
+
 }

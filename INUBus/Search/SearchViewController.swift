@@ -189,8 +189,12 @@ extension SearchViewController: UITableViewDelegate {
   // cell의 높이
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
-    return indexPath.row == (searchHistory.count)-1 ? 145 : 77
-  }
+    if searchTextField.isEditing {
+      return 77
+    } else {
+      return indexPath.row == (searchHistory.count)-1 ? 145 : 77
+    }
+}
   
   // cell이 선택되면 RouteViewController로 이동
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

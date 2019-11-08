@@ -22,6 +22,7 @@ final class InquiryViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupInquiry()
+    
   }
   
   // MARK: - IBActions
