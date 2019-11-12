@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EA3-sc-7NM">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EA3-sc-7NM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,21 +18,21 @@
             <objects>
                 <viewController storyboardIdentifier="engineering" id="LDJ-Da-60A" customClass="ScienceViewController" customModule="INUBus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93a-gm-uhY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 계산한 값으로, 정확하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-M7-WYG">
-                                <rect key="frame" x="28" y="108" width="128.5" height="12.5"/>
+                                <rect key="frame" x="28" y="64" width="128.5" height="12.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="9"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gS4-Ks-dVN">
-                                <rect key="frame" x="0.0" y="141" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="97" width="375" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jct-jd-Ofz">
-                                <rect key="frame" x="340" y="705" width="64" height="64"/>
+                                <rect key="frame" x="301" y="510" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="7iO-Ay-Adl"/>
                                     <constraint firstAttribute="height" constant="64" id="Hqh-nY-TyJ"/>
@@ -61,15 +59,15 @@
                     <navigationItem key="navigationItem" id="aRK-yl-fTd">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="BOb-HB-NZ4">
                             <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kp0-b5-yGy">
-                                <rect key="frame" x="20" y="11" width="70" height="22"/>
+                                <rect key="frame" x="16" y="9" width="110" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="blueInuBus"/>
                             </button>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="5au-9r-JuG">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zo5-H6-4pI">
-                                    <rect key="frame" x="369" y="0.5" width="25" height="43"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zo5-H6-4pI">
+                                    <rect key="frame" x="337" y="0.0" width="22" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="blueInfo"/>
                                     <connections>
@@ -79,7 +77,7 @@
                             </barButtonItem>
                             <barButtonItem style="plain" id="L8M-pr-mRf">
                                 <view key="customView" contentMode="scaleToFill" id="J65-fb-P4T" customClass="RoundUIView" customModule="INUBus" customModuleProvider="target">
-                                    <rect key="frame" x="156" y="5.5" width="205" height="33"/>
+                                    <rect key="frame" x="132" y="5.5" width="205" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="버스 또는 정류장 검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gq-0b-eTc">
@@ -132,13 +130,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EA3-sc-7NM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="자연대" id="UAv-4y-icE">
-                        <inset key="imageInsets" minX="0.0" minY="-8" maxX="0.0" maxY="8"/>
+                        <inset key="imageInsets" minX="0.0" minY="-2" maxX="0.0" maxY="2"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-9"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2BY-J5-nuS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>

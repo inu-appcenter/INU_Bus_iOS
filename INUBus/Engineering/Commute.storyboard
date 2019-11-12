@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hvy-SQ-ohK">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hvy-SQ-ohK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -132,7 +130,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hvy-SQ-ohK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="통학" id="0dz-xy-Zdo">
-                        <inset key="imageInsets" minX="0.0" minY="-8" maxX="0.0" maxY="8"/>
+                        <inset key="imageInsets" minX="0.0" minY="-2" maxX="0.0" maxY="2"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-9"/>
                     </tabBarItem>
                     <toolbarItems/>

@@ -18,6 +18,7 @@ class MainTableViewCell: UITableViewCell {
   @IBOutlet weak var intervalLabel: UILabel!
   
   // MARK: - Properties
+  
   weak var delegate: ReloadDataDelegate?
   
   // IBOutlets에 값을 넣어줌.
@@ -51,6 +52,7 @@ class MainTableViewCell: UITableViewCell {
   }
   
   // MARK: - IBAction
+  
   @IBAction func favoritesButtonDidTap(_ sender: Any) {
     guard let busNo = busNoLabel.text,
       var favorArray = UserDefaults.standard.value(forKey: "favorArray") as? [String] else {
