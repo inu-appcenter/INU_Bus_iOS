@@ -27,6 +27,9 @@ final class DrawerViewController: UIViewController {
   @objc func presentView(gestureRecognizer: UITapGestureRecognizer) {
     let viewController = UIStoryboard(name: "Inquiry", bundle: nil)
       .instantiateViewController(withIdentifier: "InquiryNavigationController")
+    
+    viewController.modalPresentationStyle = .fullScreen
+    
     self.present(viewController, animated: true, completion: nil)
   }
 }

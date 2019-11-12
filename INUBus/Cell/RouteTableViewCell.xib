@@ -46,7 +46,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남동중학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd1-r1-uqX">
-                        <rect key="frame" x="80.5" y="60" width="57" height="18"/>
+                        <rect key="frame" x="80.5" y="61" width="57" height="15.5"/>
                         <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.38039215686274508" blue="0.95686274509803915" alpha="1" colorSpace="deviceRGB"/>
                         <nil key="highlightedColor"/>
@@ -55,10 +55,10 @@
                         <rect key="frame" x="25.5" y="56" width="83" height="26"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turn" translatesAutoresizingMaskIntoConstraints="NO" id="qkG-v1-o35">
-                                <rect key="frame" x="13" y="7" width="11" height="12"/>
+                                <rect key="frame" x="13" y="5" width="16" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회차지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGg-8q-mhi">
-                                <rect key="frame" x="33" y="4" width="34" height="18"/>
+                                <rect key="frame" x="38" y="5" width="34" height="15.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="13"/>
                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -86,7 +86,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L58-dX-ZxI">
-                        <rect key="frame" x="160" y="47.5" width="50" height="50"/>
+                        <rect key="frame" x="177" y="75.5" width="16" height="22"/>
                         <state key="normal" image="up"/>
                         <connections>
                             <action selector="upButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VL8-JF-5v0"/>
