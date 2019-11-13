@@ -109,8 +109,6 @@ struct Inquiry: Codable {
   let title: String
   let msg: String
   let device: String
-  let version: String
   let contact: String
-
 }
 

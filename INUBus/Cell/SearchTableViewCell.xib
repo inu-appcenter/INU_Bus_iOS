@@ -8,19 +8,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="NotoSans-Regular.ttf">
-            <string>NotoSans-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="335.5" id="Hta-OL-vtV" customClass="SearchTableViewCell" customModule="INUBus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" id="Hta-OL-vtV" customClass="SearchTableViewCell" customModule="INUBus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hta-OL-vtV" id="pVy-v3-8ml">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="258.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="3002" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH3-Vl-36u">
@@ -30,13 +25,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.08.15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbP-BS-Dt2">
-                        <rect key="frame" x="267.5" y="31" width="57.5" height="13.5"/>
+                        <rect key="frame" x="267.5" y="31" width="57.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경기 광명시 직행버스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnW-BQ-k2V">
-                        <rect key="frame" x="22" y="43" width="92" height="16.5"/>
+                        <rect key="frame" x="22" y="43" width="92" height="14.5"/>
                         <fontDescription key="fontDescription" name="NotoSansChakma-Regular" family="Noto Sans Chakma" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -52,32 +47,14 @@
                             <action selector="deleteButtonDidTap" destination="Hta-OL-vtV" eventType="touchUpInside" id="xGN-xG-UHS"/>
                         </connections>
                     </button>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2cr-fa-Eah">
-                        <rect key="frame" x="0.0" y="76" width="374.5" height="1"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nTH-eh-OaQ">
-                        <rect key="frame" x="0.0" y="144.5" width="374.5" height="1"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MR0-n6-Yd8">
-                        <rect key="frame" x="114" y="97" width="147" height="32"/>
-                        <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="17"/>
-                        <state key="normal" title="모든 검색 기록 지우기"/>
-                        <connections>
-                            <action selector="allDeleteButtonDidTap" destination="Hta-OL-vtV" eventType="touchUpInside" id="mfY-jn-w4X"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="MR0-n6-Yd8" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="97" id="15H-EG-uhV"/>
                     <constraint firstItem="AH3-Vl-36u" firstAttribute="leading" secondItem="pVy-v3-8ml" secondAttribute="leading" constant="22" id="9cf-cG-Gxa"/>
+                    <constraint firstAttribute="bottom" secondItem="vnW-BQ-k2V" secondAttribute="bottom" constant="19" id="cF5-RD-sdA"/>
                     <constraint firstItem="bzD-RU-pWA" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="27" id="cSw-QB-Ht2"/>
                     <constraint firstItem="AH3-Vl-36u" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="19" id="e8h-hZ-jbA"/>
-                    <constraint firstItem="MR0-n6-Yd8" firstAttribute="leading" secondItem="pVy-v3-8ml" secondAttribute="leading" constant="114" id="ffD-Tj-aL5"/>
+                    <constraint firstAttribute="bottom" secondItem="JbP-BS-Dt2" secondAttribute="bottom" constant="31" id="fUh-Gz-dsm"/>
                     <constraint firstAttribute="trailing" secondItem="bzD-RU-pWA" secondAttribute="trailing" constant="15.5" id="fm4-lQ-ktV"/>
                     <constraint firstItem="vnW-BQ-k2V" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="43" id="ldw-i3-6nE"/>
                     <constraint firstItem="JbP-BS-Dt2" firstAttribute="top" secondItem="pVy-v3-8ml" secondAttribute="top" constant="31" id="o4E-aK-wJ0"/>
@@ -86,13 +63,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="allDeleteButton" destination="MR0-n6-Yd8" id="aoZ-w2-z3b"/>
                 <outlet property="dayLabel" destination="JbP-BS-Dt2" id="h41-FE-jm0"/>
                 <outlet property="deleteButton" destination="bzD-RU-pWA" id="8tA-av-wjC"/>
                 <outlet property="moreInfo" destination="vnW-BQ-k2V" id="Szd-vX-Glt"/>
                 <outlet property="searchLabel" destination="AH3-Vl-36u" id="Oca-HE-qzH"/>
             </connections>
-            <point key="canvasLocation" x="-76" y="49.025487256371818"/>
+            <point key="canvasLocation" x="138.40000000000001" y="-122.78860569715144"/>
         </tableViewCell>
     </objects>
     <resources>
