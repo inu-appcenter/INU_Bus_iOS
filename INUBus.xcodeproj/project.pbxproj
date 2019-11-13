@@ -59,6 +59,8 @@
 		AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A2FDCD461A7B921C61FEE6843DB74E /* CommuteRouteViewController.swift */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
 		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
+		AFBAEE66237C0EFE00C480E5 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAEE65237C0EFE00C480E5 /* SearchService.swift */; };
+		AFBAEE68237C0F2500C480E5 /* SearchServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAEE67237C0F2500C480E5 /* SearchServiceType.swift */; };
 		AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */; };
 		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
@@ -132,6 +134,8 @@
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		A99B69AC15DD4EA7DCE59D60837613F3 /* CommuteRoute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommuteRoute.storyboard; sourceTree = "<group>"; };
 		ADD3681A8BFD23FDFAF25A2E868132C9 /* ArrivalInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalInfoManager.swift; sourceTree = "<group>"; };
+		AFBAEE65237C0EFE00C480E5 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		AFBAEE67237C0F2500C480E5 /* SearchServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceType.swift; sourceTree = "<group>"; };
 		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		BB8E2F1B1FCDD39FD59A1949472ED54E /* Commute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Commute.storyboard; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 			children = (
 				13A9193EEBD53730F14C4149AA76833D /* Search.storyboard */,
 				FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */,
+				AFBAEE65237C0EFE00C480E5 /* SearchService.swift */,
+				AFBAEE67237C0F2500C480E5 /* SearchServiceType.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				260EC4B57AF232E57DBBBF5D3F0DE070 /* Commute.swift in Sources */,
 				AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */,
 				15BA6641159AF41E6E775E99C1F314EC /* CommuteTableViewCell.swift in Sources */,
+				AFBAEE68237C0F2500C480E5 /* SearchServiceType.swift in Sources */,
 				79CCC4D5C6EA8D9BBE53D7C1B7EE8A8B /* CommuteViewController.swift in Sources */,
 				4B2805EE1996902E2475A9F069CEB5E5 /* Date+.swift in Sources */,
 				17498620253ABA56020461794E1EEDAD /* DrawerViewController.swift in Sources */,
@@ -559,6 +566,7 @@
 				89908192514DF5A1B43422FBAB12102A /* NetworkManager.swift in Sources */,
 				5085526B0373F523687B9ABD42A02498 /* Objects.swift in Sources */,
 				60C5C6CA2B8002D47B9D4A865058CE77 /* PopUpViewController.swift in Sources */,
+				AFBAEE66237C0EFE00C480E5 /* SearchService.swift in Sources */,
 				D2376F170AC8E76892827D41DE52EE25 /* ProgressIndicator.swift in Sources */,
 				E334B6C6D2656362B6B135914012B5B8 /* ReloadDataDelegate.swift in Sources */,
 				08AF930433ADB310D3A6F970BAC0FBBC /* RoundUITextField.swift in Sources */,

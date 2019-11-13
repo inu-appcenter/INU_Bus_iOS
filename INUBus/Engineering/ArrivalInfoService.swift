@@ -36,7 +36,7 @@ class ArrivalInfoService: ArrivalInfoServiceType {
             completion(busStopData, busTypeInfos)
           }
         } catch {
-          print(error.localizedDescription)
+          errorLog("JSON 포맷 에러: \(error.localizedDescription)")
           completion(nil, nil)
         }
       }

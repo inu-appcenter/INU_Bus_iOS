@@ -29,7 +29,7 @@ class SearchTableViewCell: UITableViewCell {
     // Configure the view for the selected state
   }
   
-  //deletebutton을 누르면 검색기록의 해당 row의 값을 지워줌
+  // deletebutton을 누르면 검색기록의 해당 row의 값을 지워줌
   @IBAction func deleteButtonDidTap() {
     
     guard var saveHistory =
@@ -44,43 +44,57 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     guard var saveNodeNum = UserDefaults.standard.object(forKey: "saveNum")
-      as? [String] else { return }
+      as? [String] else {
+        errorLog("검색기록 삭제 에러")
+        return
+    }
     
     guard var saveDay = UserDefaults.standard.object(forKey: "saveDate")
-      as? [String] else { return }
+      as? [String] else {
+        errorLog("검색기록 삭제 에러")
+        return
+    }
     
-    //button이 눌린 row의 searchLabel의 값을 text에서 삭제함
+    // button이 눌린 row의 searchLabel의 값을 text에서 삭제함
     if let index = saveHistory.firstIndex(of: busLabel) {
       saveHistory.remove(at: index)
       saveNodeNum.remove(at: index)
       saveDay.remove(at: index)
     }
-
-    //삭제한 값을 다시 저장
+    
+    // 삭제한 값을 다시 저장
     UserDefaults.standard.set(saveHistory, forKey: "saveText")
     UserDefaults.standard.set(saveNodeNum, forKey: "saveNum")
     UserDefaults.standard.set(saveDay, forKey: "saveDate")
   }
   
   @IBAction func allDeleteButtonDidTap() {
-
+    
     guard var saveHistory =
-      UserDefaults.standard.object(forKey: "saveText") as? [String]
-      else { return }
-
-    guard var saveNodeNum = UserDefaults.standard.object(forKey: "saveNum") as? [String] else { return }
-
-    guard var saveDay = UserDefaults.standard.object(forKey: "saveDate") as? [String] else { return }
-
+      UserDefaults.standard.object(forKey: "saveText") as? [String] else {
+        errorLog("검색기록 삭제 에러")
+        return
+    }
+    
+    guard var saveNodeNum = UserDefaults.standard.object(forKey: "saveNum")
+      as? [String] else {
+        errorLog("검색기록 삭제 에러")
+        return
+    }
+    
+    guard var saveDay = UserDefaults.standard.object(forKey: "saveDate")
+      as? [String] else {
+        errorLog("검색기록 삭제 에러")
+        return
+    }
+    
     saveHistory.removeAll()
     saveNodeNum.removeAll()
     saveDay.removeAll()
-
-    //삭제한 값을 다시 저장
+    
+    // 삭제한 값을 다시 저장
     UserDefaults.standard.set(saveHistory, forKey: "saveText")
     UserDefaults.standard.set(saveNodeNum, forKey: "saveNum")
     UserDefaults.standard.set(saveDay, forKey: "saveDate")
-
   }
-  
 }
