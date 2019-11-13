@@ -10,24 +10,20 @@ import UIKit
 
 class PopUpViewController: UIViewController {
   
+  
   // MARK: - IBOutlets
   
   @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var thanksLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   
-  // MARK: - Properties
-  
-  // 정보를 요청할 서버 URL
-  let url = Server.address.rawValue + StringConstants.errormsg.rawValue
-  let device = UIDevice.current
+  let url = Server.address.rawValue + StringConstants.nodeData.rawValue
   
   var inquiryTitle = ""
   var inquiryContact = ""
   var inquiryMessage = ""
   
-  // MARK: - Life cycle
-  
+  // MARK:
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
@@ -39,13 +35,10 @@ class PopUpViewController: UIViewController {
     super.viewWillAppear(animated)
   }
   
-  // MARK: - IBActions
-  
   @IBAction func yesButtonDidTap(_ sender: Any) {
     
     request()
-    print(device.name)
-    print(device.systemVersion)
+    
     let presentingViewController =
       self.presentingViewController
     self.dismiss(animated: true, completion: {
@@ -53,8 +46,6 @@ class PopUpViewController: UIViewController {
     })
   }
 }
-
-// MARK: - Methods
 
 extension PopUpViewController {
   func setupView() {
@@ -67,12 +58,11 @@ extension PopUpViewController {
       self.view.centerYAnchor).isActive = true
     
   }
-  
-  // HTTP POST 통신을 하는 함수
+  //
   func request() {
     
     let inquiry = Inquiry(title: self.inquiryTitle, msg: self.inquiryMessage,
-                          device: "\(device.name)", version: "\(device.systemVersion)", contact: self.inquiryContact)
+                          device: "test", contact: self.inquiryContact)
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     let jsonBody = try? encoder.encode(inquiry)
@@ -80,21 +70,15 @@ extension PopUpViewController {
     
     guard let url = URL(string: url) else { return }
     
-    PostManager.shared.request(url: url, method: .post, httpBody: jsonBody!) {(data, response, error) in
+    PostManager.shared.request(url: url, method: .post, httpBody: jsonBody!) {(data, error) in
       
-      guard let data = data, error == nil else {
-        print("error=\(error)")
-        return
+      if let error = error {
+        print(error.localizedDescription)
       }
       
-      if let httpStatus = response as? HTTPURLResponse {
-        print("statusCode = \(httpStatus.statusCode)")
+      if let data = data {
+      print(String(data: data, encoding: .utf8))
       }
-      
-      let responseString = String(data: data, encoding: .utf8)
-      print("responseString = \(responseString)")
-      
     }
   }
-
 }
