@@ -17,10 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // 첫 실행시 즐겨찾기 UserDefaults를 생성
-    if UserDefaults.standard.value(forKey: "engineeringFavorArray") == nil,
-      UserDefaults.standard.value(forKey: "scienceFavorArray") == nil {
-      UserDefaults.standard.set([String](), forKey: "engineeringFavorArray")
-      UserDefaults.standard.set([String](), forKey: "scienceFavorArray")
+    if UserDefaults.standard.value(forKey: "favorArray") == nil {
+      UserDefaults.standard.set([String](), forKey: "favorArray")
     }
     
     // drawer 설정 부분
@@ -46,6 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
+  // 화면 고정
+  func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+    // 세로 화면 고정
+    return [.portrait]
+  }
 
   func applicationWillResignActive(_ application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

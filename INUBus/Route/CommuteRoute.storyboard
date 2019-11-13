@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZbE-Xw-0Pk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Medium.ttf">
+            <string>NotoSans-Medium</string>
+        </array>
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans-Regular</string>
+        </array>
+        <array key="NotoSans-SemiBold.ttf">
+            <string>NotoSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Commute Route View Controller-->
+        <scene sceneID="ZlM-Kd-oTs">
+            <objects>
+                <viewController storyboardIdentifier="CommuteRouteViewController" id="ZbE-Xw-0Pk" customClass="CommuteRouteViewController" customModule="INUBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x05-7H-8cE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sqZ-4t-UW6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sqZ-4t-UW6" firstAttribute="leading" secondItem="d0W-5s-iwP" secondAttribute="leading" id="OUd-cL-xyi"/>
+                            <constraint firstItem="sqZ-4t-UW6" firstAttribute="top" secondItem="d0W-5s-iwP" secondAttribute="top" id="a7a-Fi-SCS"/>
+                            <constraint firstItem="d0W-5s-iwP" firstAttribute="trailing" secondItem="sqZ-4t-UW6" secondAttribute="trailing" id="a8s-bD-bAE"/>
+                            <constraint firstItem="d0W-5s-iwP" firstAttribute="bottom" secondItem="sqZ-4t-UW6" secondAttribute="bottom" id="rOF-KV-Xtd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d0W-5s-iwP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0cP-vG-NSa">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="whiteBack" id="Iwb-MQ-bqp">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="backButtonDidTap:" destination="ZbE-Xw-0Pk" id="WPs-WH-XmR"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="zIt-Ox-FIQ">
+                                <view key="customView" contentMode="scaleToFill" id="ubM-PM-gqg">
+                                    <rect key="frame" x="95" y="5.5" width="92" height="33"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k29-i9-QnC">
+                                            <rect key="frame" x="0.0" y="-4" width="70" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="28"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="lCk-Fh-8Wh">
+                                <view key="customView" contentMode="scaleToFill" id="wdY-KV-IFy">
+                                    <rect key="frame" x="354" y="5.5" width="40" height="33"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="VD7-y1-gGY">
+                                            <rect key="frame" x="4" y="0.5" width="31" height="31.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도착" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1m-qy-Cck">
+                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyp-kl-frH">
+                                                    <rect key="frame" x="0.0" y="15" width="31" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="6rv-qR-5R1">
+                                <view key="customView" contentMode="scaleToFill" id="zMR-tj-eiQ">
+                                    <rect key="frame" x="306" y="5.5" width="40" height="33"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1r-4v-XZp">
+                                            <rect key="frame" x="4" y="0.0" width="31" height="31.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출발" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kR-Nr-MrQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASi-cs-x4C">
+                                                    <rect key="frame" x="0.0" y="15" width="31" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="arrivalTimeLabel" destination="Nyp-kl-frH" id="YgJ-Xe-0XR"/>
+                        <outlet property="busTypeLabel" destination="k29-i9-QnC" id="LaD-bV-trS"/>
+                        <outlet property="departureTimeLabel" destination="ASi-cs-x4C" id="jHo-8P-Bcz"/>
+                        <outlet property="tableView" destination="sqZ-4t-UW6" id="Mrr-lF-hBc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ez8-UQ-CFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="171"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="whiteBack" width="28" height="28"/>
+    </resources>
+</document>

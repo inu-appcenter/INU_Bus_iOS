@@ -12,8 +12,11 @@ class ArrivalInfoService: ArrivalInfoServiceType {
   
   func requestArrivalInfo(url: String,
                           identifier: String,
-                          completion: @escaping ([BusInfo]?, [BusTypeInfo]?) -> ()) {
-    guard let url = URL(string: url) else { return }
+                          completion: @escaping ([BusInfo]?, [BusTypeInfo]?) -> Void) {
+    guard let url = URL(string: url) else {
+      errorLog("URL error")
+      return
+    }
     
     NetworkManager.shared.request(url: url, method: .get) { data, error in
       if let error = error {
@@ -27,13 +30,13 @@ class ArrivalInfoService: ArrivalInfoServiceType {
           
           for busStop in busStops where busStop.name == identifier {
             let busStopData = busStop.data
-            self.sortArrivalInfos(busInfos: busStopData, identifier: identifier) {
+            self.sortArrivalInfos(busInfos: busStopData) {
               busTypeInfos = $0
             }
             completion(busStopData, busTypeInfos)
           }
         } catch {
-          print(error.localizedDescription)
+          errorLog("JSON 포맷 에러: \(error.localizedDescription)")
           completion(nil, nil)
         }
       }
@@ -41,17 +44,14 @@ class ArrivalInfoService: ArrivalInfoServiceType {
     }
   }
   
-  func sortArrivalInfos(busInfos: [BusInfo],
-                        identifier: String,
-                        completion: @escaping ([BusTypeInfo]?) -> ()) {
+  func sortArrivalInfos(busInfos: [BusInfo], completion: @escaping ([BusTypeInfo]?) -> Void) {
     var sortedBuses = [BusTypeInfo(busType: "즐겨찾기", busInfos: []),
                        BusTypeInfo(busType: "간선버스", busInfos: []),
                        BusTypeInfo(busType: "지선버스", busInfos: []),
                        BusTypeInfo(busType: "지선버스", busInfos: [])]
     
-    guard let favorArray = UserDefaults.standard.value(forKey: identifier + "FavorArray")
-      as? [String] else {
-        print("즐겨찾기 불러오기 실패")
+    guard let favorArray = UserDefaults.standard.value(forKey: "favorArray") as? [String] else {
+        errorLog("즐겨찾기 불러오기 실패")
         completion(nil)
         return
     }
@@ -74,7 +74,6 @@ class ArrivalInfoService: ArrivalInfoServiceType {
     for index in (0..<sortedBuses.count).reversed() where sortedBuses[index].busInfos.count == 0 {
       sortedBuses.remove(at: index)
     }
-    
     completion(sortedBuses)
   }
 }

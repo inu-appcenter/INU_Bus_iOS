@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="CommuteTableViewCell" selectionStyle="default" indentationWidth="10" id="kJF-Io-oMo" customClass="CommuteTableViewCell" customModule="INUBus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kJF-Io-oMo" id="ojs-5g-dox">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deg-fU-LUV">
+                        <rect key="frame" x="30" y="15" width="19" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="CZc-qU-WHs"/>
+                            <constraint firstAttribute="width" constant="19" id="SPe-VZ-dJI"/>
+                        </constraints>
+                        <state key="normal" image="star"/>
+                        <connections>
+                            <action selector="favoritesButtonDidTap:" destination="kJF-Io-oMo" eventType="touchUpInside" id="NxC-jE-sEb"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="780" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBF-2c-Ino">
+                        <rect key="frame" x="65" y="10.5" width="39.5" height="31.5"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="23"/>
+                        <color key="textColor" red="0.031372549019607843" green="0.0" blue="0.95686274509803915" alpha="0.84705882352941175" colorSpace="deviceRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6분 54초" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7I-0e-A9y">
+                        <rect key="frame" x="183" y="17" width="48" height="18"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Giu-yl-y7x">
+                        <rect key="frame" x="290" y="17" width="26" height="18"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="deviceRGB"/>
+                <constraints>
+                    <constraint firstItem="deg-fU-LUV" firstAttribute="centerY" secondItem="ojs-5g-dox" secondAttribute="centerY" id="2q7-rP-N0H"/>
+                    <constraint firstItem="FBF-2c-Ino" firstAttribute="leading" secondItem="deg-fU-LUV" secondAttribute="trailing" constant="16" id="Ed5-Lm-Q6w"/>
+                    <constraint firstItem="FBF-2c-Ino" firstAttribute="centerY" secondItem="ojs-5g-dox" secondAttribute="centerY" id="FvD-9L-owi"/>
+                    <constraint firstItem="q7I-0e-A9y" firstAttribute="leading" secondItem="ojs-5g-dox" secondAttribute="trailing" multiplier="183:375" id="Sc5-nK-lsG"/>
+                    <constraint firstItem="Giu-yl-y7x" firstAttribute="centerY" secondItem="ojs-5g-dox" secondAttribute="centerY" id="WBc-Ll-pAW"/>
+                    <constraint firstItem="q7I-0e-A9y" firstAttribute="centerY" secondItem="ojs-5g-dox" secondAttribute="centerY" id="h0N-bB-pVc"/>
+                    <constraint firstItem="deg-fU-LUV" firstAttribute="leading" secondItem="ojs-5g-dox" secondAttribute="trailing" multiplier="30:375" id="nch-Fl-Bqm"/>
+                    <constraint firstItem="Giu-yl-y7x" firstAttribute="leading" secondItem="ojs-5g-dox" secondAttribute="trailing" multiplier="290:375" id="yka-IM-l72"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="eAF-cG-Ik6"/>
+            <connections>
+                <outlet property="busType" destination="FBF-2c-Ino" id="0kA-TM-Ko1"/>
+                <outlet property="currentPosition" destination="q7I-0e-A9y" id="IK9-HT-YgZ"/>
+                <outlet property="departureTime" destination="Giu-yl-y7x" id="EbI-xp-AAp"/>
+                <outlet property="favoritesButton" destination="deg-fU-LUV" id="Obd-UJ-Q8c"/>
+            </connections>
+            <point key="canvasLocation" x="-18.115942028985508" y="28.794642857142854"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star" width="18.5" height="18"/>
+    </resources>
+</document>

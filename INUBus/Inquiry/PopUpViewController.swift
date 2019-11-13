@@ -10,34 +10,29 @@ import UIKit
 
 class PopUpViewController: UIViewController {
   
-  
   // MARK: - IBOutlets
   
   @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var thanksLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   
-  let url = Server.address.rawValue + StringConstants.nodeData.rawValue
+  // MARK: - Properties
+  
+  /// 정보를 요청할 서버 URL
+  let url = Server.address.rawValue + StringConstants.errormsg.rawValue
+  let device = UIDevice.current
   
   var inquiryTitle = ""
   var inquiryContact = ""
   var inquiryMessage = ""
   
-  // MARK:
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupView()
-    // Do any additional setup after loading the view.
-    
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-  }
-  
+  // MARK: - IBAction
+
   @IBAction func yesButtonDidTap(_ sender: Any) {
-    
     request()
+    
+    print(device.name)
+    print(device.systemVersion)
     
     let presentingViewController =
       self.presentingViewController
@@ -45,24 +40,39 @@ class PopUpViewController: UIViewController {
       presentingViewController?.dismiss(animated: true, completion: nil)
     })
   }
+  
+  // MARK: - Life Cycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupView()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
 }
+
+// MARK: - Methods
 
 extension PopUpViewController {
   func setupView() {
-    
     self.mainView.translatesAutoresizingMaskIntoConstraints = false
     self.mainView.widthAnchor.constraint(equalToConstant: 260.5).isActive = true
     self.mainView.heightAnchor.constraint(equalToConstant: 155).isActive = true
     self.mainView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     self.mainView.centerYAnchor.constraint(equalTo:
       self.view.centerYAnchor).isActive = true
-    
   }
-  //
+
+  /// http post 통신을 하는 함수
   func request() {
+    let inquiry = Inquiry(title: self.inquiryTitle,
+                          msg: self.inquiryMessage,
+                          device: "\(device.name)",
+                          version: "\(device.systemVersion)",
+                          contact: self.inquiryContact)
     
-    let inquiry = Inquiry(title: self.inquiryTitle, msg: self.inquiryMessage,
-                          device: "test", contact: self.inquiryContact)
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     let jsonBody = try? encoder.encode(inquiry)
@@ -70,14 +80,19 @@ extension PopUpViewController {
     
     guard let url = URL(string: url) else { return }
     
-    PostManager.shared.request(url: url, method: .post, httpBody: jsonBody!) {(data, error) in
+    PostManager.shared.request(url: url, method: .post, httpBody: jsonBody!) {
+      data, response, error in
       
       if let error = error {
-        print(error.localizedDescription)
+        errorLog("Post 에러: \(error.localizedDescription)")
+      }
+      
+      if let httpsStatus = response as? HTTPURLResponse {
+        print("statusCode: \(httpsStatus.statusCode)")
       }
       
       if let data = data {
-      print(String(data: data, encoding: .utf8))
+        print(String(data: data, encoding: .utf8) ?? "Success")
       }
     }
   }

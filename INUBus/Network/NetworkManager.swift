@@ -16,9 +16,9 @@ final class NetworkManager {
   func request(url: URL,
                method: HTTPMethod,
                completion: @escaping (Data?, Error?) -> Void) {
-//    defer {
-//      ProgressIndicator.shared.hide()
-//    }
+    defer {
+      ProgressIndicator.shared.hide()
+    }
     let session = URLSession(configuration: .default)
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue
@@ -39,8 +39,10 @@ final class NetworkManager {
     private init() { }
     
     func request(url: URL, method: HTTPMethod, httpBody: Data,
-                 completion: @escaping (Data?, Error?) -> Void) {
-      
+                 completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+      defer {
+        ProgressIndicator.shared.hide()
+      }
       let session = URLSession(configuration: .default)
       var urlRequest = URLRequest(url: url)
       
@@ -49,8 +51,8 @@ final class NetworkManager {
       urlRequest.httpBody = httpBody
       ProgressIndicator.shared.show()
       
-      let task = session.dataTask(with: urlRequest) { (data, _, error) in
-        completion(data, error)
+      let task = session.dataTask(with: urlRequest) { data, response, error in
+        completion(data, response, error)
         session.finishTasksAndInvalidate()
       }
       task.resume()

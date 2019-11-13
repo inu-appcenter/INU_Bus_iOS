@@ -105,10 +105,41 @@ struct Route: Codable {
 }
 
 struct Inquiry: Codable {
-  
   let title: String
   let msg: String
   let device: String
+  let version: String
   let contact: String
 }
 
+struct GPS: Codable {
+  let routeID: String
+  let status: Int
+  let location: Int
+  let lat: Double
+  let lng: Double
+  
+  var commuteBusType: CommuteBusType {
+    switch routeID {
+    case "송내":
+      return .songnae
+    case "수원":
+      return .suwon
+    case "일산":
+      return .ilsan
+    case "청라":
+      return .cheongna
+    default:
+      return .gwangmyeong
+    }
+  }
+  
+  var position: String {
+    return commuteBusType.busStopList[location]
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case status, location, lat, lng
+    case routeID = "routeId"
+  }
+}

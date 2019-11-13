@@ -59,3 +59,8 @@ func removeAllUserDefaluts() {
     UserDefaults.standard.removeObject(forKey: key)
   }
 }
+
+/// 특정 UserDealuts 데이터를 삭제하는 함수
+func removeUserDefaluts(forKey: String) {
+  UserDefaults.standard.removeObject(forKey: forKey)
+}

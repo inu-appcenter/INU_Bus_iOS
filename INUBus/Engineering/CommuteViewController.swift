@@ -1,19 +1,17 @@
 //
-//  MainViewController.swift
+//  CommuteViewController.swift
 //  INUBus
 //
-//  Created by zun on 30/08/2019.
+//  Created by zun on 25/09/2019.
 //  Copyright © 2019 zun. All rights reserved.
 //
 
 import UIKit
 import KYDrawerController
 
-/// Main에 나올 ViewController들의 베이스가 되는 ViewController
-class MainViewController: UIViewController {
-  
+class CommuteViewController: UIViewController {
   // MARK: - IBOutlets
-
+  
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchView: RoundUIView!
   @IBOutlet weak var searchImageView: UIImageView!
@@ -21,37 +19,30 @@ class MainViewController: UIViewController {
   @IBOutlet weak var infoButton: UIButton!
   
   // MARK: - Must Override Properties
-  // 상속하는 하위 클래스들은 무조건 오버라이드를 해야함.
   
   /// 버스 정류장 식별자
   var busStopIdentifier: String {
-    return ""
+    return "gps"
   }
   
   /// Tab Bar에 들어갈 위치 인덱스
   var tabBarIndex: Int {
-    return -1
+    return 2
   }
   
-  // MARK: - Properties
-  
-  let arrivalInfoService: ArrivalInfoServiceType = ArrivalInfoService()
+  // MARK: Properties
   
   /// 정보를 요청할 서버 URL
-  let url = Server.address.rawValue + StringConstants.arrivalInfo.rawValue
+  let url = Server.address.rawValue + "gps"
   
   /// TableView에 쓰일 Cell 식별자
-  let cellIdentifier = StringConstants.mainTableViewCell.rawValue
+  let cellIdentifier = "CommuteTableViewCell"
   
-  /// 서버에서 받아오는 JSON 형태
-  var busInfos = [BusInfo]()
-  
-  /// TableView에 띄울 Array. busInfos의 정보들이 정렬되어짐.
-  var sortedBuses = [BusTypeInfo]()
-  
-  var timer: Timer!
-  
-  // MARK: - IBAtions
+  var gpsInfos = [GPS(routeID: "송내", status: 0, location: 0, lat: 0, lng: 0),
+                  GPS(routeID: "수원", status: 0, location: 0, lat: 0, lng: 0),
+                  GPS(routeID: "일산", status: 0, location: 0, lat: 0, lng: 0),
+                  GPS(routeID: "청라", status: 0, location: 0, lat: 0, lng: 0),
+                  GPS(routeID: "광명", status: 0, location: 0, lat: 0, lng: 0)]
   
   @IBAction func infoButtonDidTap() {
     if let drawerController = navigationController?.parent?.parent as?
@@ -64,22 +55,17 @@ class MainViewController: UIViewController {
     request()
   }
   
-  // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
     request()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    request()
-  }
 }
 
 // MARK: - Methods
 
-extension MainViewController {
+extension CommuteViewController {
   func setUp() {
     tableView.delegate = self
     tableView.dataSource = self
@@ -108,60 +94,51 @@ extension MainViewController {
     
     // info 버튼 그림자 설정
     infoButton.layer.applyShadow()
-    
-    startTimer()
   }
   
-  /// 서버에 데이터를 요청하는 함수.
   func request() {
-    arrivalInfoService.requestArrivalInfo(url: url, identifier: busStopIdentifier) {
-      if let busInfos = $0, let busTypeInfo = $1 {
-        self.busInfos = busInfos
-        self.sortedBuses = busTypeInfo
-        DispatchQueue.main.async {
-          self.tableView.reloadData()
+    guard let url = URL(string: url) else {
+      errorLog("잘못된 URL입니다.")
+      return
+    }
+    
+    NetworkManager.shared.request(url: url, method: .get) { data, error in
+      if let error = error {
+        errorLog("네트워크 에러가 발생했습니다: " + error.localizedDescription)
+      }
+      
+      if let data = data {
+        do {
+          self.gpsInfos = try JSONDecoder().decode([GPS].self, from: data)
+          
+          DispatchQueue.main.async {
+            self.tableView.reloadData()
+          }
+        } catch {
+          errorLog("Decode하는데 오류가 발생했습니다: " + error.localizedDescription)
         }
       }
     }
   }
-  
+
   @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
     UIViewController
       .instantiate(storyboard: "Search", identifier: "SearchViewController")
       .push(at: self, animated: false)
   }
-  
-  // 매초 1초씩 tableView를 업데이트 함으로써 1초씩 감소하는 효과를 봄.
-  func startTimer() {
-    timer = Timer.scheduledTimer(timeInterval: 1,
-                                 target: self,
-                                 selector: #selector(countDown),
-                                 userInfo: nil,
-                                 repeats: true)
-  }
-  
-  @objc func countDown() {
+}
+
+// MARK: - Custom Delegate
+
+extension CommuteViewController: ReloadDataDelegate {
+  func tableViewReloadData() {
     tableView.reloadData()
   }
 }
 
-// MARK: - ReloadDataDelegate
+// MARK: - TableViewDelegate
 
-extension MainViewController: ReloadDataDelegate {
-  func tableViewReloadData() {
-    arrivalInfoService.sortArrivalInfos(busInfos: busInfos) {
-      if let busTypeInfos = $0 {
-        self.sortedBuses = busTypeInfos
-        self.tableView.reloadData()
-      }
-    }
-  }
-}
-
-// MARK: - UITableViewDelegate
-
-extension MainViewController: UITableViewDelegate {
-  // cell의 높이
+extension CommuteViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 52
   }
@@ -176,10 +153,9 @@ extension MainViewController: UITableViewDelegate {
     let view = UIView()
     view.backgroundColor = UIColor(white: 235/250, alpha: 1)
     
-    view.addSubview(sectionLabel(text: sortedBuses[section].busType,
-                                 size: sizeByDevice(size: 28)))
-    view.addSubview(sectionLabel(text: "남은시간", size: sizeByDevice(size: 182)))
-    view.addSubview(sectionLabel(text: "배차간격", size: sizeByDevice(size: 288)))
+    view.addSubview(sectionLabel(text: "통학버스", size: sizeByDevice(size: 28)))
+    view.addSubview(sectionLabel(text: "현재위치", size: sizeByDevice(size: 182)))
+    view.addSubview(sectionLabel(text: "출발시간", size: sizeByDevice(size: 288)))
     
     return view
   }
@@ -189,9 +165,9 @@ extension MainViewController: UITableViewDelegate {
     tableView.deselectRow(at: indexPath, animated: false)
     
     if let viewController = UIViewController
-      .instantiate(storyboard: "Route",
-                   identifier: "RouteViewController") as? RouteViewController {
-      viewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
+      .instantiate(storyboard: "CommuteRoute",
+                   identifier: "CommuteRouteViewController") as? CommuteRouteViewController {
+      viewController.gpsInfo = gpsInfos[indexPath.row]
       viewController.push(at: self)
     }
   }
@@ -213,30 +189,26 @@ extension MainViewController: UITableViewDelegate {
   }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - TableViewDataSource
 
-extension MainViewController: UITableViewDataSource {
-  // section의 개수
+extension CommuteViewController: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return sortedBuses.count
+    return 1
   }
   
-  // 각 section안에 들어갈 cell의 개수
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return sortedBuses[section].busInfos.count
+    return gpsInfos.count
   }
   
-  // cell 커스터마이징
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(
-      withIdentifier: cellIdentifier, for: indexPath
-      ) as? MainTableViewCell else {
-        errorLog("TableViewCell error")
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+      as? CommuteTableViewCell else {
+        errorLog("테이블뷰셀 에러")
         return UITableViewCell()
     }
     
     cell.delegate = self
-    cell.busInfo = sortedBuses[indexPath.section].busInfos[indexPath.row]
+    cell.gpsInfo = gpsInfos[indexPath.row]
     
     return cell
   }
