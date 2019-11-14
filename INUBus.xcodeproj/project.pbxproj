@@ -30,9 +30,11 @@
 		4173D0C42D054DBBC8FB9B2D5F4AC73F /* ArrivalInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196440D6AAD92309E2E63C442810737 /* ArrivalInfoService.swift */; };
 		458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */; };
 		4B2805EE1996902E2475A9F069CEB5E5 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6DB49E8169BD07F59F3EE86BBBC77 /* Date+.swift */; };
+		4F34B768D804FAC0DC3955777C63CFA4 /* SearchServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E55BF07667FDB7B185225CA534680E /* SearchServiceType.swift */; };
 		5085526B0373F523687B9ABD42A02498 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011A8E2DCE4FDEC0E346B31598BC4C3B /* Objects.swift */; };
 		5120FBE3A3189AF90B3AE4C750694FF8 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A9193EEBD53730F14C4149AA76833D /* Search.storyboard */; };
 		547D8E1EA71401AED07C064D04E2EE37 /* Drawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */; };
+		57C6651638F3BF782989C2345A08F6E1 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */; };
 		60C5C6CA2B8002D47B9D4A865058CE77 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D3CED2904AC110CF3C35BBC8AEC9A2 /* PopUpViewController.swift */; };
 		6351C71E97A6B72284E627130F50B949 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0B0231627F638EFF5759FB4C1FDC36B /* NotoSans-Regular.ttf */; };
 		68501155673108CF7ECB3C6D48232026 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6184DBC64C76146A7F4647EAA388967A /* SearchTableViewCell.xib */; };
@@ -59,9 +61,6 @@
 		AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A2FDCD461A7B921C61FEE6843DB74E /* CommuteRouteViewController.swift */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
 		AD74EAFDE4932AA1B9CF1E399DB529EF /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D24E18436F3E12031F5CA46064DD2 /* Engineering.storyboard */; };
-		AFBAEE66237C0EFE00C480E5 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAEE65237C0EFE00C480E5 /* SearchService.swift */; };
-		AFBAEE68237C0F2500C480E5 /* SearchServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAEE67237C0F2500C480E5 /* SearchServiceType.swift */; };
-		AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */; };
 		B4E3D88474D2E5223411C72F4CDD89F9 /* EngineeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D93CCC2B444B9288C7B2BAFF840115 /* EngineeringViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
 		C6B424D583500F803D4EE21F14009BF5 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F16BF3B61D8A26E4F692C5EA0560B291 /* NanumSquareRegular.ttf */; };
@@ -98,10 +97,10 @@
 		2D108F6D4EC745C078727E3A7B0AFA05 /* Science.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Science.storyboard; sourceTree = "<group>"; };
 		2E8DE7DCB608C2A9FE006B124276EF63 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = INUBus/Network/NetworkManager.swift; sourceTree = SOURCE_ROOT; };
 		3076E47778D7C47FDEDB4671426B1CFD /* Route.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Route.storyboard; sourceTree = "<group>"; };
+		30E55BF07667FDB7B185225CA534680E /* SearchServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceType.swift; sourceTree = "<group>"; };
 		32A2FDCD461A7B921C61FEE6843DB74E /* CommuteRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteRouteViewController.swift; sourceTree = "<group>"; };
 		35E1E3D46316FEEC4F7678832546EAAF /* Pods-INUBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INUBus.debug.xcconfig"; path = "Target Support Files/Pods-INUBus/Pods-INUBus.debug.xcconfig"; sourceTree = "<group>"; };
 		373AE60E4D0B5741DB041BF01EE3305B /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
-		387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38C9AED849821A253AF7BDD66D2A3AFB /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		38E14AA1EF408C3914D18D09F5002C5D /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		3DE4EB47C00B1DD869CAFE437E0B1A9B /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,9 +133,8 @@
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		A99B69AC15DD4EA7DCE59D60837613F3 /* CommuteRoute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommuteRoute.storyboard; sourceTree = "<group>"; };
 		ADD3681A8BFD23FDFAF25A2E868132C9 /* ArrivalInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalInfoManager.swift; sourceTree = "<group>"; };
-		AFBAEE65237C0EFE00C480E5 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
-		AFBAEE67237C0F2500C480E5 /* SearchServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceType.swift; sourceTree = "<group>"; };
 		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		BB8E2F1B1FCDD39FD59A1949472ED54E /* Commute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Commute.storyboard; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		C64D9C4B5531AE85FB85C9803746C63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +197,8 @@
 		2386BE588CE8B9625F2F210BF3FD6663 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6A7F84B572065F2F849DE5076569FB53 /* Main.storyboard */,
+				EBFE70FD45933AEB3CA138AEC6BEFF2C /* Info.plist */,
 				A7A8BBB51597AB8D368EB0639F612160 /* Font */,
 				C64D9C4B5531AE85FB85C9803746C63B /* AppDelegate.swift */,
 				774ECDFB09CCD2995D874DD5BD9D68CA /* Assets.xcassets */,
@@ -291,9 +291,6 @@
 				5A0AA75F38831FD6B329EAE2BF832069 /* Route */,
 				89FEB4F59CBFCA31FB23AA7251C8A6FE /* Search */,
 				2386BE588CE8B9625F2F210BF3FD6663 /* Supporting Files */,
-				EBFE70FD45933AEB3CA138AEC6BEFF2C /* Info.plist */,
-				6A7F84B572065F2F849DE5076569FB53 /* Main.storyboard */,
-				387D19F0F6E9E1A1054D0341F56DCA6B /* ViewController.swift */,
 			);
 			path = INUBus;
 			sourceTree = "<group>";
@@ -311,9 +308,9 @@
 			isa = PBXGroup;
 			children = (
 				13A9193EEBD53730F14C4149AA76833D /* Search.storyboard */,
+				B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */,
+				30E55BF07667FDB7B185225CA534680E /* SearchServiceType.swift */,
 				FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */,
-				AFBAEE65237C0EFE00C480E5 /* SearchService.swift */,
-				AFBAEE67237C0F2500C480E5 /* SearchServiceType.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 				260EC4B57AF232E57DBBBF5D3F0DE070 /* Commute.swift in Sources */,
 				AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */,
 				15BA6641159AF41E6E775E99C1F314EC /* CommuteTableViewCell.swift in Sources */,
-				AFBAEE68237C0F2500C480E5 /* SearchServiceType.swift in Sources */,
 				79CCC4D5C6EA8D9BBE53D7C1B7EE8A8B /* CommuteViewController.swift in Sources */,
 				4B2805EE1996902E2475A9F069CEB5E5 /* Date+.swift in Sources */,
 				17498620253ABA56020461794E1EEDAD /* DrawerViewController.swift in Sources */,
@@ -566,7 +562,6 @@
 				89908192514DF5A1B43422FBAB12102A /* NetworkManager.swift in Sources */,
 				5085526B0373F523687B9ABD42A02498 /* Objects.swift in Sources */,
 				60C5C6CA2B8002D47B9D4A865058CE77 /* PopUpViewController.swift in Sources */,
-				AFBAEE66237C0EFE00C480E5 /* SearchService.swift in Sources */,
 				D2376F170AC8E76892827D41DE52EE25 /* ProgressIndicator.swift in Sources */,
 				E334B6C6D2656362B6B135914012B5B8 /* ReloadDataDelegate.swift in Sources */,
 				08AF930433ADB310D3A6F970BAC0FBBC /* RoundUITextField.swift in Sources */,
@@ -574,6 +569,8 @@
 				17A5BEA1C3F419885FFB2DED8086B5EF /* RouteTableViewCell.swift in Sources */,
 				DAB1CD488A0C5D16EE0A225B40F8F5B4 /* RouteViewController.swift in Sources */,
 				7DB2D8A81073FA8FE198D4B1516A26C0 /* ScienceViewController.swift in Sources */,
+				57C6651638F3BF782989C2345A08F6E1 /* SearchService.swift in Sources */,
+				4F34B768D804FAC0DC3955777C63CFA4 /* SearchServiceType.swift in Sources */,
 				9A0E1992BB4AF959A267967D778F3437 /* SearchTableViewCell.swift in Sources */,
 				9FF37A04ADED104662BFB8CD699C33BD /* SearchViewController.swift in Sources */,
 				12197ED56D033A4E6F6146B9DB84B405 /* Server.swift in Sources */,
@@ -584,7 +581,6 @@
 				0DF15FC4117DF01770EE7B2FFC8FDD30 /* UIImage+.swift in Sources */,
 				CF52DBDA579483A632E7A239D379565B /* UIView+.swift in Sources */,
 				14F34526C6A9EADDE2C17B121E38900B /* UIViewController+.swift in Sources */,
-				AFF484B42AC4BEF6B2E685B74ACD4706 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
