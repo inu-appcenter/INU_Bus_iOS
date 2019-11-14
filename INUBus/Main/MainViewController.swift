@@ -109,6 +109,7 @@ extension MainViewController {
     // info 버튼 그림자 설정
     infoButton.layer.applyShadow()
     
+    // 타이머를 작동시켜서 버스 시간들을 매초마다 업데이트함.
     startTimer()
   }
   
@@ -127,7 +128,8 @@ extension MainViewController {
   
   @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
     UIViewController
-      .instantiate(storyboard: "Search", identifier: "SearchViewController")
+      .instantiate(storyboard: StringConstants.search.rawValue,
+                   identifier: StringConstants.searchViewController.rawValue)
       .push(at: self, animated: false)
   }
   
@@ -178,8 +180,10 @@ extension MainViewController: UITableViewDelegate {
     
     view.addSubview(sectionLabel(text: sortedBuses[section].busType,
                                  size: sizeByDevice(size: 28)))
-    view.addSubview(sectionLabel(text: "남은시간", size: sizeByDevice(size: 182)))
-    view.addSubview(sectionLabel(text: "배차간격", size: sizeByDevice(size: 288)))
+    view.addSubview(sectionLabel(text: StringConstants.sectionRemaning.rawValue,
+                                 size: sizeByDevice(size: 182)))
+    view.addSubview(sectionLabel(text: StringConstants.sectionInterval.rawValue,
+                                 size: sizeByDevice(size: 288)))
     
     return view
   }
@@ -189,8 +193,9 @@ extension MainViewController: UITableViewDelegate {
     tableView.deselectRow(at: indexPath, animated: false)
     
     if let viewController = UIViewController
-      .instantiate(storyboard: "Route",
-                   identifier: "RouteViewController") as? RouteViewController {
+      .instantiate(storyboard: StringConstants.route.rawValue,
+                   identifier: StringConstants.routeViewController.rawValue)
+      as? RouteViewController {
       viewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
       viewController.push(at: self)
     }

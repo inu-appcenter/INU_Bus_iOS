@@ -14,8 +14,14 @@ enum StringConstants: String {
   case tabBarController = "TabBarController"
   case drawer = "Drawer"
   case drawerViewController = "DrawerViewController"
+  case search = "Search"
+  case route = "Route"
+  case routeViewController = "RouteViewController"
+  case searchViewController = "SearchViewController"
   case mainTableViewCell = "MainTableViewCell"
   case notoSansMedium = "NotoSans-Medium"
+  case sectionRemaning = "남은시간"
+  case sectionInterval = "배차간격"
   case arrivalInfo
   case nodeData
   case engineer
