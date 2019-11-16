@@ -18,76 +18,161 @@ final class InquiryViewController: UIViewController {
   @IBOutlet weak var sendButton: UIButton!
   
   // MARK: - Property
-  let message = "소중한 의견 감사드립니다!"
   
- // MARK: - IBActions
+  /// 정보를 요청할 서버 URL
+  let url = Server.address.rawValue + StringConstants.errormsg.rawValue
+  
+  // 다음 화면으로 넘어갈 스토리보드와 뷰컨트롤러
+  let storyboardIdentifier = StringConstants.inquiry.rawValue
+  let viewControllerIdentifier = StringConstants.popUpViewController.rawValue
+  
+ // MARK: - IBAction
   
   @IBAction func backButtonDidTap(_ sender: Any) {
-    self.dismiss(animated: true)
-    changeStatusBarColor(barStyle: .default)
+    dismiss(animated: true)
   }
   
-  @IBAction func titleTextContentsCheck(_ sender: Any) {
-    contentsCheck()
+  @IBAction func sendButtonDidTap(_ sender: Any) {
+    request()
   }
-  
-  @IBAction func phoneTextContentsCheck(_ sender: Any) {
-    contentsCheck()
-  }
-  
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupInquiry()
-  }
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let viewController = segue.destination as? PopUpViewController {
-      viewController.inquiryTitle = self.titleTextField.text ?? ""
-      viewController.inquiryContact = self.phoneNumberTextField.text ?? ""
-      viewController.inquiryMessage = self.contentsTextView.text ?? ""
-    }
+    setUp()
   }
 }
 
 // MARK: - Methods
 
 extension InquiryViewController {
-  func setupInquiry() {
-    self.contentsTextView.layer.borderColor =
-      UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1).cgColor
+  func setUp() {
+    let viewControllerGesture = UITapGestureRecognizer(target: self,
+                                                       action: #selector(tapViewcontroller(_:)))
+    view.addGestureRecognizer(viewControllerGesture)
+    contentsTextView.delegate = self
     
-    self.contentsTextView.layer.borderWidth = 1
+    titleTextField.delegate = self
+    titleTextField.addTarget(self,
+                             action: #selector(contentsCheck),
+                             for: .editingChanged)
+    phoneNumberTextField.addTarget(self,
+                                   action: #selector(contentsCheck),
+                                   for: .editingChanged)
     
-    let viewControllerGesture: UITapGestureRecognizer =
-      UITapGestureRecognizer(target: self, action: #selector(tapViewcontroller(_:)))
-    self.view.addGestureRecognizer(viewControllerGesture)
-    self.contentsTextView.delegate = self
+    contentsTextView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      contentsTextView.topAnchor.constraint(
+        equalTo: phoneNumberTextField.bottomAnchor,
+        constant: 50),
+      contentsTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                                constant: 31),
+      contentsTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                              constant: -31),
+      contentsTextView.heightAnchor.constraint(
+        equalToConstant: heightByDevice(height: UIScreen.main.bounds.height))
+    ])
+    
+    sendButton.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      sendButton.widthAnchor.constraint(equalToConstant: 70),
+      sendButton.heightAnchor.constraint(equalToConstant: 32),
+      sendButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      sendButton.topAnchor.constraint(equalTo: contentsTextView.bottomAnchor,
+                                      constant: 54)
+    ])
   }
   
   /// 빈 공간을  눌렀을 때의 함수
   @objc func tapViewcontroller(_ sender: UITapGestureRecognizer) {
     // 키보드를 내림
-    self.view.endEditing(true)
-    self.contentsCheck()
+    view.endEditing(true)
+    contentsCheck()
   }
   
   /// TextField, TextView가 다 채워졌으면 버튼을 활성화하는 함수
-  func contentsCheck() {
-    if self.titleTextField.text != "" &&
-      self.phoneNumberTextField.text != "" &&
-      self.contentsTextView.text != "" {
-      self.sendButton.isEnabled = true
+  @objc func contentsCheck() {
+    if titleTextField.text != "" &&
+      phoneNumberTextField.text != "" &&
+      contentsTextView.text != "" {
+      sendButton.alpha = 1
+      sendButton.isEnabled = true
     } else {
-      self.sendButton.isEnabled = false
+      sendButton.alpha = 0.5
+      sendButton.isEnabled = false
+    }
+  }
+  
+  /// textView를 기기 높이에 따라서 조정하기 위한 함수.
+  func heightByDevice(height: CGFloat) -> CGFloat {
+    return height *  174 / 667
+  }
+  
+  /// 문의사항을 서버에 post함.
+  func request() {
+    let inquiry = Inquiry(title: titleTextField.text ?? "",
+                          msg: contentsTextView.text,
+                          device: UIDevice.current.name,
+                          version: UIDevice.current.systemVersion,
+                          contact: phoneNumberTextField.text ?? "")
+    
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+    
+    do {
+      let jsonBody = try encoder.encode(inquiry)
+      
+      guard let url = URL(string: url) else {
+        errorLog("URL 에러")
+        return
+      }
+      
+      NetworkManager.shared.post(url: url,
+                                 httpBody: jsonBody) { data, response, error in
+        if let error = error {
+          errorLog("Post 에러: \(error.localizedDescription)")
+          
+          DispatchQueue.main.async {
+                      UIAlertController
+              .alert(title: nil, message: StringConstants.networkError.rawValue)
+              .action(title: "확인")
+              .present(to: self)
+          }
+        }
+        
+        if let httpsStatus = response as? HTTPURLResponse {
+          print("statusCode: \(httpsStatus.statusCode)")
+        }
+        
+        if let data = data {
+          print(String(data: data, encoding: .utf8) ?? "Success")
+          let viewController = UIViewController
+            .instantiate(storyboard: self.storyboardIdentifier,
+                         identifier: self.viewControllerIdentifier)
+          DispatchQueue.main.async {
+            viewController.modalPresentationStyle = .overFullScreen
+            self.present(viewController, animated: false)
+          }
+          
+        }
+      }
+      
+    } catch {
+      errorLog("인코딩 에러: \(error.localizedDescription)")
     }
   }
 }
 
-// MARK: - UITextViewDelegate
-
 extension InquiryViewController: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
-    self.contentsCheck()
+    // TextView내에 내용이 변했을때를 감지함
+    contentsCheck()
+  }
+}
+
+extension InquiryViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    //return을 눌렀을 때 키보드를 내려줌.
+    textField.resignFirstResponder()
+    return true
   }
 }

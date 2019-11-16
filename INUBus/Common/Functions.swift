@@ -28,7 +28,7 @@ func showNoticeAlertController(viewController: UIViewController) {
                 end: 7,
                 font: UIFont(name: "Jalnan", size: 13),
                 color: UIColor(red: 0/255, green: 97/255, blue: 244/255, alpha: 1))
-    .action(title: "확인했습니다", style: .default, completion: nil)
+    .action(title: "확인했습니다")
     .present(to: viewController)
 }
 

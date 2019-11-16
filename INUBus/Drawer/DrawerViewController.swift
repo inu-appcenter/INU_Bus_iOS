@@ -12,10 +12,6 @@ final class DrawerViewController: UIViewController {
   
   @IBOutlet weak var inquiryView: RoundUIView!
   
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -25,9 +21,9 @@ final class DrawerViewController: UIViewController {
   }
   
   @objc func presentView(gestureRecognizer: UITapGestureRecognizer) {
-    let viewController = UIStoryboard(name: "Inquiry", bundle: nil)
-      .instantiateViewController(withIdentifier: "InquiryNavigationController")
-    viewController.modalPresentationStyle = .fullScreen
-    self.present(viewController, animated: true, completion: nil)
+    let viewController = UIViewController
+      .instantiate(storyboard: StringConstants.inquiry.rawValue,
+                   identifier: StringConstants.inquiryNaviVC.rawValue)
+    present(viewController, animated: true)
   }
 }

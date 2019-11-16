@@ -10,7 +10,7 @@ import UIKit
 
 class ScienceViewController: MainViewController {
   override var busStopIdentifier: String {
-    return "science"
+    return StringConstants.science.rawValue
   }
   
   override var tabBarIndex: Int {

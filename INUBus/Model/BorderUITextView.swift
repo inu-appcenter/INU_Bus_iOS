@@ -1,31 +1,23 @@
 //
-//  RoundUITextField.swift
-//  
+//  BorderUITextView.swift
+//  INUBus
 //
-//  Created by 임현규 on 12/08/2019.
+//  Created by zun on 15/11/2019.
+//  Copyright © 2019 zun. All rights reserved.
 //
 
 import UIKit
 
-/// storyboard상에서 UITextField의 특정 프로퍼티를 변경하기 위한 클래스
+/// storyboard상에서 UITextView의 특정 프로퍼티를 변경하기 위한 클래스
 @IBDesignable
-class RoundUITextField: UITextField {
-
+class BorderUITextView: UITextView {
+  
   @IBInspectable var borderWidth: CGFloat {
     get {
       return layer.borderWidth
     }
     set {
       layer.borderWidth = newValue
-    }
-  }
-  
-  @IBInspectable var cornerRadius: CGFloat {
-    get {
-      return layer.cornerRadius
-    }
-    set {
-      layer.cornerRadius = newValue
     }
   }
   
@@ -37,5 +29,4 @@ class RoundUITextField: UITextField {
       layer.borderColor = newValue?.cgColor
     }
   }
-  
 }
