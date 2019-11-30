@@ -10,34 +10,46 @@ import UIKit
 
 class RouteViewController: UIViewController {
   
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var busNoLabel: UILabel!
   @IBOutlet weak var firstBusTimeLabel: UILabel!
   @IBOutlet weak var lastBusTimeLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   
+  // MARK: - Properties
+  
+  /// 상위 viewController에서 받아올 버스 번호
   var busNo: String?
   
-  var route: Route?
-  
+  /// tableView에 표시될 정보를 담을 배열
   var busStops = [String]()
   
-  let url = Server.address.rawValue + "nodeData/"
+  /// 정보를 요청할 서버 URL
+  let url = Server.address.rawValue + StringConstants.nodeData.rawValue
   
-  let cellIdentifier = "RouteTableViewCell"
+  /// tableView에 쓰일 Cell 식별자
+  let cellIdentifier = StringConstants.routeTableViewCell.rawValue
+  
+  // MARK: - IBAction
+  
+  @IBAction func backButtonDidTap(_ sender: Any) {
+    self.navigationController?.navigationBar.barTintColor = .white
+    changeStatusBarColor(barStyle: .default)
+    tabBarController?.tabBar.isHidden = false
+    self.navigationController?.popViewController(animated: true)
+  }
+  
+  // MARK: - Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
     request()
   }
-  
-  @IBAction func backButtonDidTap(_ sender: Any) {
-    self.navigationController?.navigationBar.barTintColor = .white
-    changeStatusBarColor(barStyle: .default)
-    self.navigationController?.popViewController(animated: true)
-  }
-  
 }
+
+// MARK: - Methods
 
 extension RouteViewController {
   func setUp() {
@@ -46,30 +58,38 @@ extension RouteViewController {
     tableView.register(UINib(nibName: cellIdentifier, bundle: nil),
                        forCellReuseIdentifier: cellIdentifier)
     
-    self.navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 97, blue: 244)
+    navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 97, blue: 244)
     
     changeStatusBarColor(barStyle: .lightContent)
     busNoLabel.text = busNo
     busNoLabel.sizeToFit()
+    
+    tabBarController?.tabBar.isHidden = true
   }
   
   func request() {
-    guard let busNo = busNo, let url = URL(string: url + busNo) else { return }
+    guard let busNo = busNo, let url = URL(string: url + "/\(busNo)") else {
+      errorLog("버스 번호, URL 에러")
+      return
+    }
     
     NetworkManager.shared.request(url: url, method: .get) { data, error in
       if let error = error {
-        print(error.localizedDescription)
+        errorLog("네트워크 에러: \(error.localizedDescription)")
+        DispatchQueue.main.async {
+          showErrorAlertController(viewController: self)
+        }
       }
       
       if let data = data {
         do {
           let route = try JSONDecoder().decode(Route.self, from: data)
           
-          self.route = route
           for node in route.nodeList {
             self.busStops.append(node.nodeName)
           }
           
+          // 중간에 회차지 부분을 표시하기 위해 회차지를 찾고 "" 라는 원소를 넣어줌
           if let index = self.busStops.firstIndex(of: route.turnNode) {
             self.busStops.insert("", at: index + 1)
           }
@@ -80,32 +100,36 @@ extension RouteViewController {
             self.tableView.reloadData()
           }
         } catch {
-          print(error.localizedDescription)
+          errorLog("JSON 포맷 에러: \(error.localizedDescription)")
         }
-        
       }
-      ProgressIndicator.shared.hide()
     }
   }
   
+  /// 출발시간, 도착시간을 hh:mm으로 바꿔주는 함수.
   func changeTimeIntToString(time: Int) -> String {
     let hour = time > 1000 ? "\(time / 100)" : "0\(time / 100)"
     let minTemp = time % 100
     let min = minTemp > 10 ? "\(minTemp)" : "0\(minTemp)"
-    
     return hour + ":" + min
   }
 }
 
+// MARK: - TableViewUpDelegate
+
 extension RouteViewController: TableViewUpDelegate {
+  /// cell에서 버튼을 눌렀을 때 위로 tableView를 맨위로 올리기 위한 함수
   func scrollToTableViewTop() {
     let indexPath = IndexPath(row: 0, section: 0)
     self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
   }
 }
 
+// MARK: - UITableViewDelegate
+
 extension RouteViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    // 마지막 상단위로 올리는 셀 크기만 173, 나머지 셀 크기는 61
     return indexPath.row != busStops.count ? 61 : 173
   }
   
@@ -114,9 +138,12 @@ extension RouteViewController: UITableViewDelegate {
   }
 }
 
+// MARK: - UITableViewDataSource
+
 extension RouteViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return busStops.count + 1
+    // 중간에 회차지 셀을 추가하기 위해 +1을 함
+    return busStops.count == 0 ? 0 : busStops.count + 1
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -128,6 +155,7 @@ extension RouteViewController: UITableViewDataSource {
     
     cell.delegate = self
     
+    // 마지막 상단위로 올리는 버튼이 있는 셀
     if indexPath.row == busStops.count {
       cell.busStopLabel.text = ""
       cell.upLineView.isHidden = true
@@ -138,6 +166,7 @@ extension RouteViewController: UITableViewDataSource {
       return cell
     }
     
+    // 나머지 셀 작업들
     let busStop = busStops[indexPath.row]
     cell.busStopLabel.text = busStop
     

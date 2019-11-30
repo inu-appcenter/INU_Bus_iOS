@@ -22,21 +22,30 @@ func showNoticeAlertController(viewController: UIViewController) {
     .alert(title: nil, message: message)
     .setMessage(start: 0,
                 end: message.count,
-                font: UIFont(name: "NotoSans-Medium", size: 13),
+                font: UIFont(name: StringConstants.notoSansMedium.rawValue,
+                             size: 13),
                 color: .black)
     .setMessage(start: 0,
                 end: 7,
-                font: UIFont(name: "Jalnan", size: 13),
+                font: UIFont(name: StringConstants.jalnan.rawValue, size: 13),
                 color: UIColor(red: 0/255, green: 97/255, blue: 244/255, alpha: 1))
     .action(title: "확인했습니다")
     .present(to: viewController)
+}
+
+/// 에러가 발생했을 때 AlertController를 띄우는 함수
+func showErrorAlertController(viewController: UIViewController) {
+  UIAlertController
+  .alert(title: nil, message: StringConstants.networkError.rawValue)
+  .action(title: "확인")
+  .present(to: viewController)
 }
 
 /// Main Table View의 section에 들어갈 label을 반환해주는 함수.
 func sectionLabel(text: String, size: CGFloat) -> UILabel {
   let label = UILabel()
   label.text = text
-  label.font = UIFont(name: "NotoSans-Regular", size: 12)
+  label.font = UIFont(name: StringConstants.notoSansRegular.rawValue, size: 12)
   label.textColor = UIColor(white: 112/255, alpha: 1)
   label.frame = CGRect(x: size, y: 0, width: 50, height: 20)
   return label

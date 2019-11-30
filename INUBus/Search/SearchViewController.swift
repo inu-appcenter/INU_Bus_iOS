@@ -10,7 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
   
-  let cellIndentifier = "SearchTableViewCell"
+  let cellIndentifier = StringConstants.searchTableViewCell.rawValue
   
   let url = Server.address.rawValue + StringConstants.nodeData.rawValue
   
@@ -168,7 +168,7 @@ class SearchViewController: UIViewController {
   }
 }
 
-//MARK: - Methods
+// MARK: - Methods
 
 extension SearchViewController {
   

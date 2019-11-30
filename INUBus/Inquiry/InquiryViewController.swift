@@ -132,10 +132,7 @@ extension InquiryViewController {
           errorLog("Post 에러: \(error.localizedDescription)")
           
           DispatchQueue.main.async {
-                      UIAlertController
-              .alert(title: nil, message: StringConstants.networkError.rawValue)
-              .action(title: "확인")
-              .present(to: self)
+            showErrorAlertController(viewController: self)
           }
         }
         

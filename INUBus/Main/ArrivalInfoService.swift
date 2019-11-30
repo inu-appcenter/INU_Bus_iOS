@@ -14,13 +14,13 @@ class ArrivalInfoService: ArrivalInfoServiceType {
                           identifier: String,
                           completion: @escaping ([BusInfo]?, [BusTypeInfo]?) -> Void) {
     guard let url = URL(string: url) else {
-      errorLog("URL error")
+      errorLog("URL 에러")
       return
     }
     
     NetworkManager.shared.request(url: url, method: .get) { data, error in
       if let error = error {
-        print(error.localizedDescription)
+        errorLog("네트워크 에러: \(error.localizedDescription)")
       }
       
       if let data = data {
@@ -40,7 +40,6 @@ class ArrivalInfoService: ArrivalInfoServiceType {
           completion(nil, nil)
         }
       }
-      ProgressIndicator.shared.hide()
     }
   }
   

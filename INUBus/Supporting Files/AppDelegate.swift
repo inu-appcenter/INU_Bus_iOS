@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
     // 첫 실행시 즐겨찾기 UserDefaults를 생성
     if UserDefaults.standard.value(forKey: StringConstants.favorArray.rawValue) == nil {
       UserDefaults.standard.set([String](), forKey: StringConstants.favorArray.rawValue)

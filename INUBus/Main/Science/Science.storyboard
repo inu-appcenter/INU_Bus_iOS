@@ -59,15 +59,15 @@
                     <navigationItem key="navigationItem" id="aRK-yl-fTd">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="BOb-HB-NZ4">
                             <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kp0-b5-yGy">
-                                <rect key="frame" x="16" y="9" width="110" height="26"/>
+                                <rect key="frame" x="16" y="9" width="80" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="blueInuBus"/>
                             </button>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="5au-9r-JuG">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zo5-H6-4pI">
-                                    <rect key="frame" x="337" y="0.0" width="22" height="44"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zo5-H6-4pI">
+                                    <rect key="frame" x="337" y="0.0" width="43" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="blueInfo"/>
                                     <connections>

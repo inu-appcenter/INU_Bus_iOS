@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" id="YTI-BA-048">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Nzc-j3-5aa">
                             <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h7G-MD-G6M">
-                                <rect key="frame" x="20" y="11" width="70" height="22"/>
+                                <rect key="frame" x="20" y="11" width="80" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="blueInuBus"/>
                             </button>
@@ -67,7 +67,7 @@
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="Dod-jA-gK0">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yJV-cE-gdw">
-                                    <rect key="frame" x="369" y="0.5" width="25" height="43"/>
+                                    <rect key="frame" x="369" y="0.5" width="43" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="blueInfo"/>
                                     <connections>

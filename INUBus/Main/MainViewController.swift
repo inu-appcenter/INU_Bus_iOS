@@ -73,7 +73,14 @@ class MainViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    // 타이머를 작동시켜서 버스 시간들을 매초마다 업데이트함.
+    startTimer()
     request()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    timer.invalidate()
   }
 }
 
@@ -108,9 +115,6 @@ extension MainViewController {
     
     // info 버튼 그림자 설정
     infoButton.layer.applyShadow()
-    
-    // 타이머를 작동시켜서 버스 시간들을 매초마다 업데이트함.
-    startTimer()
   }
   
   /// 서버에 데이터를 요청하는 함수.

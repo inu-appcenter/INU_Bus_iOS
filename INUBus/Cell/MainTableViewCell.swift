@@ -19,6 +19,10 @@ class MainTableViewCell: UITableViewCell {
   
   // MARK: - Properties
   
+  /// 즐겨찾기 UserDefaults를 이용할 식별자
+  let favorIdentifier = StringConstants.favorArray.rawValue
+  
+  /// tableView의 reloadData 함수를 이용할 델리게이트
   weak var delegate: ReloadDataDelegate?
   
   // IBOutlets에 값을 넣어줌.
@@ -39,9 +43,11 @@ class MainTableViewCell: UITableViewCell {
       
       intervalLabel.text = "\(busInfo.interval)분"
       
-      if let array = UserDefaults.standard.value(forKey: "favorArray") as? [String],
+      if let array = UserDefaults.standard.value(forKey: favorIdentifier)
+        as? [String],
         array.contains(busInfo.no) {
-        favoritesButton.setImage(UIImage(named: AssetConstants.colorStar.rawValue), for: .normal)
+        favoritesButton.setImage(UIImage(named: StringConstants.colorStar.rawValue),
+                                 for: .normal)
       }
       
       let rgb = (CGFloat(busInfo.rgb.0),
@@ -55,23 +61,24 @@ class MainTableViewCell: UITableViewCell {
   
   @IBAction func favoritesButtonDidTap(_ sender: Any) {
     guard let busNo = busNoLabel.text,
-      var favorArray = UserDefaults.standard.value(forKey: "favorArray") as? [String] else {
+      var favorArray = UserDefaults.standard.value(forKey: favorIdentifier)
+        as? [String] else {
       errorLog("MainTableViewCell error")
       return
     }
     
     if favoritesButton.imageView?.image ==
       UIImage(named: AssetConstants.star.rawValue) {
-      favoritesButton.setImage(UIImage(named: AssetConstants.colorStar.rawValue),
+      favoritesButton.setImage(UIImage(named: StringConstants.colorStar.rawValue),
                                for: .normal)
       favorArray.append(busNo)
-      UserDefaults.standard.set(favorArray, forKey: "favorArray")
+      UserDefaults.standard.set(favorArray, forKey: favorIdentifier)
     } else {
-      favoritesButton.setImage(UIImage(named: AssetConstants.star.rawValue),
+      favoritesButton.setImage(UIImage(named: StringConstants.star.rawValue),
                                for: .normal)
       if let index = favorArray.firstIndex(of: busNo) {
         favorArray.remove(at: index)
-        UserDefaults.standard.set(favorArray, forKey: "favorArray")
+        UserDefaults.standard.set(favorArray, forKey: favorIdentifier)
       }
     }
     delegate?.tableViewReloadData()
@@ -88,7 +95,7 @@ class MainTableViewCell: UITableViewCell {
   }
   
   override func prepareForReuse() {
-    favoritesButton.setImage(UIImage(named: AssetConstants.star.rawValue),
+    favoritesButton.setImage(UIImage(named: StringConstants.star.rawValue),
                              for: .normal)
     busNoLabel.text = nil
     timeRemainingLabel.text = nil

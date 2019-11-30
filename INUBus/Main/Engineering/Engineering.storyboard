@@ -18,7 +18,7 @@
             <objects>
                 <viewController storyboardIdentifier="engineering" id="C9o-aq-DSD" customClass="EngineeringViewController" customModule="INUBus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nsf-uM-rP4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 계산한 값으로, 정확하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-f8-gQS">
@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" id="hle-Hd-kgD">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="cPn-UO-yBL">
                             <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VL7-hw-bf2">
-                                <rect key="frame" x="16" y="9" width="110" height="26"/>
+                                <rect key="frame" x="16" y="9" width="80" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="blueInuBus"/>
                             </button>
@@ -67,7 +67,7 @@
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="VO9-ui-zJL">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f6d-pR-cTl">
-                                    <rect key="frame" x="309" y="0.0" width="50" height="44"/>
+                                    <rect key="frame" x="316" y="0.5" width="43" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="blueInfo"/>
                                     <connections>
@@ -77,7 +77,7 @@
                             </barButtonItem>
                             <barButtonItem style="plain" id="8ix-A3-VqM">
                                 <view key="customView" contentMode="scaleToFill" id="Rmq-n3-5JB" customClass="RoundUIView" customModule="INUBus" customModuleProvider="target">
-                                    <rect key="frame" x="132" y="5.6666666666666679" width="172" height="33"/>
+                                    <rect key="frame" x="136" y="5.5" width="172" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="버스 또는 정류장 검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-TU-ncm">

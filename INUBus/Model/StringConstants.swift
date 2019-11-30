@@ -22,10 +22,16 @@ enum StringConstants: String {
   case routeViewController = "RouteViewController"
   case searchViewController = "SearchViewController"
   case mainTableViewCell = "MainTableViewCell"
+  case routeTableViewCell = "RouteTableViewCell"
+  case searchTableViewCell = "SearchTableViewCell"
   case notoSansMedium = "NotoSans-Medium"
+  case notoSansRegular = "NotoSans-Regular"
+  case jalnan = "Jalnan"
   case sectionRemaning = "남은시간"
   case sectionInterval = "배차간격"
   case networkError = "서버와의 연결이 불안정합니다.\n잠시 후 다시 시도해주세요."
+  case star
+  case colorStar
   case arrivalInfo
   case nodeData
   case engineer
