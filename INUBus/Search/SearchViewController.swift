@@ -189,7 +189,7 @@ extension SearchViewController {
   func request() {
     guard let url = URL(string: url) else { return }
     
-    NetworkManager.shared.request(url: url, method: .get) { (data, error) in
+    NetworkManager.shared.tempRequest(url: url, method: .get) { (data, error) in
       if let error = error {
         print(error.localizedDescription)
       }
@@ -375,12 +375,12 @@ extension SearchViewController: UITableViewDataSource {
       if searchTextField.text == "" {
         cell.searchLabel.text = searchHistory[indexPath.row]
         cell.moreInfo.text = "정류장 번호: " + nodeNumHistory[indexPath.row]
-        cell.dayLabel.text = dayHistory[indexPath.row]
+        cell.dateLabel.text = dayHistory[indexPath.row]
         cell.deleteButton.isHidden = false
       } else {
         cell.searchLabel.text = searchList[indexPath.row]
         cell.moreInfo.text = "정류장 번호: " + nodeNumList[indexPath.row]
-        cell.dayLabel.text = dayList[indexPath.row]
+        cell.dateLabel.text = dayList[indexPath.row]
         cell.deleteButton.isHidden = true
       }
     } else {
@@ -388,12 +388,12 @@ extension SearchViewController: UITableViewDataSource {
       if searchTextField.text != "" {
       cell.searchLabel.text = searchList[indexPath.row]
       cell.moreInfo.text = "정류장 번호: " + nodeNumList[indexPath.row]
-      cell.dayLabel.text = dayList[indexPath.row]
+      cell.dateLabel.text = dayList[indexPath.row]
       cell.deleteButton.isHidden = false
       } else {
         cell.searchLabel.text = searchHistory[indexPath.row]
         cell.moreInfo.text = "정류장 번호: " + nodeNumHistory[indexPath.row]
-        cell.dayLabel.text = dayHistory[indexPath.row]
+        cell.dateLabel.text = dayHistory[indexPath.row]
         cell.deleteButton.isHidden = false
       }
   }

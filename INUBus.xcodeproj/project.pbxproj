@@ -63,6 +63,8 @@
 		AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A2FDCD461A7B921C61FEE6843DB74E /* CommuteRouteViewController.swift */; };
 		AC2A7B45131837AAAF0BBDBEFB9DFFE2 /* ReloadDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B4A7897D0C08A5C81281C8AD0851A /* ReloadDataDelegate.swift */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
+		AFC9F98223A17EEF00551496 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9F98123A17EEF00551496 /* StationViewController.swift */; };
+		AFFFFE522393A48E00C14BA4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFFE512393A48E00C14BA4 /* TestViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
 		BE71DED6C64B0FB65C75326039803CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1B424F066BD42F360911724B783136 /* Main.storyboard */; };
 		C02D7CB2AC854F718D57FE7D182955A6 /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B27BE087CA7E67652D19DC4B816CBF /* Engineering.storyboard */; };
@@ -135,6 +137,8 @@
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		A99B69AC15DD4EA7DCE59D60837613F3 /* CommuteRoute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommuteRoute.storyboard; sourceTree = "<group>"; };
+		AFC9F98123A17EEF00551496 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
+		AFFFFE512393A48E00C14BA4 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 				B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */,
 				30E55BF07667FDB7B185225CA534680E /* SearchServiceType.swift */,
 				FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */,
+				AFFFFE512393A48E00C14BA4 /* TestViewController.swift */,
+				AFC9F98123A17EEF00551496 /* StationViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -564,8 +570,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC9F98223A17EEF00551496 /* StationViewController.swift in Sources */,
 				8E91701C17D0FD4E6BAA367C9FF49692 /* AppDelegate.swift in Sources */,
 				946BAC509886E1791984B24E893ECBAB /* ArrivalInfoService.swift in Sources */,
+				AFFFFE522393A48E00C14BA4 /* TestViewController.swift in Sources */,
 				644727D190419963CB7F2BCF0B84157F /* ArrivalInfoServiceType.swift in Sources */,
 				FBEE3D6F1FF840C2538C37F79C02022F /* AssetConstants.swift in Sources */,
 				A7B0C92235F931F9759008D3BE07E0E7 /* BorderUITextView.swift in Sources */,

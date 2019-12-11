@@ -47,7 +47,7 @@ final class InquiryViewController: UIViewController {
 extension InquiryViewController {
   func setUp() {
     let viewControllerGesture = UITapGestureRecognizer(target: self,
-                                                       action: #selector(tapViewcontroller(_:)))
+                                                       action: #selector(tapViewController(_:)))
     view.addGestureRecognizer(viewControllerGesture)
     contentsTextView.delegate = self
     
@@ -83,7 +83,7 @@ extension InquiryViewController {
   }
   
   /// 빈 공간을  눌렀을 때의 함수
-  @objc func tapViewcontroller(_ sender: UITapGestureRecognizer) {
+  @objc func tapViewController(_ sender: UITapGestureRecognizer) {
     // 키보드를 내림
     view.endEditing(true)
     contentsCheck()

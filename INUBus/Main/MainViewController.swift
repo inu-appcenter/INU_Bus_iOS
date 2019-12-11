@@ -68,7 +68,6 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
-    request()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -131,10 +130,17 @@ extension MainViewController {
   }
   
   @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
-    UIViewController
+//    UIViewController
+//      .instantiate(storyboard: StringConstants.search.rawValue,
+//                   identifier: StringConstants.searchViewController.rawValue)
+//      .push(at: self, animated: false)
+    let viewController = UIViewController
       .instantiate(storyboard: StringConstants.search.rawValue,
                    identifier: StringConstants.searchViewController.rawValue)
-      .push(at: self, animated: false)
+    if let test = viewController as? TestViewController {
+      test.busInfos = busInfos
+      test.push(at: self)
+    }
   }
   
   // 매초 1초씩 tableView를 업데이트 함으로써 1초씩 감소하는 효과를 봄.

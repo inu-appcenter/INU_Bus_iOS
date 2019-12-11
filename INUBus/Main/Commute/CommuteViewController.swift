@@ -102,7 +102,7 @@ extension CommuteViewController {
       return
     }
     
-    NetworkManager.shared.request(url: url, method: .get) { data, error in
+    NetworkManager.shared.tempRequest(url: url, method: .get) { data, error in
       if let error = error {
         errorLog("네트워크 에러가 발생했습니다: " + error.localizedDescription)
       }

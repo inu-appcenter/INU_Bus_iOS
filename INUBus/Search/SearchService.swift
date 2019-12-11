@@ -101,7 +101,7 @@ class SearchService: SearchServiceType {
 
     cell.searchLabel.text = arr[indexPath.row]
     cell.moreInfo.text = "정류장 번호: " + node[indexPath.row]
-    cell.dayLabel.text = day[indexPath.row]
+    cell.dateLabel.text = day[indexPath.row]
     cell.deleteButton.isHidden = hidden
   }
 
@@ -114,7 +114,7 @@ class SearchService: SearchServiceType {
 
     guard let url = URL(string: url) else { return }
 
-        NetworkManager.shared.request(url: url, method: .get) { (data, error) in
+        NetworkManager.shared.tempRequest(url: url, method: .get) { (data, error) in
           if let error = error {
             print(error.localizedDescription)
           }

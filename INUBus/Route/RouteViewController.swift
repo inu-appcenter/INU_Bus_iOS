@@ -73,7 +73,7 @@ extension RouteViewController {
       return
     }
     
-    NetworkManager.shared.request(url: url, method: .get) { data, error in
+    NetworkManager.shared.tempRequest(url: url, method: .get) { data, error in
       if let error = error {
         errorLog("네트워크 에러: \(error.localizedDescription)")
         DispatchQueue.main.async {

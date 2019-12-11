@@ -143,3 +143,23 @@ struct GPS: Codable {
     case routeID = "routeId"
   }
 }
+
+// Set Collection을 사용하기 위해 Hashable 적용
+// struct를 UserDefaults로 사용하기 위해 Codable 적용
+struct RGB: Hashable, Codable {
+  let red: Float
+  let green: Float
+  let blue: Float
+}
+
+struct Search: Hashable, Codable {
+  enum SearchType: String, Codable {
+    case bus
+    case station
+  }
+  let type: SearchType
+  let name: String
+  let detail: String
+  let date: String
+  let rgb: RGB
+}
