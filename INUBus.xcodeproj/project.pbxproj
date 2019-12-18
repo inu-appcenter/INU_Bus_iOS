@@ -30,6 +30,7 @@
 		2FD98317558D4C3364061DE0E23BA879 /* BusTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32DC46501CB1B75B4095BB430FB210 /* BusTypeInfo.swift */; };
 		32DE2E250D84B6B082698826F95E439C /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFBE98EDF0B3D79B0FE314F1DEE460 /* NanumSquareBold.ttf */; };
 		35630E1C65E037008E074671BE1BCF75 /* NotoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68296BB72BDDF860941CA82161A2556A /* NotoSans-ExtraBold.ttf */; };
+		3B9D8DE37EBC8FA8A16DF524FEED2A5F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14FE3E27BADDD6640922DB6E626E3D /* TestViewController.swift */; };
 		458C2563E9403AC254638FF24947BAC3 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BE30E11551DDAFA4FD9ECCCB0748F /* RoundUIView.swift */; };
 		4B2805EE1996902E2475A9F069CEB5E5 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6DB49E8169BD07F59F3EE86BBBC77 /* Date+.swift */; };
 		4F34B768D804FAC0DC3955777C63CFA4 /* SearchServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E55BF07667FDB7B185225CA534680E /* SearchServiceType.swift */; };
@@ -63,8 +64,6 @@
 		AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A2FDCD461A7B921C61FEE6843DB74E /* CommuteRouteViewController.swift */; };
 		AC2A7B45131837AAAF0BBDBEFB9DFFE2 /* ReloadDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B4A7897D0C08A5C81281C8AD0851A /* ReloadDataDelegate.swift */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
-		AFC9F98223A17EEF00551496 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9F98123A17EEF00551496 /* StationViewController.swift */; };
-		AFFFFE522393A48E00C14BA4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFFE512393A48E00C14BA4 /* TestViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
 		BE71DED6C64B0FB65C75326039803CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1B424F066BD42F360911724B783136 /* Main.storyboard */; };
 		C02D7CB2AC854F718D57FE7D182955A6 /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B27BE087CA7E67652D19DC4B816CBF /* Engineering.storyboard */; };
@@ -73,6 +72,7 @@
 		CEDEE8F01D2D96DCB636D932A3E4BED5 /* Route.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076E47778D7C47FDEDB4671426B1CFD /* Route.storyboard */; };
 		CF4FEBE5B112F5B4139F8DA833438B0C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */; };
 		CF52DBDA579483A632E7A239D379565B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */; };
+		D01AA8FF69A8FD123C8C6B8A6AC493C6 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177222E2CDC0EA4DB93C39765F39C373 /* StationViewController.swift */; };
 		D2376F170AC8E76892827D41DE52EE25 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFDB7663805F7B562AEE0C199D1BDF6 /* ProgressIndicator.swift */; };
 		D81B2324116F73F663D0B4095786AC8C /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E42A7BD5679FF7C17474441C2628882 /* NotoSans-Bold.ttf */; };
 		DAB1CD488A0C5D16EE0A225B40F8F5B4 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3D6CC745CD5C482395546606B1428 /* RouteViewController.swift */; };
@@ -94,6 +94,7 @@
 		0F9CF12C8962132D16BA88C0D80FE36B /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		1282D8E1C435D6357C265E1A961CB351 /* RoundUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundUITextField.swift; sourceTree = "<group>"; };
 		13A9193EEBD53730F14C4149AA76833D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		177222E2CDC0EA4DB93C39765F39C373 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		182F5D460692FF89CC2C4B99C93F0266 /* CommuteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteViewController.swift; sourceTree = "<group>"; };
 		199830CA93FF5F65DCEBED654D87C474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AD593875379C23B50170C7AE69FE4E3 /* NotoSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Medium.ttf"; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 		832C5D6C937F54C48DFBBEACB0AC3C51 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		8A32DC46501CB1B75B4095BB430FB210 /* BusTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTypeInfo.swift; sourceTree = "<group>"; };
 		8A4A744D811B841ED34C684EF0ADAA77 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8C14FE3E27BADDD6640922DB6E626E3D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		91677746AF074356C51B56EF596921B8 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		96C6DB49E8169BD07F59F3EE86BBBC77 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		9F6B4A7897D0C08A5C81281C8AD0851A /* ReloadDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadDataDelegate.swift; sourceTree = "<group>"; };
@@ -137,8 +139,6 @@
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		A99B69AC15DD4EA7DCE59D60837613F3 /* CommuteRoute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommuteRoute.storyboard; sourceTree = "<group>"; };
-		AFC9F98123A17EEF00551496 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
-		AFFFFE512393A48E00C14BA4 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
@@ -307,8 +307,8 @@
 				B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */,
 				30E55BF07667FDB7B185225CA534680E /* SearchServiceType.swift */,
 				FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */,
-				AFFFFE512393A48E00C14BA4 /* TestViewController.swift */,
-				AFC9F98123A17EEF00551496 /* StationViewController.swift */,
+				177222E2CDC0EA4DB93C39765F39C373 /* StationViewController.swift */,
+				8C14FE3E27BADDD6640922DB6E626E3D /* TestViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -570,10 +570,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFC9F98223A17EEF00551496 /* StationViewController.swift in Sources */,
 				8E91701C17D0FD4E6BAA367C9FF49692 /* AppDelegate.swift in Sources */,
 				946BAC509886E1791984B24E893ECBAB /* ArrivalInfoService.swift in Sources */,
-				AFFFFE522393A48E00C14BA4 /* TestViewController.swift in Sources */,
 				644727D190419963CB7F2BCF0B84157F /* ArrivalInfoServiceType.swift in Sources */,
 				FBEE3D6F1FF840C2538C37F79C02022F /* AssetConstants.swift in Sources */,
 				A7B0C92235F931F9759008D3BE07E0E7 /* BorderUITextView.swift in Sources */,
@@ -610,8 +608,10 @@
 				9A0E1992BB4AF959A267967D778F3437 /* SearchTableViewCell.swift in Sources */,
 				9FF37A04ADED104662BFB8CD699C33BD /* SearchViewController.swift in Sources */,
 				12197ED56D033A4E6F6146B9DB84B405 /* Server.swift in Sources */,
+				D01AA8FF69A8FD123C8C6B8A6AC493C6 /* StationViewController.swift in Sources */,
 				07F642EEB59CFF4780E3D9CEC8B714F5 /* StringConstants.swift in Sources */,
 				ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */,
+				3B9D8DE37EBC8FA8A16DF524FEED2A5F /* TestViewController.swift in Sources */,
 				DD3ECC9CB34EBA0271119FADABFC64A5 /* UIAlertController+.swift in Sources */,
 				71F042371D539E91497C7EF0BCB50417 /* UIColor+.swift in Sources */,
 				0DF15FC4117DF01770EE7B2FFC8FDD30 /* UIImage+.swift in Sources */,

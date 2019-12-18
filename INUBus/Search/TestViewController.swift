@@ -44,8 +44,13 @@ class TestViewController: UIViewController {
     }
   }
   
+  /// 중복된 Search값은 없앤 Set
   var searchingData = Set<Search>()
+  
+  /// tableView에 표시될 Array
   var searchingArray = [Search]()
+  
+  /// 모든 버스 노선 정보를 담을 Array
   var routeData = [Route]()
   
   @IBAction func backButtonDidTap(_ sender: Any) {
@@ -55,11 +60,17 @@ class TestViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
+    tabBarController?.tabBar.isHidden = true
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     request()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    tabBarController?.tabBar.isHidden = false
   }
 }
 
@@ -162,6 +173,7 @@ extension TestViewController: UITableViewDelegate {
     
     var searchHistory = [Search]()
     
+    // 텍스트 필드 값이 있을 때
     if textField.text != "" {
       if let data = UserDefaults.standard.value(forKey: "searchHistory") as? Data {
         let temp = try? PropertyListDecoder().decode([Search].self, from: data)
@@ -173,19 +185,111 @@ extension TestViewController: UITableViewDelegate {
       // struct를 UserDefaults에 저장하기 위해선 이렇게 해야한다.
       UserDefaults.standard.set(try? PropertyListEncoder().encode(searchHistory),
                                 forKey: "searchHistory")
+    } else { // 히스토리를 누를 때
+      if let data = UserDefaults.standard.value(forKey: "searchHistory") as? Data {
+        let temp = try? PropertyListDecoder().decode([Search].self, from: data)
+        searchHistory = temp ?? [Search]()
+      }
+      
+      let temp = searchHistory[indexPath.row]
+      searchHistory.remove(at: indexPath.row)
+      searchHistory.insert(temp, at: 0)
+      
+      UserDefaults.standard.set(try? PropertyListEncoder().encode(searchHistory),
+                                forKey: "searchHistory")
     }
 
-    if searchingArray[indexPath.row].type == .bus {
-      let viewController = UIViewController
-        .instantiate(storyboard: StringConstants.route.rawValue,
-                     identifier: StringConstants.routeViewController.rawValue)
-      if let route = viewController as? RouteViewController {
-        route.busNo = searchingArray[indexPath.row].name
-        route.push(at: self)
+    var tempArray = [Search]()
+    
+    if textField.text == "" {
+      tempArray = searchHistory
+      
+      if tempArray[0].type == .bus {
+        let viewController = UIViewController
+          .instantiate(storyboard: StringConstants.route.rawValue,
+                       identifier: StringConstants.routeViewController.rawValue)
+        if let route = viewController as? RouteViewController {
+          route.busNo = tempArray[0].name
+          route.push(at: self)
+        }
+      } else {
+        var temp = [BusInfo]()
+        for busInfo in busInfos {
+          for data in routeData where data.no == busInfo.no {
+            for node in data.nodeList where node.nodeName == tempArray[0].name {
+              temp.append(busInfo)
+              break
+            }
+            break
+          }
+        }
+        
+        let viewController = UIViewController.instantiate(storyboard: "Search",
+                                                          identifier: "station")
+        if let station = viewController as? StationViewController {
+          station.busInfos = temp
+          station.push(at: self)
+        }
       }
     } else {
+      tempArray = searchingArray
       
+      if tempArray[indexPath.row].type == .bus {
+        let viewController = UIViewController
+          .instantiate(storyboard: StringConstants.route.rawValue,
+                       identifier: StringConstants.routeViewController.rawValue)
+        if let route = viewController as? RouteViewController {
+          route.busNo = tempArray[indexPath.row].name
+          route.push(at: self)
+        }
+      } else {
+        var temp = [BusInfo]()
+        for busInfo in busInfos {
+          for data in routeData where data.no == busInfo.no {
+            for node in data.nodeList where node.nodeName == tempArray[indexPath.row].name {
+              temp.append(busInfo)
+              break
+            }
+            break
+          }
+        }
+        
+        let viewController = UIViewController.instantiate(storyboard: "Search",
+                                                          identifier: "station")
+        if let station = viewController as? StationViewController {
+          station.busInfos = temp
+          station.push(at: self)
+        }
+      }
     }
+    
+//    if tempArray[indexPath.row].type == .bus {
+//      let viewController = UIViewController
+//        .instantiate(storyboard: StringConstants.route.rawValue,
+//                     identifier: StringConstants.routeViewController.rawValue)
+//      if let route = viewController as? RouteViewController {
+//        route.busNo = tempArray[indexPath.row].name
+//        route.push(at: self)
+//      }
+//    } else {
+//      var temp = [BusInfo]()
+//      for busInfo in busInfos {
+//        for data in routeData where data.no == busInfo.no {
+//          for node in data.nodeList where node.nodeName == tempArray[indexPath.row].name {
+//            temp.append(busInfo)
+//            break
+//          }
+//          break
+//        }
+//      }
+//
+//      let viewController = UIViewController.instantiate(storyboard: "Search",
+//                                                        identifier: "station")
+//      if let station = viewController as? StationViewController {
+//        station.busInfos = temp
+//        station.push(at: self)
+//      }
+//    }
   }
 }
 

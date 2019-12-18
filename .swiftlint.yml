@@ -6,6 +6,7 @@ excluded:
 - INUBus/Supporting Files/AppDelegate.swift
 - INUBus/Model/Objects.swift
 - INUBus/Extension/CALayer+.swift
+- INUBus/Search/TestViewController.swift
 
 line_length:
   warning: 99
