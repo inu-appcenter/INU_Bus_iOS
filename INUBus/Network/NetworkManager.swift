@@ -33,7 +33,7 @@ final class NetworkManager {
     task.resume()
   }
   
-  func request(url: URL, completion: @escaping (Data?, Error?) -> Void) {
+  func get(url: URL, completion: @escaping (Data?, Error?) -> Void) {
     defer {
       ProgressIndicator.shared.hide()
     }

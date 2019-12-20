@@ -73,6 +73,7 @@ class MainViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     // 타이머를 작동시켜서 버스 시간들을 매초마다 업데이트함.
+    tabBarController?.tabBar.isHidden = false
     startTimer()
     request()
   }
@@ -137,9 +138,9 @@ extension MainViewController {
     let viewController = UIViewController
       .instantiate(storyboard: StringConstants.search.rawValue,
                    identifier: StringConstants.searchViewController.rawValue)
-    if let test = viewController as? TestViewController {
-      test.busInfos = busInfos
-      test.push(at: self)
+    if let searchViewController = viewController as? SearchViewController {
+      searchViewController.busInfos = busInfos
+      searchViewController.push(at: self, animated: false)
     }
   }
   

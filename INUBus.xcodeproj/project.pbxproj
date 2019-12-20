@@ -58,12 +58,12 @@
 		946BAC509886E1791984B24E893ECBAB /* ArrivalInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA49FEE7F8AD342642E6CCF92842ACE /* ArrivalInfoService.swift */; };
 		968126C3082BE260A070AAA493563DC2 /* Template.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9147A63986C78550112B2DC38FCDDA8 /* Template.storyboard */; };
 		9A0E1992BB4AF959A267967D778F3437 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4EB47C00B1DD869CAFE437E0B1A9B /* SearchTableViewCell.swift */; };
-		9FF37A04ADED104662BFB8CD699C33BD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */; };
 		A3FECE8036646E99C101F39ACBD52B30 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */; };
 		A7B0C92235F931F9759008D3BE07E0E7 /* BorderUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295738E9BBC10EB9031E9EBD0841CB0A /* BorderUITextView.swift */; };
 		AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A2FDCD461A7B921C61FEE6843DB74E /* CommuteRouteViewController.swift */; };
 		AC2A7B45131837AAAF0BBDBEFB9DFFE2 /* ReloadDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B4A7897D0C08A5C81281C8AD0851A /* ReloadDataDelegate.swift */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
+		AF261C9023AA1786000495EE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF261C8F23AA1786000495EE /* SearchViewController.swift */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
 		BE71DED6C64B0FB65C75326039803CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1B424F066BD42F360911724B783136 /* Main.storyboard */; };
 		C02D7CB2AC854F718D57FE7D182955A6 /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B27BE087CA7E67652D19DC4B816CBF /* Engineering.storyboard */; };
@@ -139,6 +139,7 @@
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		A99B69AC15DD4EA7DCE59D60837613F3 /* CommuteRoute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommuteRoute.storyboard; sourceTree = "<group>"; };
+		AF261C8F23AA1786000495EE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		E9147A63986C78550112B2DC38FCDDA8 /* Template.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Template.storyboard; sourceTree = "<group>"; };
 		EBD768A0A45311216AAD2C4042918D42 /* Commute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Commute.storyboard; sourceTree = "<group>"; };
 		F16BF3B61D8A26E4F692C5EA0560B291 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
-		FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,9 +306,9 @@
 				13A9193EEBD53730F14C4149AA76833D /* Search.storyboard */,
 				B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */,
 				30E55BF07667FDB7B185225CA534680E /* SearchServiceType.swift */,
-				FE2003AE4E43A7A44FC0EC83247976FE /* SearchViewController.swift */,
 				177222E2CDC0EA4DB93C39765F39C373 /* StationViewController.swift */,
 				8C14FE3E27BADDD6640922DB6E626E3D /* TestViewController.swift */,
+				AF261C8F23AA1786000495EE /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -578,6 +578,7 @@
 				6B3042678962D413F9F0ED2D0F8A34DC /* BusColor.swift in Sources */,
 				2FD98317558D4C3364061DE0E23BA879 /* BusTypeInfo.swift in Sources */,
 				7C7B7BC84223896A934A9138C98634ED /* CALayer+.swift in Sources */,
+				AF261C9023AA1786000495EE /* SearchViewController.swift in Sources */,
 				260EC4B57AF232E57DBBBF5D3F0DE070 /* Commute.swift in Sources */,
 				AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */,
 				15BA6641159AF41E6E775E99C1F314EC /* CommuteTableViewCell.swift in Sources */,
@@ -606,7 +607,6 @@
 				57C6651638F3BF782989C2345A08F6E1 /* SearchService.swift in Sources */,
 				4F34B768D804FAC0DC3955777C63CFA4 /* SearchServiceType.swift in Sources */,
 				9A0E1992BB4AF959A267967D778F3437 /* SearchTableViewCell.swift in Sources */,
-				9FF37A04ADED104662BFB8CD699C33BD /* SearchViewController.swift in Sources */,
 				12197ED56D033A4E6F6146B9DB84B405 /* Server.swift in Sources */,
 				D01AA8FF69A8FD123C8C6B8A6AC493C6 /* StationViewController.swift in Sources */,
 				07F642EEB59CFF4780E3D9CEC8B714F5 /* StringConstants.swift in Sources */,

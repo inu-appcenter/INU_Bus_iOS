@@ -11,7 +11,7 @@ import UIKit
 /// 기준이 width인 375인 아이폰 8의 비율에 맞게 사이즈를 변환해주는 함수.
 func sizeByDevice(size: CGFloat) -> CGFloat {
   let width = UIScreen.main.bounds.width
-  return size / 375 * width
+  return size * width / 375
 }
 
 /// 공지사항 AlertController를 띄우는 함수.
