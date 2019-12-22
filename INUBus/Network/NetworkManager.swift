@@ -13,26 +13,7 @@ final class NetworkManager {
   
   private init() { }
   
-  func tempRequest(url: URL,
-               method: HTTPMethod,
-               completion: @escaping (Data?, Error?) -> Void) {
-    defer {
-      ProgressIndicator.shared.hide()
-    }
-    
-    let session = URLSession(configuration: .default)
-    var urlRequest = URLRequest(url: url)
-    urlRequest.httpMethod = method.rawValue
-    urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    
-    ProgressIndicator.shared.show()
-    let task = session.dataTask(with: urlRequest) { data, _, error in
-      completion(data, error)
-      session.finishTasksAndInvalidate()
-    }
-    task.resume()
-  }
-  
+  /// HTTP Method 중 GET
   func get(url: URL, completion: @escaping (Data?, Error?) -> Void) {
     defer {
       ProgressIndicator.shared.hide()
@@ -52,6 +33,7 @@ final class NetworkManager {
     task.resume()
   }
   
+  /// HTTP Method 중 POST
   func post(url: URL,
             httpBody: Data,
             completion: @escaping (Data?, URLResponse?, Error?) -> Void) {

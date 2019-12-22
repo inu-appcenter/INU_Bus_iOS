@@ -15,12 +15,16 @@ class RouteViewController: UIViewController {
   @IBOutlet weak var busNoLabel: UILabel!
   @IBOutlet weak var firstBusTimeLabel: UILabel!
   @IBOutlet weak var lastBusTimeLabel: UILabel!
+  @IBOutlet weak var busFareLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   
   // MARK: - Properties
   
   /// 상위 viewController에서 받아올 버스 번호
   var busNo: String?
+  
+  /// 버스의 색깔
+  var busColor: BusColor?
   
   /// tableView에 표시될 정보를 담을 배열
   var busStops = [String]()
@@ -36,7 +40,7 @@ class RouteViewController: UIViewController {
   @IBAction func backButtonDidTap(_ sender: Any) {
     self.navigationController?.navigationBar.barTintColor = .white
     changeStatusBarColor(barStyle: .default)
-    tabBarController?.tabBar.isHidden = false
+//    tabBarController?.tabBar.isHidden = false
     self.navigationController?.popViewController(animated: true)
   }
   
@@ -45,6 +49,10 @@ class RouteViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     request()
   }
 }
@@ -64,6 +72,8 @@ extension RouteViewController {
     busNoLabel.text = busNo
     busNoLabel.sizeToFit()
     
+    updateBusFare()
+    
     tabBarController?.tabBar.isHidden = true
   }
   
@@ -73,7 +83,7 @@ extension RouteViewController {
       return
     }
     
-    NetworkManager.shared.tempRequest(url: url, method: .get) { data, error in
+    NetworkManager.shared.get(url: url) { data, error in
       if let error = error {
         errorLog("네트워크 에러: \(error.localizedDescription)")
         DispatchQueue.main.async {
@@ -112,6 +122,19 @@ extension RouteViewController {
     let minTemp = time % 100
     let min = minTemp > 10 ? "\(minTemp)" : "0\(minTemp)"
     return hour + ":" + min
+  }
+  
+  func updateBusFare() {
+    if let busColor = busColor {
+      switch busColor {
+      case .blue, .purple:
+        busFareLabel.text = "1,250"
+      case .green:
+        busFareLabel.text = "950"
+      case .orange:
+        busFareLabel.text = "2,600"
+      }
+    }
   }
 }
 

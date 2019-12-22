@@ -106,7 +106,7 @@ struct Route: Codable {
 
 struct Inquiry: Codable {
   let title: String
-  let msg: String
+  let message: String
   let device: String
   let version: String
   let contact: String
@@ -157,6 +157,7 @@ struct Search: Hashable, Codable {
     case bus
     case station
   }
+  
   let type: SearchType
   let name: String
   let detail: String

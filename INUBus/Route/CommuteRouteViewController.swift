@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 미구현.
 class CommuteRouteViewController: UIViewController {
   
   @IBOutlet weak var busTypeLabel: UILabel!

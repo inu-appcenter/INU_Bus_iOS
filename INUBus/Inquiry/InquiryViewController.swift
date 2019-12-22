@@ -110,7 +110,7 @@ extension InquiryViewController {
   /// 문의사항을 서버에 post함.
   func request() {
     let inquiry = Inquiry(title: titleTextField.text ?? "",
-                          msg: contentsTextView.text,
+                          message: contentsTextView.text,
                           device: UIDevice.current.name,
                           version: UIDevice.current.systemVersion,
                           contact: phoneNumberTextField.text ?? "")

@@ -51,6 +51,8 @@ class MainViewController: UIViewController {
   
   var timer: Timer!
   
+  var refreshControl = UIRefreshControl()
+  
   // MARK: - IBAtions
   
   @IBAction func infoButtonDidTap() {
@@ -95,8 +97,12 @@ extension MainViewController {
     // tableView 비어있는 cell 지우기
     tableView.tableFooterView = UIView()
     
+    // tableView를 아래로 swipe했을 때 새로고침하기 위한 설정.
+    tableView.addSubview(refreshControl)
+    refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    
     // 검색 바를 기기에 맞게 사이즈 조절하기
-    searchView.frame.size.width = sizeByDevice(size: 205)
+    searchView.frame.size.width = widthByDevice(size: 205)
     searchImageView.frame = CGRect(x: searchView.frame.width - 35,
                                    y: 9,
                                    width: 16,
@@ -130,11 +136,14 @@ extension MainViewController {
     }
   }
   
+  @objc func refresh() {
+    defer {
+      refreshControl.endRefreshing()
+    }
+    request()
+  }
+  
   @objc func pushViewController(gestureRecognizer: UITapGestureRecognizer) {
-//    UIViewController
-//      .instantiate(storyboard: StringConstants.search.rawValue,
-//                   identifier: StringConstants.searchViewController.rawValue)
-//      .push(at: self, animated: false)
     let viewController = UIViewController
       .instantiate(storyboard: StringConstants.search.rawValue,
                    identifier: StringConstants.searchViewController.rawValue)
@@ -190,11 +199,11 @@ extension MainViewController: UITableViewDelegate {
     view.backgroundColor = UIColor(white: 235/250, alpha: 1)
     
     view.addSubview(sectionLabel(text: sortedBuses[section].busType,
-                                 size: sizeByDevice(size: 28)))
+                                 size: widthByDevice(size: 28)))
     view.addSubview(sectionLabel(text: StringConstants.sectionRemaning.rawValue,
-                                 size: sizeByDevice(size: 182)))
+                                 size: widthByDevice(size: 182)))
     view.addSubview(sectionLabel(text: StringConstants.sectionInterval.rawValue,
-                                 size: sizeByDevice(size: 288)))
+                                 size: widthByDevice(size: 288)))
     
     return view
   }
@@ -203,12 +212,23 @@ extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
     
-    if let viewController = UIViewController
+//    if let viewController = UIViewController
+//      .instantiate(storyboard: StringConstants.route.rawValue,
+//                   identifier: StringConstants.routeViewController.rawValue)
+//      as? RouteViewController {
+//      viewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
+//      viewController.busColor = sortedBuses[indexPath.section].busInfos[indexPath.row].busColor
+//      viewController.push(at: self)
+//    }
+    
+    let viewController = UIViewController
       .instantiate(storyboard: StringConstants.route.rawValue,
                    identifier: StringConstants.routeViewController.rawValue)
-      as? RouteViewController {
-      viewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
-      viewController.push(at: self)
+    if let routeViewController = viewController as? RouteViewController {
+      let busInfo = sortedBuses[indexPath.section].busInfos[indexPath.row]
+      routeViewController.busNo = busInfo.no
+      routeViewController.busColor = busInfo.busColor
+      routeViewController.push(at: self)
     }
   }
   

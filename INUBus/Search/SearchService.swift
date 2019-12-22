@@ -114,7 +114,7 @@ class SearchService: SearchServiceType {
 
     guard let url = URL(string: url) else { return }
 
-        NetworkManager.shared.tempRequest(url: url, method: .get) { (data, error) in
+        NetworkManager.shared.get(url: url) { (data, error) in
           if let error = error {
             print(error.localizedDescription)
           }

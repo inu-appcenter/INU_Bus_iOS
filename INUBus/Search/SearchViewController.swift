@@ -87,11 +87,12 @@ extension SearchViewController {
                        forCellReuseIdentifier: cellIdentifier)
     tableView.tableFooterView = UIView()
     
+    textField.delegate = self
     // textField의 값이 변경될 때마다 실행될 함수 설정.
     textField.addTarget(self, action: #selector(retrieveData), for: .editingChanged)
     
     // textField를 기기에 맞게 크기 설정.
-    textField.frame = CGRect(x: 0, y: 10, width: sizeByDevice(size: 253), height: 28)
+    textField.frame = CGRect(x: 0, y: 10, width: widthByDevice(size: 253), height: 28)
     
     self.textField.becomeFirstResponder()
   }
@@ -191,11 +192,23 @@ extension SearchViewController: ReloadDataDelegate {
   }
 }
 
+// MARK: - UITextFieldDelegate
+
+extension SearchViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+  }
+}
+
 // MARK: - UITableViewDelegate
 
 extension SearchViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 77
+  }
+  
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    textField.resignFirstResponder()
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

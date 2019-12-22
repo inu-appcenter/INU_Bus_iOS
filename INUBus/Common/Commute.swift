@@ -8,6 +8,7 @@
 
 import Foundation
 
+// 미구현.
 enum CommuteBusType {
   case songnae
   case suwon

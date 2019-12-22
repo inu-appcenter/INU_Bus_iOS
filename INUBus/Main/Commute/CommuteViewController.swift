@@ -75,7 +75,7 @@ extension CommuteViewController {
     tableView.tableFooterView = UIView()
     
     // 검색 바를 기기에 맞게 사이즈 조절하기
-    searchView.frame.size.width = sizeByDevice(size: 205)
+    searchView.frame.size.width = widthByDevice(size: 205)
     searchImageView.frame = CGRect(x: searchView.frame.width - 35,
                                    y: 9,
                                    width: 16,
@@ -102,7 +102,7 @@ extension CommuteViewController {
       return
     }
     
-    NetworkManager.shared.tempRequest(url: url, method: .get) { data, error in
+    NetworkManager.shared.get(url: url) { data, error in
       if let error = error {
         errorLog("네트워크 에러가 발생했습니다: " + error.localizedDescription)
       }
@@ -153,9 +153,9 @@ extension CommuteViewController: UITableViewDelegate {
     let view = UIView()
     view.backgroundColor = UIColor(white: 235/250, alpha: 1)
     
-    view.addSubview(sectionLabel(text: "통학버스", size: sizeByDevice(size: 28)))
-    view.addSubview(sectionLabel(text: "현재위치", size: sizeByDevice(size: 182)))
-    view.addSubview(sectionLabel(text: "출발시간", size: sizeByDevice(size: 288)))
+    view.addSubview(sectionLabel(text: "통학버스", size: widthByDevice(size: 28)))
+    view.addSubview(sectionLabel(text: "현재위치", size: widthByDevice(size: 182)))
+    view.addSubview(sectionLabel(text: "출발시간", size: widthByDevice(size: 288)))
     
     return view
   }
