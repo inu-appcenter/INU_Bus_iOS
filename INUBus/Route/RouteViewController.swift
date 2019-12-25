@@ -132,7 +132,11 @@ extension RouteViewController {
       case .green:
         busFareLabel.text = "950"
       case .orange:
-        busFareLabel.text = "2,600"
+        if let busNo = busNo, busNo == "3002" {
+          busFareLabel.text = "2,400"
+        } else {
+          busFareLabel.text = "2,600"
+        }
       }
     }
   }

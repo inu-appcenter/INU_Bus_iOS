@@ -73,7 +73,7 @@ class SearchViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     tabBarController?.tabBar.isHidden = true
-    request()
+    tableView.reloadData()
   }
 }
 
@@ -95,6 +95,8 @@ extension SearchViewController {
     textField.frame = CGRect(x: 0, y: 10, width: widthByDevice(size: 253), height: 28)
     
     self.textField.becomeFirstResponder()
+    
+    request()
   }
   
   func request() {
@@ -147,7 +149,7 @@ extension SearchViewController {
     }
   }
   
-  // textField의 text값이 변경될때마다 실행될 함수. 텍스트 값이 들어있는 정류장 혹은 버스를 검색한다.
+  /// textField의 text값이 변경될때마다 실행될 함수. 텍스트 값이 들어있는 정류장 혹은 버스를 검색한다.
   @objc func retrieveData() {
     guard let str = textField.text else {
       errorLog("텍스트필드 text 에러")
@@ -181,6 +183,19 @@ extension SearchViewController {
       return searchHistory
     }
     return nil
+  }
+  
+  func detailToBusColor(detail: String) -> BusColor {
+    switch detail {
+    case "간선급행":
+      return .purple
+    case "순환":
+      return .green
+    case "광역":
+      return .orange
+    default:
+      return .blue
+    }
   }
 }
 
@@ -221,6 +236,7 @@ extension SearchViewController: UITableViewDelegate {
     // textField의 text 값이 없을 때. 즉 검색 히스토리를 눌렀을 때
     if textField.text == "" {
       search = searchHistory[indexPath.row]
+      search.date = dateFormatter.string(from: Date())
       searchHistory.remove(at: indexPath.row)
       searchHistory.insert(search, at: 0)
     } else { // 검색한 부분을 눌렀을 때
@@ -237,6 +253,7 @@ extension SearchViewController: UITableViewDelegate {
                      identifier: StringConstants.routeViewController.rawValue)
       if let routeViewController = viewController as? RouteViewController {
         routeViewController.busNo = search.name
+        routeViewController.busColor = detailToBusColor(detail: search.detail)
         routeViewController.push(at: self)
       }
     } else { // 정류장을 눌렀을 때

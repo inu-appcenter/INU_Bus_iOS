@@ -64,6 +64,8 @@
 		AAA4B84C367ED3C0DAF1230F3D24D9B9 /* CommuteRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A2FDCD461A7B921C61FEE6843DB74E /* CommuteRouteViewController.swift */; };
 		AC2A7B45131837AAAF0BBDBEFB9DFFE2 /* ReloadDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B4A7897D0C08A5C81281C8AD0851A /* ReloadDataDelegate.swift */; };
 		ACDEA2877C9CA41C17DF4B2C7EDB1069 /* TableViewUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81CEC445D1F65C02C2EC1B872FFCC /* TableViewUpDelegate.swift */; };
+		AF42589823B1164100319160 /* FrontGateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42589723B1164100319160 /* FrontGateViewController.swift */; };
+		AF49F81B23B0019400447D45 /* FrontGate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF49F81A23B0019300447D45 /* FrontGate.storyboard */; };
 		BB273582BF2BCA636C39145A66B91B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1372AA8808FD16527B5E902A40A179 /* LaunchScreen.storyboard */; };
 		BE71DED6C64B0FB65C75326039803CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1B424F066BD42F360911724B783136 /* Main.storyboard */; };
 		C02D7CB2AC854F718D57FE7D182955A6 /* Engineering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B27BE087CA7E67652D19DC4B816CBF /* Engineering.storyboard */; };
@@ -139,6 +141,8 @@
 		A57C8B5F90A5EB022F64DBD95F044B11 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = INUBus/Network/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		A9784DE29033159838A8FBEDD4E0097C /* Drawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawer.storyboard; sourceTree = "<group>"; };
 		A99B69AC15DD4EA7DCE59D60837613F3 /* CommuteRoute.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommuteRoute.storyboard; sourceTree = "<group>"; };
+		AF42589723B1164100319160 /* FrontGateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontGateViewController.swift; sourceTree = "<group>"; };
+		AF49F81A23B0019300447D45 /* FrontGate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FrontGate.storyboard; sourceTree = "<group>"; };
 		B1C1AFA8B7B35AE03AE1770F8A1759E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		B5F867E9EFCF55D7B6A6D567CED4BABC /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		C248CBF1C41AD1142A07F58620818B9E /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 		A5C667D7342C198DF6C1291EEBB16701 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AF49F81923B000D400447D45 /* FrontGate */,
 				9F599152AAE898A9D0FFEF233F3833B8 /* Commute */,
 				BE7073A63A28DC5CC811A2D3DD42943D /* Engineering */,
 				051F8C4A863E10071872C854B32DCE25 /* Science */,
@@ -367,6 +372,15 @@
 				CB2723906CFB10A098AFB93852D98A19 /* NotoSans-SemiBold.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		AF49F81923B000D400447D45 /* FrontGate */ = {
+			isa = PBXGroup;
+			children = (
+				AF49F81A23B0019300447D45 /* FrontGate.storyboard */,
+				AF42589723B1164100319160 /* FrontGateViewController.swift */,
+			);
+			path = FrontGate;
 			sourceTree = "<group>";
 		};
 		BE7073A63A28DC5CC811A2D3DD42943D /* Engineering */ = {
@@ -473,6 +487,7 @@
 				8CDF1B51C09E4CB678CAFEF74F0DF600 /* .swiftlint.yml in Resources */,
 				0A815557BCDBD508729352220810CB0B /* Assets.xcassets in Resources */,
 				940659D0CDA672E54DBCF5E57E76B08F /* Commute.storyboard in Resources */,
+				AF49F81B23B0019400447D45 /* FrontGate.storyboard in Resources */,
 				CB3BECF2034918C9CF535D50675B5F5E /* CommuteRoute.storyboard in Resources */,
 				8D1C15B5D5A69351679A5ECB1BC20AE5 /* CommuteTableViewCell.xib in Resources */,
 				547D8E1EA71401AED07C064D04E2EE37 /* Drawer.storyboard in Resources */,
@@ -587,6 +602,7 @@
 				00FA0FEF86806E211C68FF9751EC1040 /* EngineeringViewController.swift in Sources */,
 				698E4FB5D3A344944C2DA7358D3B6F70 /* ExtensionKYDrawerController.swift in Sources */,
 				E163599715AB87EF14C7A96392AA5951 /* Functions.swift in Sources */,
+				AF42589823B1164100319160 /* FrontGateViewController.swift in Sources */,
 				CF4FEBE5B112F5B4139F8DA833438B0C /* HTTPMethod.swift in Sources */,
 				8844173FEADC6EB17016988BE9F8EB67 /* InquiryViewController.swift in Sources */,
 				0704DB2CBEE66F6E3147EBB43F7A8179 /* Log.swift in Sources */,

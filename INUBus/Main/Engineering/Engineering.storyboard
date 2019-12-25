@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="44A-hP-ZUB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="44A-hP-ZUB">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 계산한 값으로, 정확하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-f8-gQS">
-                                <rect key="frame" x="28" y="64" width="127.5" height="10.5"/>
+                                <rect key="frame" x="28" y="64" width="128.5" height="12.5"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="9"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="VO9-ui-zJL">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f6d-pR-cTl">
-                                    <rect key="frame" x="316" y="0.5" width="43" height="43"/>
+                                    <rect key="frame" x="309" y="0.0" width="45" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="blueInfo"/>
                                     <connections>
@@ -77,7 +77,7 @@
                             </barButtonItem>
                             <barButtonItem style="plain" id="8ix-A3-VqM">
                                 <view key="customView" contentMode="scaleToFill" id="Rmq-n3-5JB" customClass="RoundUIView" customModule="INUBus" customModuleProvider="target">
-                                    <rect key="frame" x="136" y="5.5" width="172" height="33"/>
+                                    <rect key="frame" x="132" y="5.5" width="172" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="버스 또는 정류장 검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-TU-ncm">

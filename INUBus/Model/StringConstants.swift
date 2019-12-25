@@ -38,5 +38,6 @@ enum StringConstants: String {
   case nodeData
   case engineer
   case science
+  case frontgate
   case errormsg
 }

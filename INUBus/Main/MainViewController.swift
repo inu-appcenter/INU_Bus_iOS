@@ -212,15 +212,6 @@ extension MainViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
     
-//    if let viewController = UIViewController
-//      .instantiate(storyboard: StringConstants.route.rawValue,
-//                   identifier: StringConstants.routeViewController.rawValue)
-//      as? RouteViewController {
-//      viewController.busNo = sortedBuses[indexPath.section].busInfos[indexPath.row].no
-//      viewController.busColor = sortedBuses[indexPath.section].busInfos[indexPath.row].busColor
-//      viewController.push(at: self)
-//    }
-    
     let viewController = UIViewController
       .instantiate(storyboard: StringConstants.route.rawValue,
                    identifier: StringConstants.routeViewController.rawValue)

@@ -161,6 +161,6 @@ struct Search: Hashable, Codable {
   let type: SearchType
   let name: String
   let detail: String
-  let date: String
+  var date: String
   let rgb: RGB
 }
