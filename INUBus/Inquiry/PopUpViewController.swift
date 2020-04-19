@@ -8,7 +8,8 @@
 
 import UIKit
 
-class PopUpViewController: UIViewController {
+// 확인 버튼을 누를시 화면을 내려가게 할 viewController
+final class PopUpViewController: UIViewController {
 
   @IBAction func yesButtonDidTap(_ sender: Any) {
     let presentingViewController = self.presentingViewController

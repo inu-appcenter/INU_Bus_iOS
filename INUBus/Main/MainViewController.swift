@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var infoButton: UIButton!
   
   // MARK: - Must Override Properties
-  // 상속하는 하위 클래스들은 무조건 오버라이드를 해야함.
+  // 상속하는 하위 클래스들은 각각 맞는 값으로 할당 해야함.
   
   /// 버스 정류장 식별자
   var busStopIdentifier: String {
@@ -67,6 +67,7 @@ class MainViewController: UIViewController {
   }
   
   // MARK: - Life cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
@@ -130,6 +131,13 @@ extension MainViewController {
         self.busInfos = busInfos
         self.sortedBuses = busTypeInfo
         DispatchQueue.main.async {
+          self.tableView.reloadData()
+        }
+      } else {
+        DispatchQueue.main.async {
+          showErrorAlertController(viewController: self)
+          self.busInfos.removeAll()
+          self.sortedBuses.removeAll()
           self.tableView.reloadData()
         }
       }

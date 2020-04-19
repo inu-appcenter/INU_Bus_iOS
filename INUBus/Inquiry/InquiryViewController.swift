@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 문의하기 부분을 보여줄 viewController
 final class InquiryViewController: UIViewController {
   
   // MARK: - IBOutlets
@@ -36,6 +37,7 @@ final class InquiryViewController: UIViewController {
     request()
   }
   // MARK: - Life Cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
@@ -82,7 +84,7 @@ extension InquiryViewController {
     ])
   }
   
-  /// 빈 공간을  눌렀을 때의 함수
+  /// 빈 공간을 눌렀을 때의 함수
   @objc func tapViewController(_ sender: UITapGestureRecognizer) {
     // 키보드를 내림
     view.endEditing(true)

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RouteTableViewCell: UITableViewCell {
+/// 메인 화면에서 cell 선택 시 해당 버스의 정류장 정보를 보여줄 cell
+final class RouteTableViewCell: UITableViewCell {
   
   @IBOutlet weak var busStopLabel: UILabel!
   @IBOutlet weak var upLineView: UIView!

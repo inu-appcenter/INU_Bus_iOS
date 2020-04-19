@@ -21,6 +21,7 @@ class ArrivalInfoService: ArrivalInfoServiceType {
     NetworkManager.shared.get(url: url) { data, error in
       if let error = error {
         errorLog("네트워크 에러: \(error.localizedDescription)")
+        completion(nil, nil)
       }
       
       if let data = data {

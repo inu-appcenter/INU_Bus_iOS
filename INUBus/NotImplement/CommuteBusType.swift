@@ -8,7 +8,8 @@
 
 import Foundation
 
-// 미구현.
+/// 미구현.
+/// 통학버스의 버스 타입을 관리할 enum.
 enum CommuteBusType {
   case songnae
   case suwon

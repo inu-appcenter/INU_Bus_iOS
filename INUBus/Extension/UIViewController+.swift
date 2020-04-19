@@ -8,6 +8,7 @@
 
 import UIKit
 
+// viewController에 도움을 줄 메소드
 extension UIViewController {
   static func instantiate(storyboard: String, identifier: String) -> UIViewController {
     let storyboard = UIStoryboard(name: storyboard, bundle: nil)

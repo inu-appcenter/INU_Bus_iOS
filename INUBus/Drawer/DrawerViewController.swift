@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Info 버튼을 눌렀을 때 보여줄 viewController
 final class DrawerViewController: UIViewController {
   
   @IBOutlet weak var inquiryView: RoundUIView!

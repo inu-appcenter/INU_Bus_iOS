@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// 미구현
+/// 통학버스 tablveView에 사용될 cell
 class CommuteTableViewCell: UITableViewCell {
   @IBOutlet weak var favoritesButton: UIButton!
   @IBOutlet weak var busType: UILabel!

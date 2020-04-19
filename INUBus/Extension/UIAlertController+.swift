@@ -8,6 +8,7 @@
 
 import UIKit
 
+// UIAlertController를 편리한 사용의 도움을 줄 메소드
 extension UIAlertController {
   
   static func alert(title: String?,

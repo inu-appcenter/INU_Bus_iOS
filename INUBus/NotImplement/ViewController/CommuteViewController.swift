@@ -9,7 +9,9 @@
 import UIKit
 import KYDrawerController
 
+/// 통학버스 정보를 보여줄 viewController
 class CommuteViewController: UIViewController {
+  
   // MARK: - IBOutlets
   
   @IBOutlet weak var tableView: UITableView!

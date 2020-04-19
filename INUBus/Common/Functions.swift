@@ -73,3 +73,13 @@ func removeAllUserDefaluts() {
 func removeUserDefaluts(forKey: String) {
   UserDefaults.standard.removeObject(forKey: forKey)
 }
+
+/// error line을 표시해줄 함수
+func errorLog(_ message: Any,
+              file: String = #file,
+              function: String = #function,
+              line: Int = #line) {
+  let fileName = file.split(separator: "/").last ?? ""
+  let functionName = function.split(separator: "(").first ?? ""
+  print("❌[\(fileName)]\(functionName)(\(line)):\(message)")
+}

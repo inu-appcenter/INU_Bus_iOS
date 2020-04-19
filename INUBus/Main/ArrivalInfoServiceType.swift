@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 각 데이터를 가져오고 처리할 protocol
 protocol ArrivalInfoServiceType: class {
   /// 특정 정류장의 버스 도착 예정 시간을 서버에 요청하는 함수.
   func requestArrivalInfo(url: String,

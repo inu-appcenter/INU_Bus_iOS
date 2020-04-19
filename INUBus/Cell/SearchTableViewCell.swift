@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
+/// 검색 시 검색 결과가 나올 cell
+final class SearchTableViewCell: UITableViewCell {
   
   @IBOutlet weak var searchLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!

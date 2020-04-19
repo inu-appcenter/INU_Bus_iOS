@@ -8,7 +8,8 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell {
+/// 공대, 자연대, 정문 tableView의 cell로 활용될 클래스.
+final class MainTableViewCell: UITableViewCell {
   
   // MARK: - IBOutlets
   
