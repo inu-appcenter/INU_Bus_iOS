@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RouteViewController: UIViewController {
+/// 해당 버스의 버스 정류장을 보여줄 viewController
+final class RouteViewController: UIViewController {
   
   // MARK: - IBOutlets
   

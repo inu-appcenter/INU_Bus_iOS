@@ -9,6 +9,7 @@
 import UIKit
 import KYDrawerController
 
+/// 미구현
 /// 통학버스 정보를 보여줄 viewController
 class CommuteViewController: UIViewController {
   

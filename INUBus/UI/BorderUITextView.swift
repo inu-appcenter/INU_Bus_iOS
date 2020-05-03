@@ -1,5 +1,5 @@
 //
-//  RoundUIButton.swift
+//  BorderUITextView.swift
 //  INUBus
 //
 //  Created by zun on 15/11/2019.
@@ -8,8 +8,9 @@
 
 import UIKit
 
+/// storyboard에서 UITextView의 특정 프로퍼티를 변경하기 위한 코드.
 @IBDesignable
-class RoundUIButton: UIButton {
+final class BorderUITextView: UITextView {
   
   @IBInspectable var borderWidth: CGFloat {
     get {
@@ -17,15 +18,6 @@ class RoundUIButton: UIButton {
     }
     set {
       layer.borderWidth = newValue
-    }
-  }
-  
-  @IBInspectable var cornerRadius: CGFloat {
-    get {
-      return layer.cornerRadius
-    }
-    set {
-      layer.cornerRadius = newValue
     }
   }
   

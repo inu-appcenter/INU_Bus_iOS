@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Asset과 관련된 문자열 enum.
 enum AssetConstants: String {
   case star
   case colorStar

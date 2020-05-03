@@ -8,7 +8,8 @@
 
 import Foundation
 
-class ArrivalInfoService: ArrivalInfoServiceType {
+/// ArrivalInfoServiceType을 구현
+final class ArrivalInfoService: ArrivalInfoServiceType {
   
   func requestArrivalInfo(url: String,
                           identifier: String,

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// cell에서 tablewView를 위로 올리게 해줄 delegate 패턴을 위한 protocol
 protocol TableViewUpDelegate: class {
   func scrollToTableViewTop()
 }

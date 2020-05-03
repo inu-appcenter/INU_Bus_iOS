@@ -8,7 +8,9 @@
 
 import Foundation
 
+/// server와 통신할 Manager 객체
 final class NetworkManager {
+  // singleton pattern
   static let shared = NetworkManager()
   
   private init() { }

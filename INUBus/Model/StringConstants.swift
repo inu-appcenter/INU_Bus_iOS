@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 문자열을 상수로 관리할 enum.
 enum StringConstants: String {
   case favorArray
   case main = "Main"

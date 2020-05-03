@@ -8,7 +8,7 @@
 
 import UIKit
 
-// 공대 버스 정류장의 버스 정보를 보여줄 viewController
+/// 공대 버스 정류장의 버스 정보를 보여줄 viewController
 final class EngineeringViewController: MainViewController {
   override var busStopIdentifier: String {
     return StringConstants.engineer.rawValue

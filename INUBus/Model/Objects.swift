@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 가장 기본이 되는 버스 기본 정보.
 struct BusInfo: Codable {
   let no: String
   let arrival: Int64
@@ -60,6 +61,7 @@ struct BusInfo: Codable {
     }
   }
   
+  /// 현재 버스가 운행중인지 아닌지를 체크
   var isRunning: Bool {
     let hour = Calendar.current.component(.hour, from: Date())
     let currentTime = Calendar.current.component(.minute, from: Date()) + hour * 100
@@ -72,6 +74,7 @@ struct BusInfo: Codable {
   }
 }
 
+/// Main 화면에 표시할 정보를 받을 JSON 변환 struct
 struct BusStop: Codable {
   let name: String
   let data: [BusInfo]
@@ -104,6 +107,7 @@ struct Route: Codable {
   }
 }
 
+/// 문의할 때 보낼 struct
 struct Inquiry: Codable {
   let title: String
   let message: String
@@ -112,6 +116,7 @@ struct Inquiry: Codable {
   let contact: String
 }
 
+/// 셔틀버스에 사용될 struct
 struct GPS: Codable {
   let routeID: String
   let status: Int

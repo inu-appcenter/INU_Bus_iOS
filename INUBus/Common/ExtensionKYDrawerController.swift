@@ -10,7 +10,7 @@ import Foundation
 import KYDrawerController
 
 /// Status bar color를 바꿀 수 있는 KYDrawerController
-class ExtensionKYDrawerController: KYDrawerController {
+final class ExtensionKYDrawerController: KYDrawerController {
   var statusBarColor = UIStatusBarStyle.default {
     didSet {
       setNeedsStatusBarAppearanceUpdate()

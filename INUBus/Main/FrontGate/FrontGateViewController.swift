@@ -8,7 +8,8 @@
 
 import UIKit
 
-class FrontGateViewController: MainViewController {
+/// 학교 정문 버스 정류장의 버스 정보를 보여줄 viewController
+final class FrontGateViewController: MainViewController {
   override var busStopIdentifier: String {
     return StringConstants.frontgate.rawValue
   }

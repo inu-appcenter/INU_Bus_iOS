@@ -9,7 +9,7 @@ import UIKit
 
 /// storyboard상에서 UITextField의 특정 프로퍼티를 변경하기 위한 클래스
 @IBDesignable
-class RoundUITextField: UITextField {
+final class RoundUITextField: UITextField {
 
   @IBInspectable var borderWidth: CGFloat {
     get {

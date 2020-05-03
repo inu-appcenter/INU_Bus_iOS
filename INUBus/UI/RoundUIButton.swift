@@ -1,16 +1,16 @@
 //
-//  RoundUIView.swift
+//  RoundUIButton.swift
 //  INUBus
 //
-//  Created by zun on 04/08/2019.
+//  Created by zun on 15/11/2019.
 //  Copyright © 2019 zun. All rights reserved.
 //
 
 import UIKit
 
-/// 스토리보드 상에서 view corner를 둥글게 하기 위한 class
+/// storyboard에서 UIButton의 특정 프로퍼티를 변경하기 위한 코드.
 @IBDesignable
-class RoundUIView: UIView {
+final class RoundUIButton: UIButton {
   
   @IBInspectable var borderWidth: CGFloat {
     get {
@@ -38,5 +38,4 @@ class RoundUIView: UIView {
       layer.borderColor = newValue?.cgColor
     }
   }
-
 }

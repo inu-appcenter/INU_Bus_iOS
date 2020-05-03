@@ -9,7 +9,7 @@
 import UIKit
 
 /// 검색 바를 눌렀을 때 검색할 화면을 보여줄 뷰컨트롤러.
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
   
   // MARK: - @IBOutlets
   

@@ -9,7 +9,7 @@
 import UIKit
 
 /// SearchViewController에서 정류장을 눌렀을 때 나올 화면을 구현.
-class StationViewController: UIViewController {
+final class StationViewController: UIViewController {
   
   // MARK: - IBOutlets
   

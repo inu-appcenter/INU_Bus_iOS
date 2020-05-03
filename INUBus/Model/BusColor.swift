@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 버스 종류에 따른 버스 색깔.
 enum BusColor {
   case blue
   case purple

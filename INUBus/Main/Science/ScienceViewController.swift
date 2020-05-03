@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ScienceViewController: MainViewController {
+/// 자연과학대 버스 정류장의 버스 정보를 보여줄 viewController
+final class ScienceViewController: MainViewController {
   override var busStopIdentifier: String {
     return StringConstants.science.rawValue
   }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// cell에서 tableView를 reload하기 위해 사용될 delegate 패턴 protocol
 protocol ReloadDataDelegate: class {
   func tableViewReloadData()
 }
