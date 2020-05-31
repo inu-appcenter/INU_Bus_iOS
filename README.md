@@ -24,7 +24,7 @@
 
 ### 스크린샷
 <div>
-  <img src="./images/1.PNG" width="50%"></img>
+  <img width="443" alt="1" src="https://user-images.githubusercontent.com/27484212/83354916-e758cd80-a396-11ea-8423-6ad2f5b89ffb.png">
 </div>
 
 ## 개발
