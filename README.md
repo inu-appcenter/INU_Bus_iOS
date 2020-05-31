@@ -40,6 +40,6 @@
 ### 활용 기술
 
 - **UserDefaults**
-- **URL**
+- **URLSession**
 - **SwiftLint**
 
