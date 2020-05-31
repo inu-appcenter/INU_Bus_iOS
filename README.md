@@ -24,9 +24,12 @@
 
 ### 스크린샷
 <div>
-  <img width="414" alt="1" src="https://user-images.githubusercontent.com/27484212/83354916-e758cd80-a396-11ea-8423-6ad2f5b89ffb.png">
-  <img width="414" alt="3" src="https://user-images.githubusercontent.com/27484212/83354955-271fb500-a397-11ea-9c4f-4dde9eebfd67.png">
-  <img width="414" alt="4" src="https://user-images.githubusercontent.com/27484212/83354976-50d8dc00-a397-11ea-899d-b9738b93f269.png">
+  <img width="300" alt="1" src="https://user-images.githubusercontent.com/27484212/83354916-e758cd80-a396-11ea-8423-6ad2f5b89ffb.png">
+  <img width="300" alt="3" src="https://user-images.githubusercontent.com/27484212/83354955-271fb500-a397-11ea-9c4f-4dde9eebfd67.png">
+  <img width="300" alt="4" src="https://user-images.githubusercontent.com/27484212/83354976-50d8dc00-a397-11ea-899d-b9738b93f269.png">
+  <img width="300" alt="5" src="https://user-images.githubusercontent.com/27484212/83355003-8f6e9680-a397-11ea-9bc9-865021181fc1.png">
+  <img width="300" alt="6" src="https://user-images.githubusercontent.com/27484212/83355012-a01f0c80-a397-11ea-8ec2-f2f267d50b08.png">
+  <img width="300" alt="7" src="https://user-images.githubusercontent.com/27484212/83355014-a1e8d000-a397-11ea-987b-2c7053ca552a.png">
 </div>
 
 ## 개발
