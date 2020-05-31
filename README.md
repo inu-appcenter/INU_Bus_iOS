@@ -24,7 +24,8 @@
 
 ### 스크린샷
 <div>
-  <img width="443" alt="1" src="https://user-images.githubusercontent.com/27484212/83354916-e758cd80-a396-11ea-8423-6ad2f5b89ffb.png">
+  <img width="90%" alt="1" src="https://user-images.githubusercontent.com/27484212/83354916-e758cd80-a396-11ea-8423-6ad2f5b89ffb.png">
+  <img width="90%" alt="3" src="https://user-images.githubusercontent.com/27484212/83354955-271fb500-a397-11ea-9c4f-4dde9eebfd67.png">
 </div>
 
 ## 개발
