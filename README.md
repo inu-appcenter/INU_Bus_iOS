@@ -23,8 +23,9 @@
 ## 디자인
 
 ### 스크린샷
-![1](./images/1.PNG)
-![2](./images/2.PNG)
+<div>
+  <img src="./images/1.PNG" width="50%"></img>
+</div>
 
 ## 개발
 
