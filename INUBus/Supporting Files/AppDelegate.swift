@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import KYDrawerController
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +16,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    // 첫 실행시 즐겨찾기 UserDefaults를 생성
+    if UserDefaults.standard.value(forKey: StringConstants.favorArray.rawValue) == nil {
+      UserDefaults.standard.set([String](), forKey: StringConstants.favorArray.rawValue)
+    }
+    
+    // drawer 설정 부분
+    let mainViewController = UIStoryboard(name: StringConstants.main.rawValue,
+                                          bundle: nil)
+      .instantiateViewController(withIdentifier: StringConstants.tabBarController.rawValue)
+    let drawerViewController = UIStoryboard(name: StringConstants.drawer.rawValue,
+                                            bundle: nil)
+      .instantiateViewController(withIdentifier: StringConstants.drawerViewController.rawValue)
+    let drawerController = ExtensionKYDrawerController(drawerDirection: .right,
+                                                       drawerWidth: 265)
+    
+    drawerController.mainViewController = mainViewController
+    drawerController.drawerViewController = drawerViewController
+    
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = drawerController
+    window?.makeKeyAndVisible()
+    
+    UITabBarItem.appearance()
+      .setTitleTextAttributes([NSAttributedString.Key.font: UIFont(
+        name: StringConstants.notoSansMedium.rawValue, size: 15)!],
+        for: .normal)
+
     return true
+  }
+  
+  // 화면 고정
+  func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+    // 세로 화면 고정
+    return [.portrait]
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
